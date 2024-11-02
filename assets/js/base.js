@@ -326,7 +326,7 @@ window.addEventListener('click', (event) => {
 //////////////////POP UP FILTER
 
 // Function to filter cards by data-id
-function filterById(id) {
+function filterById2(id) {
     const cards = document.querySelectorAll('.calendar-card');
     cards.forEach(card => {
       if (card.getAttribute('data-id') === String(id)) {
@@ -338,11 +338,33 @@ function filterById(id) {
   }
   
   // Function to show all cards
-  function showAll() {
+  function showAll1() {
     const cards = document.querySelectorAll('.calendar-card');
     cards.forEach(card => {
       card.style.display = 'block'; // Show all cards
     });
   }
   
-  
+  ///////Calendar opens popup
+
+  // Select the open and close buttons
+const openPopupButton = document.getElementById('openPopupButton');
+const closePopupButton1 = document.querySelector('.close-popup-button');
+const popup1 = document.querySelector('.popup');
+
+// Function to open the pop-up
+openPopupButton.addEventListener('click', function() {
+    popup1.style.display = 'flex'; // Show the pop-up
+});
+
+// Function to close the pop-up
+closePopupButton.addEventListener('click', function() {
+    popup1.style.display = 'none'; // Hide the pop-up
+});
+
+// Optional: Close pop-up when clicking outside of it
+popup1.addEventListener('click', function(e) {
+    if (e.target === popup) {
+        popup.style.display = 'none';
+    }
+});

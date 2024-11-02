@@ -12491,7 +12491,7 @@ option+4 dollar*/
 }
 
 .portfolio-card-img-top {
-  height: 100%; /* Ensure the image covers the container height */
+  height: 200px; /* Ensure the image covers the container height */
   width: 100%; /* Ensure the image covers the container width */
   object-fit: cover; /* Cover the entire area (crops image if necessary) */
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Smooth transition for the hover effect */
