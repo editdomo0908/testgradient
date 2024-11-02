@@ -12274,6 +12274,69 @@ option+4 dollar*/
   padding: 5%;
 }
 
+.image-container {
+  position: relative;
+  overflow: hidden; /* Ensures the pseudo-element doesn't overflow */
+  background-color: black;
+}
+
+#groupImage2 {
+  width: 100%; /* Ensure the image takes full width */
+  max-width: 100%; /* Adjust as necessary */
+  opacity: 0.3; /* Start at 0.3 opacity */
+  transition: opacity 0.5s ease-in; /* Smooth transition */
+}
+
+.image-container::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%; /* Adjust the height of the blur overlay */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)); /* Black to transparent gradient */
+  pointer-events: none; /* Allow clicks to go through */
+}
+
+.title-container {
+  position: absolute;
+  top: 10%; /* Adjust as necessary to position it correctly */
+  left: 50%;
+  transform: translateX(-50%); /* Center the title */
+  z-index: 10; /* Ensure it sits above the image */
+  color: white; /* Set text color for visibility */
+  text-align: center; /* Center the text */
+}
+
+.lazy-load {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.lazy-load[src] {
+  opacity: 1;
+}
+
+/* Define the swimming animation */
+@keyframes swim-up {
+  0% {
+    transform: translateY(300px); /* Start 50px below the final position */
+    opacity: 0; /* Start invisible */
+  }
+  100% {
+    transform: translateY(0); /* End at the original position */
+    opacity: 1; /* End fully visible */
+  }
+}
+.swim-in {
+  opacity: 0; /* Initially hidden */
+  transition: opacity 2s ease; /* Smooth transition for opacity */
+}
+
+.swim-in.visible {
+  animation: swim-up 2s ease forwards; /* Apply animation when visible */
+}
+
 .card {
   max-height: 500px;
   border: none !important; /* Override any other border settings */
