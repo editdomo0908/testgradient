@@ -1,0 +1,73 @@
+
+
+@use'../components/mixins' as *;
+@use '../custom' as *;
+
+
+
+
+
+
+
+.btn-round {
+
+    @include media-breakpoint-down(sm) {
+        display: none !important
+    }
+    
+    position: relative;
+    padding: 0.9375rem 4.375rem 0.9375rem 1.25rem;
+    font-weight: 500;
+    margin: 0;
+    font-weight: 600;
+    text-decoration: none;
+
+    span {
+        position:absolute;
+        @include gradient-initial; 
+        width: 2.5rem;
+        height: 2.5rem;
+        top: 50%;
+        right: 5px;
+        transform: translateY(-50%);
+        border-radius: 50%;
+
+        i {
+            font-size: 1rem;
+            line-height: 2.25rem;
+            color: black;
+
+        }
+
+
+    }
+
+    &:hover {
+    
+        background-color: rgba($primary, 0.1);
+
+        span {
+            background-color: $secondary;
+            color: $primary;
+        }
+    }
+}
+
+.btn-portfolio {
+    font-family: 'Jost', sans-serif;
+    text-transform: uppercase ;
+    background-color: $third;
+    font-weight: 500;
+    padding: 0.5rem;
+    margin: 0;
+    border: 0.1rem solid rgba($white, 0.6);
+    font-weight: 600;
+
+    &:hover {
+    
+        background-color: rgba($primary, 0.5);
+
+    }
+
+
+}

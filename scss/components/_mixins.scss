@@ -1,0 +1,41 @@
+//Gradient
+
+@use '../custom' as *;
+
+
+@mixin gradient {
+    //background: linear-gradient(to right, rgba($primary,0.85),rgba($secondary,0.95));
+
+
+    background-color:hsla(324, 23%, 41%, 0.4);
+    background-image:
+    radial-gradient(at 8% 96%, $primary, transparent 50%),
+    radial-gradient(at 62% 57%, $secondary 0px, transparent 50%),
+    radial-gradient(at 55% 96%, $third 0px, transparent 50%),
+    radial-gradient(at 90% 39%, $fourth 0px, transparent 50%),
+    radial-gradient(at 85% 93%, #a99047 0px, transparent 50%),
+    radial-gradient(at 20% 46%, #562648 0px, transparent 50%),
+    radial-gradient(at 0% 0%, rgb(95, 78, 83) 0px, transparent 50%);
+}
+
+
+
+
+// Define the gradient mixin
+// Mixin using palette colors as defaults
+@mixin gradient-initial($color1:  #562648a2, $color2: #777eada8, $color3: #a99147b4) {
+    background: linear-gradient(to right, $color1, $color2, $color3);
+  }
+  
+
+
+
+//Absolute center
+
+@mixin absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 53.5%;
+    transform: translate(-50%, -50%);
+}
+

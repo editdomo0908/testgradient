@@ -1,0 +1,14 @@
+@use '../custom' as *;
+@use'../components/mixins' as *;
+
+
+.vision {
+    background-color:$primary;
+}
+
+
+.gold-title {
+    color:$secondary;
+}
+   
+

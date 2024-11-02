@@ -1,0 +1,113 @@
+
+@use '../custom' as *;
+@use'../components/mixins' as *;
+
+
+.portfolio {
+    background-color: $secondary;
+}
+
+.portfolio-card-section{
+    padding: 80px 0 80px ;
+}
+
+
+ .portfolio-card{
+     padding: 15px;
+     margin-bottom:15px;
+     border:none!important;
+     background-image: linear-gradient(315deg, $secondary 0%, $third 74%);
+     transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+    
+}
+
+.portfolio-card:hover {
+    transform: scale(1.05); /* Slightly enlarge the card on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Adds a shadow effect on hover */
+  }
+
+
+
+.portfolio-card-img-top {
+    height: 100%; /* Ensure the image covers the container height */
+    width: 100%; /* Ensure the image covers the container width */
+    object-fit: cover; /* Cover the entire area (crops image if necessary) */
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Smooth transition for the hover effect */
+   
+
+}
+
+ .portfolio-card-title{
+    color: #fff;
+    font-size: 24px;
+    padding-top: 1rem;
+}
+ .portfolio-card-text{
+    color: #ddd;
+    padding-bottom: 15px;
+    
+}
+ .btn-primary{
+     background-color: transparent!important;
+     border:2px solid #fff!important;
+    
+ 
+}
+ .cart-btn{
+     background-color:  $third !important;
+     color: white !important;
+     width: 96px;
+     border-radius: 30px !important;
+     margin: 0.5 auto;
+     margin-top: -21px;
+     margin-right: 16px 
+}
+ //.first-bt{border: 4px solid  white !important;}
+
+
+    .first-bt-hover {
+        font-size: 16px;
+        font-weight: 600;
+        color: #fff;
+        cursor: pointer;
+        text-align:center;
+        border: none;
+        background-size: 300% 100%;
+    
+        border-radius: 50px;
+        moz-transition: all .4s ease-in-out;
+        -o-transition: all .4s ease-in-out;
+        -webkit-transition: all .4s ease-in-out;
+        transition: all .4s ease-in-out;
+    }
+    
+    .first-bt-hover:hover {
+        background-position: 100% 0;
+        moz-transition: all .4s ease-in-out;
+        -o-transition: all .4s ease-in-out;
+        -webkit-transition: all .4s ease-in-out;
+        transition: all .4s ease-in-out;
+    }
+    
+    .first-bt-hover:focus {
+        outline: none;
+    }
+    
+    .first-bt-hover.color-1 {
+        background-image: linear-gradient(to right,  $secondary, $third, $primary);
+        box-shadow: 0 4px 15px 0 rgb(145, 152, 199);
+        border-radius: 50px;
+    }
+
+
+
+
+
+
+
+
+ 
+ .fa-cart-plus{
+     padding-right: 10px;
+}
+ 

@@ -1,0 +1,73 @@
+@use '../custom' as *;
+
+
+.display-2 {
+ 
+    margin-bottom: 1rem;
+    font-family: 'Jost', sans-serif;
+
+
+    &--intro{
+        display: inline-block;
+        font-weight: 600;
+        font-size: 8rem;
+        opacity: 1;
+      
+    }
+
+
+    &--description{
+        display: inline-block;
+        font-weight: 500;
+        font-size: 3rem;
+     
+        margin-top: 1.2rem;
+
+@include media-breakpoint-up(lg) {
+    font-size: 2rem;
+    display: inline-block;
+}
+    }
+}
+
+
+
+//HEADING LINE
+.heading-line::before {
+    content: "";
+    width: 10rem;
+    height: 0.1rem;
+    display: block;
+    margin: 0 auto;
+    background-color: $primary;
+}
+
+.heading-line::after {
+    content: "";
+    width: 2rem;
+    padding-top: 0.5rem;
+    height: 0.2rem;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    background-color: $primary;
+
+}
+
+
+.display-3 {
+        font-family: 'Jost', sans-serif;
+}
+
+//BORDER-RIGHT
+
+.border-right {
+    border-right:0.1rem solid $primary;
+    height: 100%;
+}
+
+.company-name {
+    font-family: 'Jost', sans-serif;
+    color:  $primary;
+    font-size: 5rem;
+};

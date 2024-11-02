@@ -1,0 +1,89 @@
+@use '../custom' as *;
+@use'../components/mixins' as *;
+
+
+
+#wave {
+    background-color: black;
+}
+
+
+#company {
+    background-color: black;
+    padding: 5%;
+}
+
+
+.card {
+  max-height: 500px;
+    border: none !important; /* Override any other border settings */
+      
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+  }
+  
+  .card:hover {
+    transform: scale(1.05); /* Slightly enlarge the card on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Adds a shadow effect on hover */
+  }
+
+
+
+.img-container {
+    height: 80%; /* Set the desired height */
+    overflow: hidden; /* Hide overflow if the image is larger */
+    position: relative; /* Needed for absolute positioning of hover text */
+  }
+  
+  .img-container img {
+    height: 100%; /* Ensure the image covers the container height */
+    width: 100%; /* Ensure the image covers the container width */
+    object-fit: cover; /* Cover the entire area (crops image if necessary) */
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Smooth transition for the hover effect */
+  }
+  
+  .hover-text {
+    position: absolute;
+    top: 0;
+    left: -100%; /* Start outside of the container */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: $third; /* Semi-transparent background */
+    color: black;
+    font-size: 1.5rem;
+    opacity: 0;
+    transform: translateX(0); /* Initial state */
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Smooth transition */
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box; /* Ensures padding is included in the element's width */
+    border: none !important; /* Override any other border settings */
+  }
+  
+  .card:hover .img-container img {
+    opacity: 0;
+    transform: scale(1.2); /* Slightly enlarge the image */
+  }
+  
+  .card:hover .hover-text {
+    opacity: 1;
+    transform: translateX(100%); /* Slide in from the left */
+  }
+  
+  /* Optional: Adjust card title */
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  /* Center text and ensure consistency */
+  .card-body {
+    text-align: center;
+    padding: 15px;
+    @include gradient-initial($color1: $primary, $color2: $secondary, $color3: $third);
+  
+  }
+  

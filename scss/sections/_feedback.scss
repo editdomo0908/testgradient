@@ -1,0 +1,56 @@
+@use '../custom' as *;
+@use'../components/mixins' as *;
+
+
+
+.feedback {
+  background-color:$third;
+
+    &__card{
+        background-color: $gray-200;
+        padding: 2rem 1.25rem;
+        border-radius: 0.625rem;
+        height: auto;
+        margin: 2rem;
+        text-align: center;
+        @include gradient-initial;
+
+
+        i{
+            font: size 1.5rem;
+            color: black;
+        }
+    }
+
+    &__picture{
+        width: 6rem;
+        height: 6rem;
+        position: absolute;
+        left:50%;
+        transform: translate(-50%, -50%);
+        
+        img {
+            border:0.325rem solid black;
+        }
+    }
+
+    &__name {
+        padding-top:2.5rem;
+        margin-bottom: 1rem;
+        text-align: center;
+        font-weight: 500;
+        color: white;
+
+    }
+
+    &__right {
+        color: black;
+    }
+
+}
+
+
+.card-img-comp {
+width: 100%;
+height: 100%;
+}

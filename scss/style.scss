@@ -1,0 +1,29 @@
+/* https://www.youtube.com/watch?v=iJKCj8uAHz8
+option+shift+A to change for comment, 
+option+7 for brackets,
+option+4 dollar*/
+
+
+
+
+@use 'custom'; //to use custom sass file as a module
+
+
+@use 'components/animations';
+@use 'components/buttons';
+@use 'components/mixins';
+@use 'components/typography';
+
+@use 'sections/navbar';
+@use'sections/intro';
+@use'sections/vision';
+@use'sections/company';
+@use'sections/feedback';
+@use'sections/portfolio';
+
+
+
+
+
+
+

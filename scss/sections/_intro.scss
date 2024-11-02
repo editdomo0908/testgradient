@@ -1,0 +1,195 @@
+@use '../custom' as *;
+@use'../components/mixins' as *;
+
+.bg-video {
+    position: absolute;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    opacity: .25;
+    z-index: 1; // Ensure the video is behind the text
+    overflow: hidden;
+
+    &__content {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+////Sections fade in
+
+  ////////////////////////////////////////////////////////////////
+
+.landing {
+    @include gradient-initial;
+    min-height: 100vh;
+    position: relative; // Ensures that the text can be positioned within this context
+    z-index: 2; // Ensure it layers above the video
+}
+
+.intro-section {
+    padding: 15rem 0 0 0;
+    position: relative; // Ensure this section is positioned correctly relative to the landing
+    z-index: 3; // Higher than the background video
+}
+
+.introstext {
+    margin-left: 10%;
+    padding-top: 10%;
+    position: relative; // Ensure z-index works
+    z-index: 4; // Highest z-index to ensure it's above the video and any other content
+}
+
+
+.intro-btn{
+    margin-left: 10%;
+    margin-top: 10%;
+    color: black!important;
+}
+
+
+
+
+.group-img 
+{
+max-width: 80%;
+max-height: 80%;
+
+}
+
+
+
+.hidden {
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out; /* Smooth transition */
+}
+
+.visible {
+    opacity: 1;
+    transition: opacity 0.8s ease-in-out; /* Smooth transition */
+  
+}
+
+.sticky {
+    position: sticky;
+    top: 0; /* Makes it stick to the top of the viewport */
+    z-index: 10; /* Keeps it above other elements */
+}
+
+
+  
+
+.wave1, .wave2 {
+    transition: transform 0.8s ease-in-out, fill 0.8s ease-in-out;
+    transform: scale(1) translateX(0px);
+    fill: #000000;
+  }
+  
+
+  .gradient-circle {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, rgba(234, 127, 94, 0.9), rgba(85, 81, 168, 0.9));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    transition: 0.3s ease, width 0.3s ease, height 0.3s ease, top 0.3s ease, left 0.3s ease;
+    visibility: hidden; /* Hide initially */
+    opacity: 0; /* Make it fully transparent */
+}
+
+.gradient-circle.visible {
+    visibility: visible; /* Show when ready */
+    opacity: 1; /* Fade in effect */
+    transition: visibility 0s 0.3s, opacity 0.3s ease; /* Delay visibility change */
+}
+
+
+.inner-square {
+
+        width: 71%; /* Size adjustment for the inner square */
+        height: 71%;
+        background: linear-gradient(
+        to right, 
+        #562648 15%,    /* This color will take up 10% of the space */
+        #a8a8a8 35%,             /* This color will take up from 10% to 25% */
+        #6987C9 45%, /* From 25% to 45% */
+                     /* This color will take up more space, from 45% to 65% */
+         #a8a8a8 80%, /* From 75% to 85% */
+                 /* Narrow band again */
+         #a99047 100% /* Final color from 95% to 100% */
+    );
+        position: absolute;
+        opacity: 0.2; /* Fully opaque */
+    
+    
+}
+
+
+
+
+.logo-text {
+    text-align: center;
+    color: black;
+    font-family: 'Arial', sans-serif;
+    z-index: 1; /* Ensures text is above the inner square */
+}
+
+.logo-text .main-title {
+    font-size: 28px;
+    font-weight: 800;
+    text-transform: lowercase;
+}
+
+.logo-text .subtitle {
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-transform: lowercase;
+}
+
+.logo-text .location {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: lowercase;
+    margin-top: 4px;
+}
+
+//GRADIENT BACKGROUND CLASS
+.gradient-bg {
+    background-color: grey;
+}
+
+////////////////////////////////////////////////////////////////
+/// SMOKEY
+/// 
+.smokey-box {
+    text-align: center;
+    margin: 50px 0;
+  }
+  
+  .smokey-box ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  .smokey-box li {
+    font-size: 2.5rem; /* Adjust size as needed */
+    font-weight: bold;
+    color: #333; /* Adjust to fit your theme */
+    margin: 0 1px;
+  
+    transform: translateY(20px);
+    animation: fadeUp 1.5s ease forwards;
+    animation-delay: calc(0.1s * var(--i)); /* Staggering effect */
+  }
+  
+ 
+ 
