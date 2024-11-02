@@ -294,3 +294,55 @@ function filterById(id) {
   
 
 
+////////////////////////////////POP_UP
+
+
+// Get the popup, close button, and open link elements
+const popup = document.querySelector('.popup');
+const closeButton = document.querySelector('.close-popup-button');
+const openPopupLink = document.getElementById('openPopupLink');
+
+// Function to show the popup
+openPopupLink.addEventListener('click', (event) => {
+  event.preventDefault(); // Prevent the default link behavior
+  popup.style.display = 'flex'; // Show the popup
+});
+
+// Function to close the popup
+closeButton.addEventListener('click', () => {
+  popup.style.display = 'none'; // Hide the popup
+});
+
+// Optional: Close the popup when clicking outside of it
+window.addEventListener('click', (event) => {
+  if (event.target === popup) {
+    popup.style.display = 'none'; // Hide the popup if clicked outside
+  }
+});
+
+
+
+
+//////////////////POP UP FILTER
+
+// Function to filter cards by data-id
+function filterById(id) {
+    const cards = document.querySelectorAll('.calendar-card');
+    cards.forEach(card => {
+      if (card.getAttribute('data-id') === String(id)) {
+        card.style.display = 'block'; // Show the card if it matches the filter
+      } else {
+        card.style.display = 'none'; // Hide the card if it doesn't match
+      }
+    });
+  }
+  
+  // Function to show all cards
+  function showAll() {
+    const cards = document.querySelectorAll('.calendar-card');
+    cards.forEach(card => {
+      card.style.display = 'block'; // Show all cards
+    });
+  }
+  
+  

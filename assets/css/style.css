@@ -12560,4 +12560,201 @@ option+4 dollar*/
   padding-right: 10px;
 }
 
+/* https://www.youtube.com/watch?v=iJKCj8uAHz8
+option+shift+A to change for comment, 
+option+7 for brackets,
+option+4 dollar*/
+/* Pop-up styling */
+.popup {
+  display: none; /* Change to block when activated */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Jost", sans-serif;
+}
+
+/* Pop-up content styling */
+.popup-content {
+  background-color: #777ead;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 90%;
+  max-height: 90%;
+  overflow: hidden; /* Prevent overflow */
+  display: flex;
+  flex-direction: column;
+  padding: 20px; /* Add some padding for better appearance */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.popup-title {
+  text-align: center; /* Center the text */
+  font-size: 4rem;
+  color: #562648;
+  margin: 20px 0; /* Margin for spacing */
+  width: 100%; /* Take full width to center */
+}
+
+.btn-pop {
+  margin-right: 1rem;
+}
+
+.filter-buttons {
+  margin: 1rem;
+}
+
+/* Close button styling */
+.close-popup-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #562648; /* Change to a contrasting color if needed */
+  cursor: pointer;
+}
+
+/* Popup inner layout */
+.popup-inner {
+  display: flex; /* Use flexbox */
+  flex-direction: row; /* Horizontal layout */
+  gap: 20px; /* Space between the two sections */
+  height: 70vh; /* Set height to allow scrolling */
+}
+
+/* Calendar card container styling */
+.calendar-card-container {
+  display: flex;
+  flex-direction: column; /* Set to column for vertical stacking */
+  overflow-y: auto; /* Allow vertical scrolling */
+  max-height: 100%; /* Fill the height of the section */
+}
+
+/* Each calendar card styling */
+.calendar-card {
+  border: 2px solid #d5d5d5;
+  border-radius: 5px;
+  margin-bottom: 10px; /* Space between cards */
+  padding: 10px; /* Padding for better spacing */
+  width: 100%; /* Full width for responsiveness */
+  min-width: 800px; /* Maximum width for larger screens */
+}
+
+.card-content {
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space between the items */
+  align-items: center; /* Align items at the start */
+}
+
+.card-header {
+  flex: 3; /* Take up 3/4 of the width */
+}
+
+.button-container {
+  flex: 1; /* Take up 1/4 of the width */
+  display: flex; /* Use flexbox to center the button */
+  justify-content: center; /* Center the button horizontally */
+  align-items: center; /* Center the button vertically */
+}
+
+@media (max-width: 768px) {
+  .popup-inner {
+    flex-direction: column; /* Stack the image and cards on smaller screens */
+    height: auto; /* Allow height to adjust */
+  }
+  .calendar-card-container {
+    height: 400px; /* Set fixed height to allow scrolling */
+    overflow-y: auto; /* Allow scrolling if too many cards */
+  }
+  .calendar-card {
+    max-width: 400px; /* Set maximum width for smaller screens */
+    width: 100%; /* Ensure the card uses full available width */
+    min-width: 100px; /* Add a minimum width to allow smaller widths if needed */
+  }
+  .card-content {
+    flex-direction: column; /* Stack the button below the header */
+  }
+  .button-container {
+    width: 100%; /* Make button full width on mobile */
+    margin-top: 10px; /* Add some spacing above the button */
+  }
+}
+/* HEADER */
+.card-header {
+  display: flex;
+  flex-direction: row;
+  background: #f3f3f3;
+  padding: 18px;
+  padding-bottom: 5px;
+  position: relative;
+}
+
+/* CALENDAR BOX */
+.calendar-box {
+  width: fit-content;
+  border: 1px solid #a99047;
+  border-radius: 1px 1px 4px 4px;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.calendar-box > .day {
+  background: #a99047;
+  color: white;
+  font-size: 3rem;
+  width: 100%;
+  text-align: center;
+}
+
+.calendar-box > .month {
+  font-size: 4rem;
+  color: white;
+}
+
+.date {
+  text-align: center; /* Center text within the date box */
+  font-size: 1.5rem; /* Adjust the font size as needed */
+  color: white;
+}
+
+.card-text-aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 2rem;
+  color: #562648;
+  margin-left: 10px;
+}
+
+.card-text-aside > .time {
+  font-size: 1.8rem;
+}
+
+.card-text-aside > .location {
+  font-size: 1.5rem;
+}
+
+.calendar-right {
+  display: flex;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  color: #3e3e3e;
+}
+
+.calendar-right > .far {
+  font-size: 3rem;
+}
+
 /*# sourceMappingURL=style.css.map */
