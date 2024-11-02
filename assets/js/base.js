@@ -348,17 +348,17 @@ function filterById2(id) {
   ///////Calendar opens popup
 
   // Select the open and close buttons
-const openPopupButton = document.getElementById('openPopupButton');
+const openPopupButton1 = document.getElementById('openPopupButton');
 const closePopupButton1 = document.querySelector('.close-popup-button');
 const popup1 = document.querySelector('.popup');
 
 // Function to open the pop-up
-openPopupButton.addEventListener('click', function() {
+openPopupButton1.addEventListener('click', function() {
     popup1.style.display = 'flex'; // Show the pop-up
 });
 
 // Function to close the pop-up
-closePopupButton.addEventListener('click', function() {
+closePopupButton1.addEventListener('click', function() {
     popup1.style.display = 'none'; // Hide the pop-up
 });
 
