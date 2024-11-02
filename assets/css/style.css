@@ -12272,6 +12272,31 @@ option+4 dollar*/
 #company {
   background-color: black;
   padding: 5%;
+  overflow: hidden;
+}
+
+.row-cols-1 {
+  position: relative;
+  margin-bottom: 50px; /* Adjust this value as needed for spacing */
+}
+
+@keyframes swim-up {
+  0% {
+    transform: translateY(300px); /* Start 300px below the final position */
+    opacity: 0; /* Start invisible */
+  }
+  100% {
+    transform: translateY(0); /* End at the original position */
+    opacity: 1; /* End fully visible */
+  }
+}
+.swim-in {
+  opacity: 0; /* Initially hidden */
+  transition: opacity 2s ease; /* Smooth transition for opacity */
+}
+
+.swim-in.visible {
+  animation: swim-up 2s ease forwards; /* Apply animation when visible */
 }
 
 .image-container {
@@ -12315,26 +12340,6 @@ option+4 dollar*/
 
 .lazy-load[src] {
   opacity: 1;
-}
-
-/* Define the swimming animation */
-@keyframes swim-up {
-  0% {
-    transform: translateY(300px); /* Start 50px below the final position */
-    opacity: 0; /* Start invisible */
-  }
-  100% {
-    transform: translateY(0); /* End at the original position */
-    opacity: 1; /* End fully visible */
-  }
-}
-.swim-in {
-  opacity: 0; /* Initially hidden */
-  transition: opacity 2s ease; /* Smooth transition for opacity */
-}
-
-.swim-in.visible {
-  animation: swim-up 2s ease forwards; /* Apply animation when visible */
 }
 
 .card {

@@ -28,20 +28,73 @@ window.addEventListener('load', function() {
 
 
 /////////////////////////////////////
+
 document.addEventListener("DOMContentLoaded", function () {
-    const cards = document.querySelectorAll('.swim-in');
+    const cardsRows = document.querySelectorAll('#company .col');
     const windowHeight = window.innerHeight; // Get the height of the window
+    let triggeredRows = 0; // To keep track of which rows have been triggered
 
     // Function to check scroll position
     function checkScroll() {
         const scrollPosition = window.scrollY; // Get the current scroll position
-        
-        // If the user has scrolled down at least half the window height
-        if (scrollPosition >= windowHeight / 2 + 300) {
-            cards.forEach(card => {
-                card.classList.add('visible'); // Add class to trigger animation
+
+        // Define trigger points based on the window height
+        const triggerPoint1 = windowHeight / 2; // First trigger point (show first 3 cards)
+        const triggerPoint2 = triggerPoint1 + 300; // Second trigger point (show next 3 cards)
+        const triggerPoint3 = triggerPoint2 + 300; // Third trigger point (show last 3 cards)
+
+        // Check if the user has scrolled past the first trigger point
+        if (scrollPosition >= triggerPoint1 && triggeredRows === 0) {
+            cardsRows.forEach((card, index) => {
+                if (index < 3) { // Only apply to the first 3 cards
+                    card.classList.add('visible'); // Add class to trigger animation
+                }
             });
-            window.removeEventListener('scroll', checkScroll); // Remove listener after triggering
+            triggeredRows = 1; // Update the triggered row count
+        }
+
+        // Check if the user has scrolled past the second trigger point
+        else if (scrollPosition >= triggerPoint2 && triggeredRows === 1) {
+            cardsRows.forEach((card, index) => {
+                if (index >= 3 && index < 6) { // Next 3 cards
+                    card.classList.add('visible'); // Add class to trigger animation
+                }
+            });
+            triggeredRows = 2; // Update the triggered row count
+        }
+
+        // Check if the user has scrolled past the third trigger point
+        else if (scrollPosition >= triggerPoint3 && triggeredRows === 2) {
+            cardsRows.forEach((card, index) => {
+                if (index >= 6) { // Last 3 cards
+                    card.classList.add('visible'); // Add class to trigger animation
+                }
+            });
+            triggeredRows = 3; // Update the triggered row count
+        }
+
+        // Handle scrolling back up to reveal the cards again
+        if (scrollPosition < triggerPoint1 && triggeredRows > 0) {
+            cardsRows.forEach((card, index) => {
+                if (index < 3) { // First 3 cards
+                    card.classList.remove('visible'); // Remove class to reset animation
+                }
+            });
+            triggeredRows = 0; // Reset the triggered row count
+        } else if (scrollPosition < triggerPoint2 && triggeredRows > 1) {
+            cardsRows.forEach((card, index) => {
+                if (index >= 3 && index < 6) { // Next 3 cards
+                    card.classList.remove('visible'); // Remove class to reset animation
+                }
+            });
+            triggeredRows = 1; // Update the triggered row count
+        } else if (scrollPosition < triggerPoint3 && triggeredRows > 2) {
+            cardsRows.forEach((card, index) => {
+                if (index >= 6) { // Last 3 cards
+                    card.classList.remove('visible'); // Remove class to reset animation
+                }
+            });
+            triggeredRows = 2; // Update the triggered row count
         }
     }
 
