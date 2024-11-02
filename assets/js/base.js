@@ -148,7 +148,7 @@ function handleScroll() {
         const scrollProgress = (windowHeight - sectionTop) / windowHeight;
 
         // Fade in heading1 and group image at appropriate scroll progress
-        if (scrollProgress > 0.15 && scrollProgress <= 0.9) {
+        if (scrollProgress > 0.3 && scrollProgress <= 0.9) {
             if (heading1.classList.contains('hidden')) {
                 heading1.classList.remove('hidden');
                 heading1.classList.add('visible');

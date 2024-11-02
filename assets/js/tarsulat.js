@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // Trigger animation for each row
             cards.forEach((card, index) => {
                 const rowIndex = Math.floor(index / 3); // Adjust row index for 3 columns per row
-                const triggerPoint = (rowIndex + 1) * 300; // Trigger each row after scrolling 300px
+                const triggerPoint = (rowIndex + 1) * 350; // Trigger each row after scrolling 300px
                 
                 // Check for scroll down
                 if (scrollPosition >= triggerPoint && !card.classList.contains('visible')) {

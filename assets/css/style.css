@@ -12271,7 +12271,7 @@ option+4 dollar*/
 
 #company {
   background-color: black;
-  padding: 5%;
+  padding: 8%;
   overflow: hidden;
 }
 
@@ -12300,6 +12300,14 @@ option+4 dollar*/
 }
 
 .image-container {
+  max-height: 500px;
+  max-width: 300px;
+  position: relative;
+  overflow: hidden; /* Ensures the pseudo-element doesn't overflow */
+  background-color: black;
+}
+
+.image-container-group {
   position: relative;
   overflow: hidden; /* Ensures the pseudo-element doesn't overflow */
   background-color: black;
@@ -12312,7 +12320,7 @@ option+4 dollar*/
   transition: opacity 0.5s ease-in; /* Smooth transition */
 }
 
-.image-container::after {
+.image-container-group::after {
   content: "";
   position: absolute;
   bottom: 0;
