@@ -49,16 +49,25 @@ document.addEventListener('DOMContentLoaded', function () {
         let newSize = maxSize - (scrollPosition / 300) * (maxSize - minSize);
         newSize = Math.max(minSize, Math.min(newSize, maxSize));
 
-        if (newSize === minSize) {
+        if (scrollPosition >= 300) {
+            // Shrink to minimum size and move to shrunkLeft
             if (!isMinSizeReached) {
                 isMinSizeReached = true;
                 circle.style.transition = 'left 0.5s ease';
                 circle.style.left = `${shrunkLeft}px`;
             }
-        } else if (scrollPosition <= (maxSize - minSize) * 300 / (maxSize - minSize)) {
-            isMinSizeReached = false;
-            circle.style.transition = 'left 0.5s ease';
-            circle.style.left = `${initialLeft}px`;
+        } else if (scrollPosition <= 300) {
+            // At 300px from the top on the way back, start moving to initialLeft
+            if (isMinSizeReached) {
+                isMinSizeReached = false;
+                circle.style.transition = 'left 0.5s ease';
+                circle.style.left = `${initialLeft}px`;
+            }
+
+            // Once at initialLeft, expand to initial size while scrolling further up
+            if (scrollPosition <= initialTop) {
+                newSize = maxSize;
+            }
         }
 
         adjustCircleSize(newSize);
