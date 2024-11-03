@@ -40,6 +40,28 @@ document.addEventListener('DOMContentLoaded', function () {
         repositionCircle();
     }
 
+    // Throttle function to limit how often a function can be called
+    function throttle(func, limit) {
+        let lastFunc;
+        let lastRan;
+        return function () {
+            const context = this;
+            const args = arguments;
+            if (!lastRan) {
+                func.apply(context, args);
+                lastRan = Date.now();
+            } else {
+                clearTimeout(lastFunc);
+                lastFunc = setTimeout(function () {
+                    if ((Date.now() - lastRan) >= limit) {
+                        func.apply(context, args);
+                        lastRan = Date.now();
+                    }
+                }, limit - (Date.now() - lastRan));
+            }
+        };
+    }
+
     function handleScroll() {
         const windowHeight = window.innerHeight;
         let scrollPosition = Math.min(window.scrollY, document.documentElement.scrollHeight - windowHeight);
@@ -51,16 +73,22 @@ document.addEventListener('DOMContentLoaded', function () {
         let newSize = maxSize - (scrollPosition / 300) * (maxSize - minSize);
         newSize = Math.max(minSize, Math.min(newSize, maxSize));
 
-        // Check if the new size is reached
-        if (newSize <= minSize) {
-            if (!isMinSizeReached) {
-                isMinSizeReached = true;
+        // Determine the current position for left adjustment
+        if (scrollPosition >= initialTop) {
+            // Only adjust if scrolled past initialTop
+            if (newSize <= minSize) {
+                if (!isMinSizeReached) {
+                    isMinSizeReached = true;
+                    circle.style.transition = 'left 0.5s ease';
+                    circle.style.left = `${shrunkLeft}px`;
+                }
+            } else {
+                isMinSizeReached = false;
                 circle.style.transition = 'left 0.5s ease';
-                circle.style.left = `${shrunkLeft}px`;
+                circle.style.left = `${initialLeft}px`;
             }
-        } else if (scrollPosition <= initialTop + 5) { // Allow a small threshold for resetting position
-            isMinSizeReached = false;
-            circle.style.transition = 'left 0.5s ease';
+        } else {
+            // Reset the position if scrolled above initialTop
             circle.style.left = `${initialLeft}px`;
         }
 
@@ -108,10 +136,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 100);
     });
 
-    window.addEventListener('scroll', handleScroll);
+    // Use the throttled handleScroll for the scroll event
+    window.addEventListener('scroll', throttle(handleScroll, 100));
     handleScroll();
 });
-
 
 //////////////////////////////////////////////////////////
 //INTRO TEXTS //////
