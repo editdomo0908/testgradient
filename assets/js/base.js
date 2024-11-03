@@ -51,28 +51,23 @@ document.addEventListener('DOMContentLoaded', function () {
         let newSize = maxSize - (scrollPosition / 300) * (maxSize - minSize);
         newSize = Math.max(minSize, Math.min(newSize, maxSize));
 
-        // Check the scroll position against the initialTop
-        if (scrollPosition > initialTop) {
-            if (newSize <= minSize) {
-                // Set the position when the min size is reached
-                if (!isMinSizeReached) {
-                    isMinSizeReached = true;
-                    circle.style.transition = 'left 0.5s ease';
-                    circle.style.left = `${shrunkLeft}px`;
-                }
-            } else {
-                // Reset position if not at min size
-                isMinSizeReached = false;
+        // Handling shrinking behavior
+        if (newSize === minSize) {
+            if (!isMinSizeReached) {
+                isMinSizeReached = true;
+                circle.style.transition = 'left 0.5s ease';
+                circle.style.left = `${shrunkLeft}px`;
+            }
+        } else if (scrollPosition <= minSizeScrollTrigger && isMinSizeReached) {
+            // Check if the user has scrolled back up past the threshold
+            if (scrollPosition < shrunkLeft) {
+                isMinSizeReached = false; // Allow the circle to grow back
                 circle.style.transition = 'left 0.5s ease';
                 circle.style.left = `${initialLeft}px`;
             }
-        } else {
-            // Immediately reset position when above initialTop
-            isMinSizeReached = false; // Reset the state
-            circle.style.transition = 'left 0.5s ease';
-            circle.style.left = `${initialLeft}px`;
         }
 
+        // Adjust the size of the circle
         adjustCircleSize(newSize);
     }
 
@@ -117,11 +112,11 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 100);
     });
 
-    // Throttle function to limit how often handleScroll is called
+    // Throttle scroll event handler
     let lastScroll = 0;
     window.addEventListener('scroll', () => {
         const now = Date.now();
-        if (now - lastScroll >= 50) { // Shortened throttle duration for better responsiveness
+        if (now - lastScroll >= 50) { // Throttle for every 50ms
             handleScroll();
             lastScroll = now;
         }
@@ -129,7 +124,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     handleScroll();
 });
-
 
 
 //////////////////////////////////////////////////////////
