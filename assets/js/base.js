@@ -49,6 +49,8 @@ document.addEventListener('DOMContentLoaded', function () {
         let newSize = maxSize - (scrollPosition / 300) * (maxSize - minSize);
         newSize = Math.max(minSize, Math.min(newSize, maxSize));
 
+        const triggerPosition = windowHeight / 3;
+
         if (scrollPosition >= 300) {
             // Shrink to minimum size and move to shrunkLeft when scrolling down
             if (!isMinSizeReached) {
@@ -57,8 +59,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 circle.style.left = `${shrunkLeft}px`;
             }
         } else {
-            // Start moving back to initialLeft only when scrolling back up within 300px of the top
-            if (isMinSizeReached && scrollPosition <= 300) {
+            // Start moving back to initialLeft only when the scroll position is close enough to the top (1/3 of window height from the top)
+            if (isMinSizeReached && scrollPosition <= triggerPosition) {
                 isMinSizeReached = false;
                 circle.style.transition = 'left 0.5s ease';
                 circle.style.left = `${initialLeft}px`;
