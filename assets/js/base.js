@@ -50,14 +50,14 @@ document.addEventListener('DOMContentLoaded', function () {
         let newSize = maxSize - (scrollPosition / 300) * (maxSize - minSize);
         newSize = Math.max(minSize, Math.min(newSize, maxSize));
 
-        // Shrink the circle if scrolling down past initialTop
-        if (scrollPosition > initialTop && newSize === minSize && !isShrunk) {
+        // If we are below the initial top, shrink the circle
+        if (scrollPosition > initialTop && !isShrunk) {
             isShrunk = true;
             circle.style.transition = 'left 0.5s ease';
-            circle.style.left = `${shrunkLeft}px`;
+            circle.style.left = `${shrunkLeft}px`; // Move to shrunk left position
         }
 
-        // Expand the circle back to its initial state only when reaching initialTop
+        // If we are at or above the initial top, expand the circle
         if (scrollPosition <= initialTop && isShrunk) {
             isShrunk = false;
             circle.style.transition = 'left 0.5s ease';
