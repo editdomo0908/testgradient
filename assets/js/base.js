@@ -8,10 +8,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const colorCount = colors.length;
 
     let maxSize, minSize, initialSize;
-    const initialTop = 130;
-    let initialLeft;
-    let shrunkLeft;
-    let isShrunk = false;
+    const initialTop = 130; // Fixed top position
+    let initialLeft; // This will be set based on screen size
+    let shrunkLeft; // Position for the shrunk circle
+    let isShrunk = false; // Track if the circle is currently shrunk
 
     const originalFontSizes = {
         mainTitle: parseFloat(window.getComputedStyle(mainTitle).fontSize),
@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function handleScroll() {
         const scrollPosition = window.scrollY;
 
+        // Set the gradient background based on scroll position
         const index = Math.floor(scrollPosition / (window.innerHeight / colorCount)) % colorCount;
         const gradientColors = colors.slice(index, index + 9).concat(colors.slice(0, Math.max(0, index + 9 - colorCount))).join(', ');
         circle.style.background = `linear-gradient(90deg, ${gradientColors})`;
@@ -49,15 +50,18 @@ document.addEventListener('DOMContentLoaded', function () {
         let newSize = maxSize - (scrollPosition / 300) * (maxSize - minSize);
         newSize = Math.max(minSize, Math.min(newSize, maxSize));
 
-        // Check if we should shrink or expand the circle based on scroll position
+        // Shrink the circle if scrolling down past initialTop
         if (scrollPosition > initialTop && newSize === minSize && !isShrunk) {
             isShrunk = true;
             circle.style.transition = 'left 0.5s ease';
             circle.style.left = `${shrunkLeft}px`;
-        } else if (scrollPosition <= initialTop && isShrunk) {
+        }
+
+        // Expand the circle back to its initial state only when reaching initialTop
+        if (scrollPosition <= initialTop && isShrunk) {
             isShrunk = false;
             circle.style.transition = 'left 0.5s ease';
-            circle.style.left = `${initialLeft}px`;
+            circle.style.left = `${initialLeft}px`; // Move back to initial left position
             newSize = maxSize;  // Reset size to max when back at the top
         }
 
@@ -107,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll();
+    handleScroll(); // Initial call to set the correct sizes
 });
 
 
