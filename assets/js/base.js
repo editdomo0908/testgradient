@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function handleScroll() {
         const windowHeight = window.innerHeight;
         let scrollPosition = Math.min(window.scrollY, document.documentElement.scrollHeight - windowHeight);
-
+        
         const index = Math.floor(scrollPosition / (windowHeight / colorCount)) % colorCount;
         const gradientColors = colors.slice(index, index + 9).concat(colors.slice(0, Math.max(0, index + 9 - colorCount))).join(', ');
         circle.style.background = `linear-gradient(90deg, ${gradientColors})`;
@@ -51,24 +51,17 @@ document.addEventListener('DOMContentLoaded', function () {
         let newSize = maxSize - (scrollPosition / 300) * (maxSize - minSize);
         newSize = Math.max(minSize, Math.min(newSize, maxSize));
 
-        // Check if the minimum size is reached
-        if (newSize === minSize) {
+        // Check if the new size is reached
+        if (newSize <= minSize) {
             if (!isMinSizeReached) {
                 isMinSizeReached = true;
                 circle.style.transition = 'left 0.5s ease';
                 circle.style.left = `${shrunkLeft}px`;
             }
-        } 
-        // Reset position only when scrolling back to the initialTop
-        else if (scrollPosition <= initialTop) {
+        } else if (scrollPosition <= initialTop + 5) { // Allow a small threshold for resetting position
             isMinSizeReached = false;
             circle.style.transition = 'left 0.5s ease';
             circle.style.left = `${initialLeft}px`;
-        } 
-        // Adjust position for intermediate scroll values
-        else if (scrollPosition > minSizeScrollTrigger) {
-            // Allow the circle to remain at shrunk position until we scroll back to the initialTop
-            return; // Early exit to prevent resetting position
         }
 
         adjustCircleSize(newSize);
@@ -118,7 +111,6 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('scroll', handleScroll);
     handleScroll();
 });
-
 
 
 //////////////////////////////////////////////////////////
