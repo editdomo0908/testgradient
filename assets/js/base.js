@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const subtitle = document.querySelector('.logo-text .subtitle');
     const locationText = document.querySelector('.logo-text .location');
 
-    const colors = ['#502651','#502651','rgb(122, 91, 131)','#878ca9','#777eade3','#878ca9', ' #ab9c70', '#a99047','#a99047'];
+    const colors = ['#502651', '#502651', 'rgb(122, 91, 131)', '#878ca9', '#777eade3', '#878ca9', '#ab9c70', '#a99047', '#a99047'];
     const colorCount = colors.length;
 
     let maxSize, minSize, initialSize;
@@ -51,16 +51,24 @@ document.addEventListener('DOMContentLoaded', function () {
         let newSize = maxSize - (scrollPosition / 300) * (maxSize - minSize);
         newSize = Math.max(minSize, Math.min(newSize, maxSize));
 
+        // Check if the minimum size is reached
         if (newSize === minSize) {
             if (!isMinSizeReached) {
                 isMinSizeReached = true;
                 circle.style.transition = 'left 0.5s ease';
                 circle.style.left = `${shrunkLeft}px`;
             }
-        } else if (scrollPosition <= minSizeScrollTrigger) {
+        } 
+        // Reset position only when scrolling back to the initialTop
+        else if (scrollPosition <= initialTop) {
             isMinSizeReached = false;
             circle.style.transition = 'left 0.5s ease';
             circle.style.left = `${initialLeft}px`;
+        } 
+        // Adjust position for intermediate scroll values
+        else if (scrollPosition > minSizeScrollTrigger) {
+            // Allow the circle to remain at shrunk position until we scroll back to the initialTop
+            return; // Early exit to prevent resetting position
         }
 
         adjustCircleSize(newSize);
@@ -110,6 +118,7 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('scroll', handleScroll);
     handleScroll();
 });
+
 
 
 //////////////////////////////////////////////////////////
