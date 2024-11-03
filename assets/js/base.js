@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function handleScroll() {
         const windowHeight = window.innerHeight;
-        let scrollPosition = Math.min(window.scrollY, document.documentElement.scrollHeight - windowHeight);
+        const scrollPosition = Math.min(window.scrollY, document.documentElement.scrollHeight - windowHeight);
 
         const index = Math.floor(scrollPosition / (windowHeight / colorCount)) % colorCount;
         const gradientColors = colors.slice(index, index + 9).concat(colors.slice(0, Math.max(0, index + 9 - colorCount))).join(', ');
@@ -50,21 +50,21 @@ document.addEventListener('DOMContentLoaded', function () {
         newSize = Math.max(minSize, Math.min(newSize, maxSize));
 
         if (scrollPosition >= 300) {
-            // Shrink to minimum size and move to shrunkLeft
+            // Shrink to minimum size and move to shrunkLeft when scrolling down
             if (!isMinSizeReached) {
                 isMinSizeReached = true;
                 circle.style.transition = 'left 0.5s ease';
                 circle.style.left = `${shrunkLeft}px`;
             }
-        } else if (scrollPosition <= 300) {
-            // At 300px from the top on the way back, start moving to initialLeft
-            if (isMinSizeReached) {
+        } else {
+            // Start moving back to initialLeft only when scrolling back up within 300px of the top
+            if (isMinSizeReached && scrollPosition <= 300) {
                 isMinSizeReached = false;
                 circle.style.transition = 'left 0.5s ease';
                 circle.style.left = `${initialLeft}px`;
             }
 
-            // Once at initialLeft, expand to initial size while scrolling further up
+            // Begin expanding to max size only after reaching initialLeft
             if (scrollPosition <= initialTop) {
                 newSize = maxSize;
             }
