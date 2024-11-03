@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const subtitle = document.querySelector('.logo-text .subtitle');
     const locationText = document.querySelector('.logo-text .location');
 
-    const colors = ['#502651', '#502651', 'rgb(122, 91, 131)', '#878ca9', '#777eade3', '#878ca9', '#ab9c70', '#a99047', '#a99047'];
+    const colors = ['#502651','#502651','rgb(122, 91, 131)','#878ca9','#777eade3','#878ca9', ' #ab9c70', '#a99047','#a99047'];
     const colorCount = colors.length;
 
     let maxSize, minSize, initialSize;
@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function () {
     let initialLeft;
     let shrunkLeft;
     let isMinSizeReached = false;
-    let minSizeScrollTrigger;
 
     const originalFontSizes = {
         mainTitle: parseFloat(window.getComputedStyle(mainTitle).fontSize),
@@ -36,45 +35,33 @@ document.addEventListener('DOMContentLoaded', function () {
             maxSize = 350; minSize = 150; initialLeft = 800; shrunkLeft = 1250;
         }
         initialSize = maxSize;
-        minSizeScrollTrigger = (maxSize - minSize) * 300 / (maxSize - minSize);
         repositionCircle();
     }
-
-    let previousScrollPosition = 0; // Track previous scroll position
 
     function handleScroll() {
         const windowHeight = window.innerHeight;
         let scrollPosition = Math.min(window.scrollY, document.documentElement.scrollHeight - windowHeight);
+
         const index = Math.floor(scrollPosition / (windowHeight / colorCount)) % colorCount;
         const gradientColors = colors.slice(index, index + 9).concat(colors.slice(0, Math.max(0, index + 9 - colorCount))).join(', ');
         circle.style.background = `linear-gradient(90deg, ${gradientColors})`;
 
-        // Calculate new size based on scroll position
         let newSize = maxSize - (scrollPosition / 300) * (maxSize - minSize);
         newSize = Math.max(minSize, Math.min(newSize, maxSize));
 
-        if (scrollPosition >= minSizeScrollTrigger) {
-            // If scroll position is below the trigger point, check if it is at min size
-            if (newSize === minSize) {
-                if (!isMinSizeReached) {
-                    isMinSizeReached = true;
-                    circle.style.transition = 'left 0.5s ease';
-                    circle.style.left = `${shrunkLeft}px`;
-                }
-            } 
-        } else {
-            // If scroll position is above the trigger point and the circle is at min size
-            if (isMinSizeReached) {
-                isMinSizeReached = false;
+        if (newSize === minSize) {
+            if (!isMinSizeReached) {
+                isMinSizeReached = true;
                 circle.style.transition = 'left 0.5s ease';
-                circle.style.left = `${initialLeft}px`;
+                circle.style.left = `${shrunkLeft}px`;
             }
+        } else if (scrollPosition <= (maxSize - minSize) * 300 / (maxSize - minSize)) {
+            isMinSizeReached = false;
+            circle.style.transition = 'left 0.5s ease';
+            circle.style.left = `${initialLeft}px`;
         }
 
-        // Adjust the size of the circle
         adjustCircleSize(newSize);
-
-        previousScrollPosition = scrollPosition; // Update the previous scroll position
     }
 
     function adjustCircleSize(newSize) {
@@ -118,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 100);
     });
 
-    // Throttle scroll event handler
+    // Throttle scroll event handler for better performance
     let lastScroll = 0;
     window.addEventListener('scroll', () => {
         const now = Date.now();
