@@ -39,27 +39,26 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function handleScroll() {
-        const windowHeight = window.innerHeight;
-        let scrollPosition = Math.min(window.scrollY, document.documentElement.scrollHeight - windowHeight);
+        const scrollPosition = window.scrollY;
 
-        const index = Math.floor(scrollPosition / (windowHeight / colorCount)) % colorCount;
+        const index = Math.floor(scrollPosition / (window.innerHeight / colorCount)) % colorCount;
         const gradientColors = colors.slice(index, index + 9).concat(colors.slice(0, Math.max(0, index + 9 - colorCount))).join(', ');
         circle.style.background = `linear-gradient(90deg, ${gradientColors})`;
 
+        // Calculate the new size based on scroll
         let newSize = maxSize - (scrollPosition / 300) * (maxSize - minSize);
         newSize = Math.max(minSize, Math.min(newSize, maxSize));
 
-        // If the circle has reached minSize and hasn't moved yet, set to shrunk position
-        if (newSize === minSize && !isShrunk) {
+        // Check if we should shrink or expand the circle based on scroll position
+        if (scrollPosition > initialTop && newSize === minSize && !isShrunk) {
             isShrunk = true;
             circle.style.transition = 'left 0.5s ease';
             circle.style.left = `${shrunkLeft}px`;
-        } 
-        // If the circle is starting to grow back from minSize, reset to initial position
-        else if (newSize > minSize && isShrunk) {
+        } else if (scrollPosition <= initialTop && isShrunk) {
             isShrunk = false;
             circle.style.transition = 'left 0.5s ease';
             circle.style.left = `${initialLeft}px`;
+            newSize = maxSize;  // Reset size to max when back at the top
         }
 
         adjustCircleSize(newSize);
