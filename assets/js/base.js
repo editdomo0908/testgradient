@@ -8,10 +8,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const colorCount = colors.length;
 
     let maxSize, minSize, initialSize;
-    const initialTop = 130; // Fixed top position
-    let initialLeft; // This will be set based on screen size
-    let shrunkLeft; // Position for the shrunk circle
-    let isShrunk = false; // Track if the circle is currently shrunk
+    const initialTop = 130;
+    let initialLeft;
+    let shrunkLeft;
+    let isMinSizeReached = false;
+    let minSizeScrollTrigger;
 
     const originalFontSizes = {
         mainTitle: parseFloat(window.getComputedStyle(mainTitle).fontSize),
@@ -35,34 +36,31 @@ document.addEventListener('DOMContentLoaded', function () {
             maxSize = 350; minSize = 150; initialLeft = 800; shrunkLeft = 1250;
         }
         initialSize = maxSize;
+        minSizeScrollTrigger = (maxSize - minSize) * 300 / (maxSize - minSize);
         repositionCircle();
     }
 
     function handleScroll() {
-        const scrollPosition = window.scrollY;
+        const windowHeight = window.innerHeight;
+        let scrollPosition = Math.min(window.scrollY, document.documentElement.scrollHeight - windowHeight);
 
-        // Set the gradient background based on scroll position
-        const index = Math.floor(scrollPosition / (window.innerHeight / colorCount)) % colorCount;
+        const index = Math.floor(scrollPosition / (windowHeight / colorCount)) % colorCount;
         const gradientColors = colors.slice(index, index + 9).concat(colors.slice(0, Math.max(0, index + 9 - colorCount))).join(', ');
         circle.style.background = `linear-gradient(90deg, ${gradientColors})`;
 
-        // Calculate the new size based on scroll
         let newSize = maxSize - (scrollPosition / 300) * (maxSize - minSize);
         newSize = Math.max(minSize, Math.min(newSize, maxSize));
 
-        // If we are below the initial top, shrink the circle
-        if (scrollPosition > initialTop && !isShrunk) {
-            isShrunk = true;
+        if (newSize === minSize) {
+            if (!isMinSizeReached) {
+                isMinSizeReached = true;
+                circle.style.transition = 'left 0.5s ease';
+                circle.style.left = `${shrunkLeft}px`;
+            }
+        } else if (scrollPosition <= minSizeScrollTrigger) {
+            isMinSizeReached = false;
             circle.style.transition = 'left 0.5s ease';
-            circle.style.left = `${shrunkLeft}px`; // Move to shrunk left position
-        }
-
-        // If we are at or above the initial top, expand the circle
-        if (scrollPosition <= initialTop && isShrunk) {
-            isShrunk = false;
-            circle.style.transition = 'left 0.5s ease';
-            circle.style.left = `${initialLeft}px`; // Move back to initial left position
-            newSize = maxSize;  // Reset size to max when back at the top
+            circle.style.left = `${initialLeft}px`;
         }
 
         adjustCircleSize(newSize);
@@ -92,7 +90,6 @@ document.addEventListener('DOMContentLoaded', function () {
         updateFontSizes(initialSize);
     }
 
-    // Show the circle after a short delay
     circle.classList.remove('visible');
     setTimeout(() => {
         circle.classList.add('visible');
@@ -111,9 +108,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial call to set the correct sizes
+    handleScroll();
 });
-
 
 
 //////////////////////////////////////////////////////////
