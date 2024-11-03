@@ -12004,7 +12004,9 @@ option+shift+A to change for comment,
 option+7 for brackets,
 option+4 dollar*/
 .menu {
-  background: linear-gradient(to right, #502651 13%, rgb(122, 91, 131) 25%, #878ca9 45%, #878ca9 65%, #ab9c70 75%, #a99047 100%);
+  background: #878ca9; /* From 25% to 45% */
+  /* This color will take up more space, from 45% to 65% */
+  /* Narrow band again */
   z-index: 3;
 }
 

@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function () {
     let initialLeft;
     let shrunkLeft;
     let isMinSizeReached = false;
-    let minSizeScrollTrigger;
 
     const originalFontSizes = {
         mainTitle: parseFloat(window.getComputedStyle(mainTitle).fontSize),
@@ -36,7 +35,6 @@ document.addEventListener('DOMContentLoaded', function () {
             maxSize = 350; minSize = 150; initialLeft = 800; shrunkLeft = 1250;
         }
         initialSize = maxSize;
-        minSizeScrollTrigger = (maxSize - minSize) * 300 / (maxSize - minSize);
         repositionCircle();
     }
 
@@ -51,13 +49,12 @@ document.addEventListener('DOMContentLoaded', function () {
         let newSize = maxSize - (scrollPosition / 300) * (maxSize - minSize);
         newSize = Math.max(minSize, Math.min(newSize, maxSize));
 
-        if (newSize === minSize) {
-            if (!isMinSizeReached) {
-                isMinSizeReached = true;
-                circle.style.transition = 'left 0.5s ease';
-                circle.style.left = `${shrunkLeft}px`;
-            }
-        } else if (scrollPosition <= minSizeScrollTrigger) {
+        // Only update left position if minSize is reached
+        if (newSize === minSize && !isMinSizeReached) {
+            isMinSizeReached = true;
+            circle.style.transition = 'left 0.5s ease';
+            circle.style.left = `${shrunkLeft}px`;
+        } else if (newSize > minSize && isMinSizeReached) {
             isMinSizeReached = false;
             circle.style.transition = 'left 0.5s ease';
             circle.style.left = `${initialLeft}px`;
@@ -90,6 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
         updateFontSizes(initialSize);
     }
 
+    // Show the circle after a short delay
     circle.classList.remove('visible');
     setTimeout(() => {
         circle.classList.add('visible');
@@ -110,6 +108,7 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('scroll', handleScroll);
     handleScroll();
 });
+
 
 
 //////////////////////////////////////////////////////////

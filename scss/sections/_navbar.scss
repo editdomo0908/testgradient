@@ -2,17 +2,12 @@
 @use'../components/mixins' as *;
 
 .menu {
-   background: linear-gradient(
-    to right, 
-    #502651 13%,    /* This color will take up 10% of the space */
-    rgb(122, 91, 131) 25%,             /* This color will take up from 10% to 25% */
-    #878ca9 45%, /* From 25% to 45% */
+   background:  #878ca9;/* From 25% to 45% */
                  /* This color will take up more space, from 45% to 65% */
-     #878ca9 65%, /* From 75% to 85% */
+    // #878ca9 65%, /* From 75% to 85% */
              /* Narrow band again */
-     #ab9c70 75%,
-     #a99047 100% /* Final color from 95% to 100% */
-);; // gradient at mixins
+     //#a99047 100% /* Final color from 95% to 100% */
+// gradient at mixins
     z-index: 3;
 
 
