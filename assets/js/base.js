@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const initialTop = 130;
     let initialLeft;
     let shrunkLeft;
-    let isMinSizeReached = false;
+    let isShrunk = false;
 
     const originalFontSizes = {
         mainTitle: parseFloat(window.getComputedStyle(mainTitle).fontSize),
@@ -49,13 +49,15 @@ document.addEventListener('DOMContentLoaded', function () {
         let newSize = maxSize - (scrollPosition / 300) * (maxSize - minSize);
         newSize = Math.max(minSize, Math.min(newSize, maxSize));
 
-        // Only update left position if minSize is reached
-        if (newSize === minSize && !isMinSizeReached) {
-            isMinSizeReached = true;
+        // If the circle has reached minSize and hasn't moved yet, set to shrunk position
+        if (newSize === minSize && !isShrunk) {
+            isShrunk = true;
             circle.style.transition = 'left 0.5s ease';
             circle.style.left = `${shrunkLeft}px`;
-        } else if (newSize > minSize && isMinSizeReached) {
-            isMinSizeReached = false;
+        } 
+        // If the circle is starting to grow back from minSize, reset to initial position
+        else if (newSize > minSize && isShrunk) {
+            isShrunk = false;
             circle.style.transition = 'left 0.5s ease';
             circle.style.left = `${initialLeft}px`;
         }
