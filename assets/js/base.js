@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let initialLeft;
     let shrunkLeft;
     let isMinSizeReached = false;
+    let isLeftReset = false;  // Track when the circle has moved back to initial left
 
     const originalFontSizes = {
         mainTitle: parseFloat(window.getComputedStyle(mainTitle).fontSize),
@@ -55,19 +56,21 @@ document.addEventListener('DOMContentLoaded', function () {
             // Shrink to minimum size and move to shrunkLeft when scrolling down
             if (!isMinSizeReached) {
                 isMinSizeReached = true;
+                isLeftReset = false; // Reset left tracking
                 circle.style.transition = 'left 0.5s ease';
                 circle.style.left = `${shrunkLeft}px`;
             }
         } else {
             // Start moving back to initialLeft only when the scroll position is close enough to the top (1/3 of window height from the top)
-            if (isMinSizeReached && scrollPosition <= triggerPosition) {
+            if (isMinSizeReached && scrollPosition <= triggerPosition && !isLeftReset) {
                 isMinSizeReached = false;
+                isLeftReset = true; // Set left reset to true once it's back to the initial position
                 circle.style.transition = 'left 0.5s ease';
                 circle.style.left = `${initialLeft}px`;
             }
 
-            // Begin expanding to max size only after reaching initialLeft
-            if (scrollPosition <= initialTop) {
+            // Begin expanding to max size only after reaching initialLeft and once it's scrolled up within 130px of the top
+            if (isLeftReset && scrollPosition <= initialTop) {
                 newSize = maxSize;
             }
         }
