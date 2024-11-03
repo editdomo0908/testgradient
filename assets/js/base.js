@@ -4,11 +4,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const subtitle = document.querySelector('.logo-text .subtitle');
     const locationText = document.querySelector('.logo-text .location');
 
-    const colors = ['#562648', '#a8a8a8', '#777eade3', '#a8a8a8', '#a99047', '#a99047'];
+    const colors = ['#502651','#502651','rgb(122, 91, 131)','#878ca9','#777eade3','#878ca9', ' #ab9c70', '#a99047','#a99047'];
     const colorCount = colors.length;
 
     let maxSize, minSize, initialSize;
-    const initialTop = 100; // Fixed top position
+    const initialTop = 130; // Fixed top position
     let initialLeft; // This will be set based on screen size
     let shrunkLeft; // Position for the shrunk circle
     let isMinSizeReached = false; // Track if min size has been reached
@@ -21,10 +21,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function updateSizes() {
         const windowWidth = window.innerWidth;
-        if (windowWidth < 500) {
-            maxSize = 180; minSize = 120; initialLeft = 250; shrunkLeft = 250; // Adjust shrunk position for small screens
+        if (windowWidth < 400) {
+            maxSize = 150; minSize = 120; initialLeft = 180; shrunkLeft = 230; // Adjust shrunk position for small screens
+        
+        } else if (windowWidth < 550){
+            maxSize = 180; minSize = 120; initialLeft = 200; shrunkLeft = 280; // Adjust shrunk position for small screens
+
         } else if (windowWidth < 750) {
-            maxSize = 200; minSize = 150; initialLeft = 250; shrunkLeft = 350; // Adjust shrunk position for medium screens
+            maxSize = 200; minSize = 150; initialLeft = 250; shrunkLeft = 250; // Adjust shrunk position for medium screens
         } else if (windowWidth < 1000) {
             maxSize = 250; minSize = 150; initialLeft = 500; shrunkLeft = 700; // Adjust shrunk position for larger screens
         } else if (windowWidth < 1440) {
@@ -41,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let scrollPosition = Math.min(window.scrollY, document.documentElement.scrollHeight - windowHeight);
 
         const index = Math.floor(scrollPosition / (windowHeight / colorCount)) % colorCount;
-        const gradientColors = colors.slice(index, index + 5).concat(colors.slice(0, Math.max(0, index + 5 - colorCount))).join(', ');
+        const gradientColors = colors.slice(index, index + 9).concat(colors.slice(0, Math.max(0, index + 9 - colorCount))).join(', ');
         circle.style.background = `linear-gradient(90deg, ${gradientColors})`;
 
         let newSize = maxSize - (scrollPosition / 300) * (maxSize - minSize);
@@ -267,7 +271,7 @@ observer.observe(triggerElement);
 
 
 ////////////////////////////////////////
-///FILTERING
+///FILTERING on landing page
 
 // Function to filter items by data-id
 function filterById(id) {
@@ -294,7 +298,7 @@ function filterById(id) {
   
 
 
-////////////////////////////////POP_UP
+////////////////////////////////POP_UP from landing //////////////////////////////////
 
 
 // Get the popup, close button, and open link elements
@@ -323,7 +327,7 @@ window.addEventListener('click', (event) => {
 
 
 
-//////////////////POP UP FILTER
+//////////////////POP UP FILTER on CALENDAR //////////////////
 
 // Function to filter cards by data-id
 function filterById2(id) {

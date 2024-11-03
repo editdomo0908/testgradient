@@ -25,15 +25,13 @@
     <div class="popup-content">
   
       <span class="close-popup-button">&times;</span> <!-- Close Button -->
-      <h2 class="popup-title">Naptár</h2>
-    
-
+      
       <div class="row text-center">
         <div class="col-md-12 filter-buttons">
           
-          <button onclick="filterById2(3)" class="btn-portfolio first-bt-hover color-1" type="button">Táncelőadás</button>
-          <button onclick="filterById2(4)" class="btn-portfolio first-bt-hover color-1" type="button">Színházi produkció</button>
-          <button onclick="showAll1()" class="btn-portfolio first-bt-hover color-1" type="button">Összes</button>
+          <button onclick="filterById2(3)" class="btn-calendar btn-portfolio first-bt-hover color-1" type="button">Táncelőadás</button>
+          <button onclick="filterById2(4)" class="btn-calendar btn-portfolio first-bt-hover color-1" type="button">Színházi produkció</button>
+          <button onclick="showAll1()" class="btn-calendar btn-portfolio first-bt-hover color-1" type="button">Összes</button>
         </div>
         </div>
 
@@ -131,13 +129,39 @@
   <div class="container">
     <!-- Brand -->
     <a class="navbar-brand" href="#">
-      <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="Brand Logo">
+      
+        <div class="logo-circle"></div>
     </a>
+    
+    
 
-    <!-- Toggler button for small screens -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+  <!-- Toggler button for small screens -->
+  <div class="navbutton-container">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      onclick="this.classList.toggle('active')"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" class="hamburger-icon">
+        <g stroke-width="6.5" stroke-linecap="round">
+          <path d="M72 82.286h28.75" fill="#009100" fill-rule="evenodd" stroke="#502651" />
+          <path d="M100.75 103.714l72.482-.143c.043 39.398-32.284 71.434-72.16 71.434-39.878 0-72.204-32.036-72.204-71.554" fill="none" stroke="#502651" />
+          <path d="M72 125.143h28.75" fill="#009100" fill-rule="evenodd" stroke="#502651" />
+          <path d="M100.75 103.714l-71.908-.143c.026-39.638 32.352-71.674 72.23-71.674 39.876 0 72.203 32.036 72.203 71.554" fill="none" stroke="#502651" />
+          <path d="M100.75 82.286h28.75" fill="#009100" fill-rule="evenodd" stroke="#502651" />
+          <path d="M100.75 125.143h28.75" fill="#009100" fill-rule="evenodd" stroke="#502651" />
+        </g>
+      </svg>
     </button>
+  </div>
+  
+  
+  
 
     <!-- Navbar links and form -->
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
@@ -159,7 +183,7 @@
 
       <!-- Language Switch Button -->
       <form class="form-inline">
-        <button class="btn btn-sm btn-outline-secondary" type="button">EN</button>
+        <button class="btn btn-sm btn-language" type="button">EN</button>
       </form>
     </div>
   </div>
@@ -348,7 +372,7 @@
       <img src="/images/groupbala.webp" class="portfolio-card-img-top" alt="...">
       <a href="#" class="btn btn-primary first-bt cart-btn">NOV.09</a>
       <div class="portfolio-card-body">
-          <h5 class="portfolio-card-title">Scaevola</h5>
+          <h5 class="portfolio-card-title">Maria</h5>
           <p class="portfolio-card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
           <a href="#" class="btn btn-primary first-bt-hover color-1"><i class="fas fa-cart-plus"></i>Információ és jegyek</a>
       </div>

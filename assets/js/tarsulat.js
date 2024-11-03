@@ -75,3 +75,83 @@ document.addEventListener("DOMContentLoaded", function () {
     // Trigger initial animation for cards based on window size
     window.dispatchEvent(new Event('scroll'));
 });
+
+
+
+
+
+
+////////////////////////////////POP_UP from landing //////////////////////////////////
+
+
+// Get the popup, close button, and open link elements
+const popup = document.querySelector('.popup');
+const closeButton = document.querySelector('.close-popup-button');
+const openPopupLink = document.getElementById('openPopupLink');
+
+// Function to show the popup
+openPopupLink.addEventListener('click', (event) => {
+  event.preventDefault(); // Prevent the default link behavior
+  popup.style.display = 'flex'; // Show the popup
+});
+
+// Function to close the popup
+closeButton.addEventListener('click', () => {
+  popup.style.display = 'none'; // Hide the popup
+});
+
+// Optional: Close the popup when clicking outside of it
+window.addEventListener('click', (event) => {
+  if (event.target === popup) {
+    popup.style.display = 'none'; // Hide the popup if clicked outside
+  }
+});
+
+
+
+
+//////////////////POP UP FILTER on CALENDAR //////////////////
+
+// Function to filter cards by data-id
+function filterById2(id) {
+    const cards = document.querySelectorAll('.calendar-card');
+    cards.forEach(card => {
+      if (card.getAttribute('data-id') === String(id)) {
+        card.style.display = 'block'; // Show the card if it matches the filter
+      } else {
+        card.style.display = 'none'; // Hide the card if it doesn't match
+      }
+    });
+  }
+  
+  // Function to show all cards
+  function showAll1() {
+    const cards = document.querySelectorAll('.calendar-card');
+    cards.forEach(card => {
+      card.style.display = 'block'; // Show all cards
+    });
+  }
+  
+  ///////Calendar opens popup
+
+  // Select the open and close buttons
+const openPopupButton1 = document.getElementById('openPopupButton');
+const closePopupButton1 = document.querySelector('.close-popup-button');
+const popup1 = document.querySelector('.popup');
+
+// Function to open the pop-up
+openPopupButton1.addEventListener('click', function() {
+    popup1.style.display = 'flex'; // Show the pop-up
+});
+
+// Function to close the pop-up
+closePopupButton1.addEventListener('click', function() {
+    popup1.style.display = 'none'; // Hide the pop-up
+});
+
+// Optional: Close pop-up when clicking outside of it
+popup1.addEventListener('click', function(e) {
+    if (e.target === popup) {
+        popup.style.display = 'none';
+    }
+});

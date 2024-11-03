@@ -3,12 +3,10 @@
 
 
 
-  
 /* Pop-up styling */
 .popup {
     display: none; /* Change to block when activated */
     position: fixed;
-    top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
@@ -18,136 +16,122 @@
     align-items: center;
     justify-content: center;
     font-family: 'Jost', sans-serif;
-  }
-  
-  /* Pop-up content styling */
-  .popup-content {
+}
+
+/* Pop-up content styling */
+.popup-content {
     background-color: $secondary;
-    padding: 20px;
+    padding: 20px; /* Add some padding for better appearance */
     border-radius: 8px;
     max-width: 90%;
-    max-height: 90%;
+    max-height: 90vh; /* Set a maximum height for better scrolling */
     overflow: hidden; /* Prevent overflow */
     display: flex;
     flex-direction: column;
-    padding: 20px; /* Add some padding for better appearance */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
     position: relative;
-  }
-  
-  .popup-title {
-    text-align: center; /* Center the text */
-    font-size: 4rem;
-    color: $primary;
-    margin: 20px 0; /* Margin for spacing */
-    width: 100%; /* Take full width to center */
-  }
+}
 
-  .btn-pop {
-    margin-right: 1rem;
-  }
-  
+/* Popup inner layout */
+.popup-inner {
+    display: flex; 
+    flex-direction: column; /* Stack elements vertically */
+    gap: 20px; 
+    height: auto; /* Allow height to adjust */
+    overflow-y: auto; /* Allow vertical scrolling */
+}
 
-  .filter-buttons {
-    margin: 1rem;
-  }
-  
-
-
-
-  /* Close button styling */
-  .close-popup-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 2rem;
-    font-weight: bold;
-    color: $primary; /* Change to a contrasting color if needed */
-    cursor: pointer;
-  }
-  
-  /* Popup inner layout */
-  .popup-inner {
-    display: flex; /* Use flexbox */
-    flex-direction: row; /* Horizontal layout */
-    gap: 20px; /* Space between the two sections */
-    height: 70vh; /* Set height to allow scrolling */
-  }
-  
-  /* Calendar card container styling */
-  .calendar-card-container {
+/* Calendar card container styling */
+.calendar-card-container {
     display: flex;
     flex-direction: column; /* Set to column for vertical stacking */
     overflow-y: auto; /* Allow vertical scrolling */
-    max-height: 100%; /* Fill the height of the section */
-  }
-  
-  /* Each calendar card styling */
-  .calendar-card {
+    max-height: calc(70vh - 80px); /* Adjust max-height to allow for header and button space */
+    margin-bottom: 5%;
+}
+
+/* Each calendar card styling */
+.calendar-card {
     border: 2px solid #d5d5d5;
     border-radius: 5px;
     margin-bottom: 10px; /* Space between cards */
     padding: 10px; /* Padding for better spacing */
     width: 100%; /* Full width for responsiveness */
     min-width: 800px; /* Maximum width for larger screens */
-  }
-  
-  .card-content {
+}
+
+.card-content {
     display: flex; /* Use flexbox for layout */
     justify-content: space-between; /* Space between the items */
     align-items: center; /* Align items at the start */
-  }
-  
-  .card-header {
+}
+
+.card-header {
     flex: 3; /* Take up 3/4 of the width */
-  }
-  
-  .button-container {
-    flex: 1; /* Take up 1/4 of the width */
-    display: flex; /* Use flexbox to center the button */
-    justify-content: center; /* Center the button horizontally */
-    align-items: center; /* Center the button vertically */
-  }
-  
-  @media (max-width: 768px) {
-    .popup-inner {
-      flex-direction: column; /* Stack the image and cards on smaller screens */
-      height: auto; /* Allow height to adjust */
+}
+
+/* Button container */
+
+    .filter-buttons {
+        margin: 1rem;
+        display: flex; /* Make it a flex container */
+        flex-direction: row; /* Default to row for larger screens */
+        justify-content: center; /* Center horizontally */
+        flex-wrap: wrap; /* Allow wrapping if necessary */
+        padding: 1rem;;
+        margin: 1rem;
     }
-  
-    .calendar-card-container {
-      height: 400px; /* Set fixed height to allow scrolling */
-      overflow-y: auto; /* Allow scrolling if too many cards */
+    
+    @media (max-width: 768px) {
+        .filter-buttons {
+            flex-direction: column; /* Stack buttons vertically on small screens */
+            align-items: center; /* Center buttons vertically */
+            margin-bottom: 1rem; /* Add some bottom margin for spacing */
+        }
     }
-  
-    .calendar-card {
-      max-width: 400px; /* Set maximum width for smaller screens */
-      width: 100%; /* Ensure the card uses full available width */
-      min-width: 100px; /* Add a minimum width to allow smaller widths if needed */
-    }
-  
-    .card-content {
-      flex-direction: column; /* Stack the button below the header */
-    }
-  
-    .button-container {
-      width: 100%; /* Make button full width on mobile */
-      margin-top: 10px; /* Add some spacing above the button */
-    }
-  }
-  
-  /* HEADER */
-  .card-header {
+    
+   
+
+
+.btn-calendar {
+    margin: 1rem;
+
+   
+}
+
+
+
+
+/* Close button styling */
+.close-popup-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 3rem;
+    font-weight: bold;
+    color: $primary; /* Ensure this variable is defined correctly in your CSS */
+    cursor: pointer;
+    display: inline-block; /* Ensure transformations work */
+    transition: transform 300ms ease, opacity 300ms ease; /* Smooth transition for transformations */
+}
+
+/* Hover effect for scaling and rotating */
+.close-popup-button:hover {
+    transform: scale(1.2) rotate(90deg); /* Scale up and rotate */
+}
+
+/* Header styling */
+.card-header {
     display: flex;
     flex-direction: row;
     background: #f3f3f3;
     padding: 18px;
     padding-bottom: 5px;
     position: relative;
-  }
-  
-  /* CALENDAR BOX */
-  .calendar-box {
+}
+
+/* Calendar box styling */
+.calendar-box {
     width: fit-content;
     border: 1px solid $third;
     border-radius: 1px 1px 4px 4px;
@@ -156,53 +140,81 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  
-  .calendar-box > .day {
+}
+
+.calendar-box > .day {
     background: $third;
     color: white;
     font-size: 3rem;
     width: 100%;
     text-align: center;
-  }
-  
-  .calendar-box > .month {
+}
+
+.calendar-box > .month {
     font-size: 4rem;
     color: white;
-  }
-  
-  .date {
+}
+
+.date {
     text-align: center; /* Center text within the date box */
     font-size: 1.5rem; /* Adjust the font size as needed */
-    color: white /* Optional: change the color if needed */
-  }
-  
-  .card-text-aside {
+    color: white; /* Optional: change the color if needed */
+}
+
+.card-text-aside {
     display: flex;
     flex-direction: column;
     justify-content: center;
     font-size: 2rem;
     color: $primary;
     margin-left: 10px;
-  }
-  
-  .card-text-aside > .time {
+}
+
+.card-text-aside > .time {
     font-size: 1.8rem;
-  }
-  
-  .card-text-aside > .location {
+}
+
+.card-text-aside > .location {
     font-size: 1.5rem;
-  }
-  
-  .calendar-right {
+}
+
+.calendar-right {
     display: flex;
     position: absolute;
     right: 5px;
     top: 5px;
     color: #3e3e3e;
-  }
-  
-  .calendar-right > .far {
+}
+
+.calendar-right > .far {
     font-size: 3rem;
-  }
-  
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .popup-inner {
+        flex-direction: column; /* Stack the image and cards on smaller screens */
+        height: auto; /* Allow height to adjust */
+    }
+
+    .calendar-card-container {
+        height: 400px; /* Set fixed height to allow scrolling */
+        overflow-y: auto; /* Allow scrolling if too many cards */
+    }
+
+    .calendar-card {
+        max-width: 400px; /* Set maximum width for smaller screens */
+        width: 100%; /* Ensure the card uses full available width */
+        min-width: 100px; /* Add a minimum width to allow smaller widths if needed */
+    }
+
+    .card-content {
+        flex-direction: column; /* Stack the button below the header */
+    }
+
+    .button-container {
+        width: 100%; /* Make button full width on mobile */
+        margin-top: 10px; /* Add some spacing above the button */
+    }
+}
+

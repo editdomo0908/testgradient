@@ -5,19 +5,50 @@
 
 
 
-$primary: #562648 ;
+$fourth: #DCE0D9;
+$fifth:#a8a8a8;
+$sixth:#878ca9;
+
+
+
+$primary: #502651;
 $secondary: #777ead;
 $third: #a99047;
-$fourth: #DCE0D9;
-$fifth:#a8a8a8ad;
-$sixth:#878ca9c3;
 
 
-$tropical-indigo: #7f7effff;
-$tropical-indigo-2: #a390e4ff;
-$wisteria: #c69dd2ff;
+  $gradient-color-1: #502651;  /* Primary */
+  $gradient-color-2: #5a3f6d;  /* Transition between primary and secondary */
+  $gradient-color-3: #6a5990;
+  $gradient-color-4: #726ea3;
+  $gradient-color-5: #777ead;  /* Secondary (middle color) */
+  $gradient-color-6: #8a8b7b;  /* Transition between secondary and third */
+  $gradient-color-7: #9d9866;
+  $gradient-color-8: #b1a552;
+  $gradient-color-9: #a99047;  /* Third */
+
+
+body {
+  background: linear-gradient(
+    to right,
+    var(--gradient-color-1),
+    var(--gradient-color-2),
+    var(--gradient-color-3),
+    var(--gradient-color-4),
+    var(--gradient-color-5),
+    var(--gradient-color-6),
+    var(--gradient-color-7),
+    var(--gradient-color-8),
+    var(--gradient-color-9)
+  );
+}
+
+
+
+$tropical-indigo:  #875a87;
+$tropical-indigo-2: #ab9c70;
+$wisteria: rgb(122, 91, 131);
 $old-rose: #cc8b8cff;
-$persian-orange: #c68866ff;
+$persian-orange: #502651 ;
 
 
 //White and grey colours:/
