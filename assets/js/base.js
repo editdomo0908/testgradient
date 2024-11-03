@@ -8,10 +8,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const colorCount = colors.length;
 
     let maxSize, minSize, initialSize;
-    const initialTop = 130; // Fixed top position
-    let initialLeft; // This will be set based on screen size
-    let shrunkLeft; // Position for the shrunk circle
-    let isMinSizeReached = false; // Track if min size has been reached
+    const initialTop = 130;
+    let initialLeft;
+    let shrunkLeft;
+    let isMinSizeReached = false;
+    let minSizeScrollTrigger;
 
     const originalFontSizes = {
         mainTitle: parseFloat(window.getComputedStyle(mainTitle).fontSize),
@@ -22,21 +23,20 @@ document.addEventListener('DOMContentLoaded', function () {
     function updateSizes() {
         const windowWidth = window.innerWidth;
         if (windowWidth < 400) {
-            maxSize = 150; minSize = 120; initialLeft = 180; shrunkLeft = 230; // Adjust shrunk position for small screens
-        
-        } else if (windowWidth < 550){
-            maxSize = 180; minSize = 120; initialLeft = 200; shrunkLeft = 280; // Adjust shrunk position for small screens
-
+            maxSize = 150; minSize = 120; initialLeft = 180; shrunkLeft = 230;
+        } else if (windowWidth < 550) {
+            maxSize = 180; minSize = 120; initialLeft = 200; shrunkLeft = 280;
         } else if (windowWidth < 750) {
-            maxSize = 200; minSize = 150; initialLeft = 250; shrunkLeft = 250; // Adjust shrunk position for medium screens
+            maxSize = 200; minSize = 150; initialLeft = 250; shrunkLeft = 250;
         } else if (windowWidth < 1000) {
-            maxSize = 250; minSize = 150; initialLeft = 500; shrunkLeft = 700; // Adjust shrunk position for larger screens
+            maxSize = 250; minSize = 150; initialLeft = 500; shrunkLeft = 700;
         } else if (windowWidth < 1440) {
-            maxSize = 300; minSize = 150; initialLeft = 600; shrunkLeft = 900; // Adjust shrunk position for large screens
+            maxSize = 300; minSize = 150; initialLeft = 600; shrunkLeft = 900;
         } else {
-            maxSize = 350; minSize = 150; initialLeft = 800; shrunkLeft = 1250; // Adjust shrunk position for extra large screens
+            maxSize = 350; minSize = 150; initialLeft = 800; shrunkLeft = 1250;
         }
         initialSize = maxSize;
+        minSizeScrollTrigger = (maxSize - minSize) * 300 / (maxSize - minSize);
         repositionCircle();
     }
 
@@ -51,30 +51,26 @@ document.addEventListener('DOMContentLoaded', function () {
         let newSize = maxSize - (scrollPosition / 300) * (maxSize - minSize);
         newSize = Math.max(minSize, Math.min(newSize, maxSize));
 
-        // Check if the minimum size has been reached
         if (newSize === minSize) {
             if (!isMinSizeReached) {
-                isMinSizeReached = true; // Set flag to true when min size is reached
-                // Move circle to the calculated shrunk left position with a smooth transition
-                circle.style.transition = 'left 0.5s ease'; // Add transition effect
-                circle.style.left = `${shrunkLeft}px`; // Move circle to the calculated shrunk left position
+                isMinSizeReached = true;
+                circle.style.transition = 'left 0.5s ease';
+                circle.style.left = `${shrunkLeft}px`;
             }
-        } else {
-            isMinSizeReached = false; // Reset flag if not at min size
-            circle.style.transition = 'left 0.5s ease'; // Ensure there's a transition for the return
-            circle.style.left = `${initialLeft}px`; // Reset to initial left position
+        } else if (scrollPosition <= minSizeScrollTrigger) {
+            isMinSizeReached = false;
+            circle.style.transition = 'left 0.5s ease';
+            circle.style.left = `${initialLeft}px`;
         }
 
         adjustCircleSize(newSize);
     }
 
     function adjustCircleSize(newSize) {
-        circle.style.position = 'fixed'; // Keep the circle in a fixed position
-        circle.style.top = `${initialTop}px`; // Maintain the top position
+        circle.style.position = 'fixed';
+        circle.style.top = `${initialTop}px`;
         circle.style.width = `${newSize}px`;
         circle.style.height = `${newSize}px`;
-        
-        // Update font sizes as the circle size changes
         updateFontSizes(newSize);
     }
 
@@ -86,37 +82,33 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function repositionCircle() {
-        circle.style.position = 'fixed'; // Fix the position of the circle
-        circle.style.left = `${initialLeft}px`; // Set fixed left position
-        circle.style.top = `${initialTop}px`; // Keep fixed top position
-        circle.style.width = `${initialSize}px`; // Set the size
-        circle.style.height = `${initialSize}px`; // Set the size
-        
-        // Update font sizes for initial positioning
+        circle.style.position = 'fixed';
+        circle.style.left = `${initialLeft}px`;
+        circle.style.top = `${initialTop}px`;
+        circle.style.width = `${initialSize}px`;
+        circle.style.height = `${initialSize}px`;
         updateFontSizes(initialSize);
     }
 
-    // Show the circle after a short delay
-    circle.classList.remove('visible'); // Initially hidden
+    circle.classList.remove('visible');
     setTimeout(() => {
-        circle.classList.add('visible'); // Add visible class after delay
-        adjustCircleSize(initialSize); // Set the initial size and update font sizes
-    }, 100); // Delay in milliseconds
+        circle.classList.add('visible');
+        adjustCircleSize(initialSize);
+    }, 100);
 
     updateSizes();
 
-    // Debounce resize event
     let resizeTimeout;
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(() => {
-            updateSizes(); // Adjust size based on new window size
-            handleScroll(); // Adjust for scrolling
-        }, 100); // Adjust delay as needed
+            updateSizes();
+            handleScroll();
+        }, 100);
     });
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial call to set the correct sizes
+    handleScroll();
 });
 
 
