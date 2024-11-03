@@ -40,28 +40,32 @@ document.addEventListener('DOMContentLoaded', function () {
         repositionCircle();
     }
 
+    let previousScrollPosition = 0; // Track previous scroll position
+
     function handleScroll() {
         const windowHeight = window.innerHeight;
         let scrollPosition = Math.min(window.scrollY, document.documentElement.scrollHeight - windowHeight);
-
         const index = Math.floor(scrollPosition / (windowHeight / colorCount)) % colorCount;
         const gradientColors = colors.slice(index, index + 9).concat(colors.slice(0, Math.max(0, index + 9 - colorCount))).join(', ');
         circle.style.background = `linear-gradient(90deg, ${gradientColors})`;
 
+        // Calculate new size based on scroll position
         let newSize = maxSize - (scrollPosition / 300) * (maxSize - minSize);
         newSize = Math.max(minSize, Math.min(newSize, maxSize));
 
-        // Handling shrinking behavior
-        if (newSize === minSize) {
-            if (!isMinSizeReached) {
-                isMinSizeReached = true;
-                circle.style.transition = 'left 0.5s ease';
-                circle.style.left = `${shrunkLeft}px`;
-            }
-        } else if (scrollPosition <= minSizeScrollTrigger && isMinSizeReached) {
-            // Check if the user has scrolled back up past the threshold
-            if (scrollPosition < shrunkLeft) {
-                isMinSizeReached = false; // Allow the circle to grow back
+        if (scrollPosition >= minSizeScrollTrigger) {
+            // If scroll position is below the trigger point, check if it is at min size
+            if (newSize === minSize) {
+                if (!isMinSizeReached) {
+                    isMinSizeReached = true;
+                    circle.style.transition = 'left 0.5s ease';
+                    circle.style.left = `${shrunkLeft}px`;
+                }
+            } 
+        } else {
+            // If scroll position is above the trigger point and the circle is at min size
+            if (isMinSizeReached) {
+                isMinSizeReached = false;
                 circle.style.transition = 'left 0.5s ease';
                 circle.style.left = `${initialLeft}px`;
             }
@@ -69,6 +73,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Adjust the size of the circle
         adjustCircleSize(newSize);
+
+        previousScrollPosition = scrollPosition; // Update the previous scroll position
     }
 
     function adjustCircleSize(newSize) {
