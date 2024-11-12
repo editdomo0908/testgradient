@@ -8,7 +8,40 @@
 
 
 .gold-title {
-    color:$secondary;
+    color:#8d7e9f;
+}
+   
+
+
+.intro-section {
+    padding: 15rem 0 0 0;
+    position: relative; // Ensure this section is positioned correctly relative to the landing
+    z-index: 3; // Higher than the background video
+   
+}
+#heading1 {
+    font-size: 1.5rem;
+    text-align: justify;
+    padding: 3rem;
+    margin: 0.5rem;
+    
+
+}
+
+#heading2 {
+    font-size: 1.5rem;
+    text-align: justify;
+    padding: 3rem;
+    margin: 1rem;
+    
+
+}
+
+
+
+.bold-vision-text {
+    font-weight: bold;
+    
 }
    
 

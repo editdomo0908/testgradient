@@ -23,7 +23,7 @@
 
 // Define the gradient mixin
 // Mixin using palette colors as defaults
-@mixin gradient-initial($color1:  #562648a2, $color2: #777eada8, $color3: #a99147b4) {
+@mixin gradient-initial($color1:  #B6A6CA, $color2: #DCE0D9, $color3: #878ca9) {
     background: linear-gradient(to right, $color1, $color2, $color3);
   }
   

@@ -28,25 +28,8 @@
     z-index: 2; // Ensure it layers above the video
 }
 
-.intro-section {
-    padding: 15rem 0 0 0;
-    position: relative; // Ensure this section is positioned correctly relative to the landing
-    z-index: 3; // Higher than the background video
-}
-
-.introstext {
-    margin-left: 10%;
-    padding-top: 10%;
-    position: relative; // Ensure z-index works
-    z-index: 4; // Highest z-index to ensure it's above the video and any other content
-}
 
 
-.intro-btn{
-    margin-left: 10%;
-    margin-top: 10%;
-    color: black!important;
-}
 
 
 
@@ -56,6 +39,62 @@
 max-width: 80%;
 max-height: 80%;
 
+}
+/* Initial hidden state */
+.hidden {
+    opacity: 0;
+    filter: blur(10px);
+    transition: opacity 0.5s ease, filter 0.5s ease;
+}
+
+/* Visible state */
+.visible {
+    opacity: 1;
+    filter: blur(0);
+    animation: fadeInBlur 1s ease forwards;
+}
+
+/* Keyframes for fade-in and blur effect */
+@keyframes fadeInBlur {
+    0% {
+        opacity: 0;
+        filter: blur(10px);
+    }
+    100% {
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+/* Initial hidden state */
+.hidden {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* Visible state for regular elements */
+.visible {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+/* Visible state with blur for group image */
+.visible-blur {
+    opacity: 1;
+    filter: blur(10px);
+    animation: fadeInBlur 2s ease forwards; /* Longer duration for a smoother effect */
+}
+
+/* Keyframes for fade-in and blur effect on group image */
+@keyframes fadeInBlur {
+    0% {
+        opacity: 0;
+        filter: blur(10px);
+    }
+    100% {
+        opacity: 1;
+        filter: blur(0);
+    }
 }
 
 
@@ -125,7 +164,7 @@ max-height: 80%;
          #a99047 100% /* Final color from 95% to 100% */
     );
         position: absolute;
-        opacity: 0.2; /* Fully opaque */
+        opacity: 0.1; /* Fully opaque */
     
     
 }

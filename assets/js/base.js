@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const subtitle = document.querySelector('.logo-text .subtitle');
     const locationText = document.querySelector('.logo-text .location');
 
-    const colors = ['#502651','#502651','rgb(122, 91, 131)','#878ca9','#777eade3','#878ca9', ' #ab9c70', '#a99047','#a99047'];
+    const colors = ['#878ca9','#A09ABC','#DCE0D9','#B6A6CA','#BC9FA9', '#D0B3C5' ];
     const colorCount = colors.length;
 
     let maxSize, minSize, initialSize;
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const scrollPosition = Math.min(window.scrollY, document.documentElement.scrollHeight - windowHeight);
 
         const index = Math.floor(scrollPosition / (windowHeight / colorCount)) % colorCount;
-        const gradientColors = colors.slice(index, index + 9).concat(colors.slice(0, Math.max(0, index + 9 - colorCount))).join(', ');
+        const gradientColors = colors.slice(index, index + 5).concat(colors.slice(0, Math.max(0, index + 5 - colorCount))).join(', ');
         circle.style.background = `linear-gradient(90deg, ${gradientColors})`;
 
         let newSize = maxSize - (scrollPosition / 300) * (maxSize - minSize);
@@ -133,9 +133,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-//////////////////////////////////////////////////////////
-//INTRO TEXTS //////
-
+//////////////////////////////////////////////////////////// Select elements
 // Select elements
 const aboutTitle = document.getElementById('aboutTitle');
 const heading1 = document.getElementById('heading1');
@@ -147,92 +145,118 @@ const portfolioSection = document.querySelector('.portfolio');
 // Track visibility state
 let portfolioVisible = false;
 
+// Function to reset visibility classes
+function resetVisibility() {
+    [aboutTitle, heading1, heading2, groupImage].forEach((el) => {
+        el.classList.remove('visible', 'visible-blur');
+        el.classList.add('hidden');
+        el.dataset.visible = "false";
+    });
+}
+
 // Function to handle scroll events
 function handleScroll() {
     const sectionTop = visionSection.getBoundingClientRect().top;
     const portfolioTop = portfolioSection.getBoundingClientRect().top;
     const windowHeight = window.innerHeight;
 
+    // Reset animations when scrolled back to the top
+    if (window.scrollY === 0) {
+        resetVisibility();
+        portfolioVisible = false;
+        return;
+    }
+
     // Check if the vision section is in the viewport
     if (sectionTop < windowHeight && sectionTop > 0) {
-        // Fade in "Rólunk" when the vision section is partially visible
-        if (sectionTop < windowHeight / 2 && aboutTitle.classList.contains('hidden')) {
+        // Fade in aboutTitle as soon as the vision section becomes visible
+        if (aboutTitle.classList.contains('hidden')) {
             aboutTitle.classList.remove('hidden');
             aboutTitle.classList.add('visible');
+            aboutTitle.dataset.visible = "true";
         }
 
         // Determine scroll progress within the vision section
         const scrollProgress = (windowHeight - sectionTop) / windowHeight;
 
-        // Fade in heading1 and group image at appropriate scroll progress
-        if (scrollProgress > 0.3 && scrollProgress <= 0.9) {
+        // Fade in heading1 and delay groupImage for a slower fade-in effect
+        if (scrollProgress > 0.3 && scrollProgress <= 0.95) {
             if (heading1.classList.contains('hidden')) {
                 heading1.classList.remove('hidden');
                 heading1.classList.add('visible');
+                heading1.dataset.visible = "true";
             }
 
-            if (groupImage.classList.contains('hidden')) {
-                groupImage.classList.remove('hidden');
-                groupImage.classList.add('visible');
-            }
+            // Ensure groupImage fades in after heading1
+            setTimeout(() => {
+                if (groupImage.classList.contains('hidden') && heading1.dataset.visible === "true") {
+                    groupImage.classList.remove('hidden');
+                    groupImage.classList.add('visible-blur');
+                    groupImage.dataset.visible = "true";
+                }
+            }, 600); // Increased delay for a slower fade-in effect
 
             // Ensure heading2 is hidden during this phase
             if (heading2.classList.contains('visible')) {
                 heading2.classList.remove('visible');
                 heading2.classList.add('hidden');
+                heading2.dataset.visible = "false";
             }
         }
 
-        // Fade in heading2 when heading1 and group image are fully visible
-        if (scrollProgress > 0.9) {
+        // Fade in heading2 when heading1 and groupImage are fully visible
+        if (scrollProgress > 0.95) {
             if (heading2.classList.contains('hidden')) {
                 heading2.classList.remove('hidden');
                 heading2.classList.add('visible');
+                heading2.dataset.visible = "true";
             }
 
             if (heading1.classList.contains('visible')) {
                 heading1.classList.remove('visible');
                 heading1.classList.add('hidden');
+                heading1.dataset.visible = "false";
             }
         }
     }
 
     // Fade out all elements as soon as the portfolio section becomes visible
     if (portfolioTop < windowHeight && !portfolioVisible) {
-        // Mark portfolio as visible
         portfolioVisible = true;
-
-        // Fade out all visible elements
         [aboutTitle, heading1, heading2, groupImage].forEach((el) => {
-            if (el.classList.contains('visible')) {
-                el.classList.remove('visible');
-                el.classList.add('hidden');
-            }
+            el.classList.remove('visible', 'visible-blur');
+            el.classList.add('hidden');
+            el.dataset.visible = "false";
         });
     }
 
     // Fade elements back in when scrolling up and the portfolio section is no longer visible
-    if (portfolioTop + 100  >= windowHeight && portfolioVisible) {
-        // Mark portfolio as not visible
+    if (portfolioTop + 100 >= windowHeight && portfolioVisible) {
         portfolioVisible = false;
 
-        // Fade in heading2 and groupImage, then heading1 as user scrolls up
         if (heading2.classList.contains('hidden')) {
             heading2.classList.remove('hidden');
             heading2.classList.add('visible');
+            heading2.dataset.visible = "true";
         }
 
-        if (groupImage.classList.contains('hidden')) {
+        if (groupImage.classList.contains('hidden') || !groupImage.classList.contains('visible-blur')) {
             groupImage.classList.remove('hidden');
-            groupImage.classList.add('visible');
+            setTimeout(() => {
+                groupImage.classList.add('visible-blur');
+                groupImage.dataset.visible = "true";
+            }, 600); // Consistent delay when scrolling up
         }
 
-        // Hide heading1 on scroll up to maintain sequence until user fully scrolls up to previous trigger points
         if (!heading1.classList.contains('hidden')) {
             heading1.classList.add('hidden');
+            heading1.dataset.visible = "false";
         }
     }
 }
+
+// Initial visibility setup for elements
+resetVisibility();
 
 // Event listener for scroll events
 window.addEventListener('scroll', handleScroll);
@@ -252,9 +276,9 @@ const triggerElement = document.querySelector('#productions');
 function animateBothWaves() {
   // Apply the animation to both waves
   wave1.style.transform = 'scale(1.2) translateX(00px)';
-  wave1.style.fill = '#777ead';
+  wave1.style.fill = '#370926';
   wave2.style.transform = 'scale(1.2) translateX(0px)';
-  wave2.style.fill = '#777ead';
+  wave2.style.fill = '#370926';
 
   // Reset after 2 seconds
   setTimeout(() => {
