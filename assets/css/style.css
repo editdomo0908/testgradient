@@ -11981,6 +11981,7 @@ option+4 dollar*/
 
 .display-3 {
   font-family: "Jost", sans-serif;
+  color: #DCE0D9;
 }
 
 .border-right {
@@ -12005,13 +12006,12 @@ option+4 dollar*/
 
 /* Container and Button Styling */
 .btn-language {
-  background-color: #878ca9 !important;
-  color: rgb(244, 244, 244) !important;
+  color: #B6A6CA !important;
   margin-left: 2rem;
 }
 
 .btn-language:hover {
-  background-color: #7b3a7c !important;
+  background-color: #B6A6CA !important;
   color: rgb(251, 251, 251) !important;
   margin-left: 2rem;
 }
@@ -12230,6 +12230,41 @@ option+4 dollar*/
 option+shift+A to change for comment, 
 option+7 for brackets,
 option+4 dollar*/
+/* Ensure the loading container covers the entire screen */
+#loading-container {
+  position: fixed; /* Fixed position relative to the viewport */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  width: 100%; /* Full viewport width */
+  height: 100%; /* Full viewport height */
+  background-color: rgba(0, 0, 0, 0.5); /* Optional: semi-transparent background */
+  z-index: 9999; /* Ensure it appears above other content */
+}
+
+/* Spinner styling */
+.spinner {
+  background: linear-gradient(to right, #B6A6CA, #DCE0D9, #878ca9);
+  position: absolute; /* Absolute positioning inside the loading container */
+  top: 50%; /* 50% from the top of the container */
+  left: 50%; /* 50% from the left of the container */
+  width: 100px; /* Spinner size */
+  height: 100px; /* Spinner size */
+  border: 10px solid #DCE0D9; /* Light gray border */
+  border-top: 10px solid #B6A6CA; /* Blue top border */
+  border-radius: 50%; /* Circular shape */
+  animation: spin 2s linear infinite; /* Spinning animation */
+  transform: translate(-50%, -50%); /* Adjust the spinner's position to truly center it */
+}
+
+/* Keyframes for the spinning animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .bg-video {
   position: absolute;
   left: 0;
@@ -12252,86 +12287,16 @@ option+4 dollar*/
   z-index: 2;
 }
 
-.group-img {
-  max-width: 80%;
-  max-height: 80%;
-}
-
-/* Initial hidden state */
-.hidden {
-  opacity: 0;
-  filter: blur(10px);
-  transition: opacity 0.5s ease, filter 0.5s ease;
-}
-
-/* Visible state */
-.visible {
-  opacity: 1;
-  filter: blur(0);
-  animation: fadeInBlur 1s ease forwards;
-}
-
-/* Keyframes for fade-in and blur effect */
-@keyframes fadeInBlur {
-  0% {
-    opacity: 0;
-    filter: blur(10px);
-  }
-  100% {
-    opacity: 1;
-    filter: blur(0);
-  }
-}
-/* Initial hidden state */
-.hidden {
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-
-/* Visible state for regular elements */
-.visible {
-  opacity: 1;
-  transition: opacity 0.5s ease;
-}
-
-/* Visible state with blur for group image */
-.visible-blur {
-  opacity: 1;
-  filter: blur(10px);
-  animation: fadeInBlur 2s ease forwards; /* Longer duration for a smoother effect */
-}
-
-/* Keyframes for fade-in and blur effect on group image */
-@keyframes fadeInBlur {
-  0% {
-    opacity: 0;
-    filter: blur(10px);
-  }
-  100% {
-    opacity: 1;
-    filter: blur(0);
-  }
-}
-.hidden {
-  opacity: 0;
-  transition: opacity 0.8s ease-in-out; /* Smooth transition */
-}
-
-.visible {
-  opacity: 1;
-  transition: opacity 0.8s ease-in-out; /* Smooth transition */
-}
-
-.sticky {
-  position: sticky;
-  top: 0; /* Makes it stick to the top of the viewport */
-  z-index: 10; /* Keeps it above other elements */
+.intro-section {
+  position: relative;
+  padding-top: 300px;
+  z-index: 2000;
 }
 
 .wave1, .wave2 {
   transition: transform 0.8s ease-in-out, fill 0.8s ease-in-out;
   transform: scale(1) translateX(0px);
-  fill: #000000;
+  fill: #370926;
 }
 
 .gradient-circle {
@@ -12395,62 +12360,114 @@ option+4 dollar*/
   background-color: grey;
 }
 
-.smokey-box {
-  text-align: center;
-  margin: 50px 0;
-}
-
-.smokey-box ul {
-  display: flex;
-  justify-content: center;
-  padding: 0;
-  list-style-type: none;
-}
-
-.smokey-box li {
-  font-size: 2.5rem; /* Adjust size as needed */
-  font-weight: bold;
-  color: #333; /* Adjust to fit your theme */
-  margin: 0 1px;
-  transform: translateY(20px);
-  animation: fadeUp 1.5s ease forwards;
-  animation-delay: calc(0.1s * var(--i)); /* Staggering effect */
-}
-
 /* https://www.youtube.com/watch?v=iJKCj8uAHz8
 option+shift+A to change for comment, 
 option+7 for brackets,
 option+4 dollar*/
+/* General section styling */
 .vision {
-  background-color: #DCE0D9;
+  background-color: #f0f0f0; /* Replace with actual primary color */
 }
 
+/* Title and heading styling */
 .gold-title {
   color: #8d7e9f;
 }
 
-.intro-section {
-  padding: 15rem 0 0 0;
-  position: relative;
-  z-index: 3;
+/* Initial hidden state */
+/* Ensure the hidden state has zero opacity and smooth transition */
+.hidden {
+  opacity: 0;
+  transition: opacity 2s ease-in-out, transform 2s ease-in-out;
+}
+
+/* Visible state will be fully opaque */
+.visible {
+  opacity: 1;
+  transform: translateX(10%) translateY(0%); /* Start off-screen on the right */
+  transition: opacity 2s ease-in-out, transform 2s ease-in-out;
+}
+
+/* Scale image to double size */
+.scaled {
+  transform: scale(1.7) translateX(-20%);
+  opacity: 0.3 !important; /* When scaled up */
+  z-index: -1000 !important;
+}
+@media (max-width: 700px) {
+  .scaled {
+    transform: scale(1.1) translateX(0%);
+    opacity: 0.3 !important; /* When scaled up */
+    z-index: -1000 !important;
+  }
+}
+
+/* Normal state for the image */
+.normal {
+  transform: scale(1);
+  opacity: 1; /* Normal opacity */
+  transition: transform 2s ease;
+}
+
+#groupImage {
+  max-height: 100%;
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+  transition: transform 2s ease, opacity 2s ease;
+}
+@media (max-width: 700px) {
+  #groupImage {
+    max-height: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+    transition: transform 2s ease, opacity 2s ease;
+  }
 }
 
 #heading1 {
-  font-size: 1.5rem;
+  margin-top: 10%;
+  transition: transform 1s ease-out 1s, opacity 1s ease-out 1s;
+  padding-top: 5rem;
+  padding-right: 5rem;
+  padding-left: 3rem;
+  font-size: 2rem;
+  color: #67114f;
   text-align: justify;
-  padding: 3rem;
-  margin: 0.5rem;
 }
 
+/* Default hidden state for heading2 */
 #heading2 {
-  font-size: 1.5rem;
-  text-align: justify;
-  padding: 3rem;
-  margin: 1rem;
+  position: relative;
+  font-size: 3rem;
+  color: #67114f;
+  transform: translateX(50%) translateY(-50%); /* Start off-screen on the right */
+  transition: transform 1s ease-out 1s, opacity 1s ease-out 1s;
+  z-index: 2; /* Ensure it stays above the image */
+  margin-top: 5rem;
+}
+@media (max-width: 700px) {
+  #heading2 {
+    position: relative;
+    font-size: 1.5rem;
+    color: #ab6cb6;
+    transform: translateY(90%); /* Start off-screen on the right */
+    transition: transform 1s ease-out 1s, opacity 1s ease-out 1s;
+    z-index: 2; /* Ensure it stays above the image */
+  }
 }
 
-.bold-vision-text {
-  font-weight: bold;
+/* When heading 2 should appear (class 'visible' is added when in viewport) */
+.visible #heading2 {
+  opacity: 1; /* Fade in */
+  transform: translateX(70%); /* Move to original position */
+  transition: transform 4s ease-out, opacity 4s ease-out;
+}
+@media (max-width: 700px) {
+  .visible #heading2 #heading2 {
+    font-size: 1.5rem !important;
+  }
 }
 
 /* https://www.youtube.com/watch?v=iJKCj8uAHz8
@@ -12458,7 +12475,7 @@ option+shift+A to change for comment,
 option+7 for brackets,
 option+4 dollar*/
 #wave {
-  background-color: black;
+  background-color: #B6A6CA;
 }
 
 #company {
@@ -12955,6 +12972,70 @@ option+4 dollar*/
     width: 100%; /* Make button full width on mobile */
     margin-top: 10px; /* Add some spacing above the button */
   }
+}
+/* https://www.youtube.com/watch?v=iJKCj8uAHz8
+option+shift+A to change for comment, 
+option+7 for brackets,
+option+4 dollar*/
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%; /* Ensures the container spans the full width */
+}
+
+.footer-container .img-container {
+  flex: 1; /* Takes up available space */
+  max-width: 300px;
+  max-height: 300px;
+}
+
+.footer-container .icon-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center; /* Vertically aligns the content */
+  flex: 1; /* Takes up available space */
+  margin-right: 2rem;
+}
+
+.footer-container .icon_group {
+  display: flex; /* Ensures icons are in a row */
+  gap: 10px; /* Adds space between icons */
+  align-items: center; /* Vertically aligns the icons */
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px; /* Adjust size as needed */
+  height: 50px;
+  border-radius: 50%; /* Makes it circular */
+  background-color: #f0f0f0; /* Light gray background */
+  color: white;
+  text-decoration: none;
+  margin: 1rem; /* Adds space between icons */
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.icon.facebook {
+  background: radial-gradient(circle at 30% 30%, #ebe7e3, #b09ce4, #ad8fb9, #c7a5d4, #4c0530);
+}
+
+.icon.facebook:hover {
+  background: linear-gradient(to right, #B6A6CA, #DCE0D9, #878ca9);
+}
+
+.icon.instagram {
+  background: radial-gradient(circle at 30% 30%, #ebe7e3, #b09ce4, #ad8fb9, #c7a5d4, #4c0530);
+}
+
+.icon.instagram:hover {
+  background: linear-gradient(to right, #B6A6CA, #DCE0D9, #878ca9);
+}
+
+.icon i {
+  font-size: 24px; /* Adjust icon size */
 }
 
 /*# sourceMappingURL=style.css.map */

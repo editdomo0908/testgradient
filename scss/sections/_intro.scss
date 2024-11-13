@@ -1,6 +1,48 @@
 @use '../custom' as *;
 @use'../components/mixins' as *;
 
+
+/* Ensure the loading container covers the entire screen */
+#loading-container {
+    position: fixed;          /* Fixed position relative to the viewport */
+    top: 0;                   /* Align to the top */
+    left: 0;                  /* Align to the left */
+    width: 100%;              /* Full viewport width */
+    height: 100%;             /* Full viewport height */
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: semi-transparent background */
+    z-index: 9999;            /* Ensure it appears above other content */
+}
+
+/* Spinner styling */
+.spinner {
+    @include gradient-initial;
+    position: absolute;       /* Absolute positioning inside the loading container */
+    top: 50%;                  /* 50% from the top of the container */
+    left: 50%;                 /* 50% from the left of the container */
+    width: 100px;               /* Spinner size */
+    height: 100px;              /* Spinner size */
+    border: 10px solid $primary; /* Light gray border */
+    border-top: 10px solid $secondary; /* Blue top border */
+    border-radius: 50%;        /* Circular shape */
+    animation: spin 2s linear infinite; /* Spinning animation */
+    transform: translate(-50%, -50%); /* Adjust the spinner's position to truly center it */
+}
+
+/* Keyframes for the spinning animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+
+
+
+
+
+
+
+
 .bg-video {
     position: absolute;
     left: 0;
@@ -30,99 +72,19 @@
 
 
 
-
-
-
-
-.group-img 
-{
-max-width: 80%;
-max-height: 80%;
-
-}
-/* Initial hidden state */
-.hidden {
-    opacity: 0;
-    filter: blur(10px);
-    transition: opacity 0.5s ease, filter 0.5s ease;
-}
-
-/* Visible state */
-.visible {
-    opacity: 1;
-    filter: blur(0);
-    animation: fadeInBlur 1s ease forwards;
-}
-
-/* Keyframes for fade-in and blur effect */
-@keyframes fadeInBlur {
-    0% {
-        opacity: 0;
-        filter: blur(10px);
-    }
-    100% {
-        opacity: 1;
-        filter: blur(0);
-    }
-}
-
-/* Initial hidden state */
-.hidden {
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-/* Visible state for regular elements */
-.visible {
-    opacity: 1;
-    transition: opacity 0.5s ease;
-}
-
-/* Visible state with blur for group image */
-.visible-blur {
-    opacity: 1;
-    filter: blur(10px);
-    animation: fadeInBlur 2s ease forwards; /* Longer duration for a smoother effect */
-}
-
-/* Keyframes for fade-in and blur effect on group image */
-@keyframes fadeInBlur {
-    0% {
-        opacity: 0;
-        filter: blur(10px);
-    }
-    100% {
-        opacity: 1;
-        filter: blur(0);
-    }
+.intro-section {
+    position: relative;
+    padding-top: 300px;
+    z-index: 2000;
+ 
 }
 
 
-
-.hidden {
-    opacity: 0;
-    transition: opacity 0.8s ease-in-out; /* Smooth transition */
-}
-
-.visible {
-    opacity: 1;
-    transition: opacity 0.8s ease-in-out; /* Smooth transition */
-  
-}
-
-.sticky {
-    position: sticky;
-    top: 0; /* Makes it stick to the top of the viewport */
-    z-index: 10; /* Keeps it above other elements */
-}
-
-
-  
 
 .wave1, .wave2 {
     transition: transform 0.8s ease-in-out, fill 0.8s ease-in-out;
     transform: scale(1) translateX(0px);
-    fill: #000000;
+    fill: #370926;
   }
   
 
@@ -205,31 +167,3 @@ max-height: 80%;
     background-color: grey;
 }
 
-////////////////////////////////////////////////////////////////
-/// SMOKEY
-/// 
-.smokey-box {
-    text-align: center;
-    margin: 50px 0;
-  }
-  
-  .smokey-box ul {
-    display: flex;
-    justify-content: center;
-    padding: 0;
-    list-style-type: none;
-  }
-  
-  .smokey-box li {
-    font-size: 2.5rem; /* Adjust size as needed */
-    font-weight: bold;
-    color: #333; /* Adjust to fit your theme */
-    margin: 0 1px;
-  
-    transform: translateY(20px);
-    animation: fadeUp 1.5s ease forwards;
-    animation-delay: calc(0.1s * var(--i)); /* Staggering effect */
-  }
-  
- 
- 

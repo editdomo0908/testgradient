@@ -1,0 +1,68 @@
+
+@use '../custom' as *;
+@use'../components/mixins' as *;
+
+
+
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%; /* Ensures the container spans the full width */
+  }
+  
+  .footer-container .img-container {
+    flex: 1; /* Takes up available space */
+    max-width: 300px;
+    max-height: 300px;
+  }
+  
+  .footer-container .icon-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; /* Vertically aligns the content */
+    flex: 1; /* Takes up available space */
+    margin-right: 2rem;
+  }
+  
+  .footer-container .icon_group {
+    display: flex; /* Ensures icons are in a row */
+    gap: 10px; /* Adds space between icons */
+    align-items: center; /* Vertically aligns the icons */
+ 
+  }
+ 
+
+  .icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px; /* Adjust size as needed */
+    height: 50px;
+    border-radius: 50%; /* Makes it circular */
+    background-color: #f0f0f0; /* Light gray background */
+    color: white;
+    text-decoration: none;
+    margin: 1rem; /* Adds space between icons */
+    transition: background-color 0.3s;
+    cursor: pointer;
+  }
+  
+  .icon.facebook {
+    background: radial-gradient(circle at 30% 30%, #ebe7e3, #b09ce4, #ad8fb9, #c7a5d4, #4c0530);
+  }
+  
+  .icon.facebook:hover {
+    @include gradient-initial /* Darker Instagram gradient */
+  }
+  
+  .icon.instagram { background: radial-gradient(circle at 30% 30%, #ebe7e3, #b09ce4, #ad8fb9, #c7a5d4, #4c0530);  }
+  
+  .icon.instagram:hover {
+    @include gradient-initial
+  }
+  
+  .icon i {
+    font-size: 24px; /* Adjust icon size */
+  }
+  

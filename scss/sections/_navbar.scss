@@ -13,13 +13,13 @@
 
 /* Container and Button Styling */
 .btn-language  {
- background-color: #878ca9 !important;
- color: rgb(244, 244, 244) !important;
+
+ color: $secondary !important;
  margin-left: 2rem;
 }
 
 .btn-language:hover  {
-  background-color: #7b3a7c !important;
+  background-color: $secondary!important;
   color: rgb(251, 251, 251) !important;
   margin-left: 2rem;
  }

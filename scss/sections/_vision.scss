@@ -1,47 +1,131 @@
 @use '../custom' as *;
 @use'../components/mixins' as *;
 
-
+/* General section styling */
 .vision {
-    background-color:$primary;
+    background-color: #f0f0f0; /* Replace with actual primary color */
+   
 }
 
-
+/* Title and heading styling */
 .gold-title {
-    color:#8d7e9f;
+    color: #8d7e9f;
 }
-   
 
 
-.intro-section {
-    padding: 15rem 0 0 0;
-    position: relative; // Ensure this section is positioned correctly relative to the landing
-    z-index: 3; // Higher than the background video
+
+/* Initial hidden state */
+/* Ensure the hidden state has zero opacity and smooth transition */
+.hidden {
+    opacity: 0;
+    transition: opacity 2s ease-in-out, transform 2s ease-in-out;
+  }
+  
+  /* Visible state will be fully opaque */
+  .visible {
    
-}
-#heading1 {
-    font-size: 1.5rem;
-    text-align: justify;
-    padding: 3rem;
-    margin: 0.5rem;
+    opacity: 1;
+    transform: translateX(10%) translateY(0%); /* Start off-screen on the right */
+    transition: opacity 2s ease-in-out, transform 2s ease-in-out;
+  }
+  
+  /* Scale image to double size */
+  .scaled {
+    transform: scale(1.7) translateX(-20%);
+   
+    opacity: 0.3 !important; /* When scaled up */
+    z-index: -1000 !important;
+
+
+    @media (max-width: 700px) {
+        transform: scale(1.1) translateX(0%);
+   
+        opacity: 0.3 !important; /* When scaled up */
+        z-index: -1000 !important;
+      
+    }
+
     
+  }
+  
+  /* Normal state for the image */
+  .normal {
+    transform: scale(1);
+    opacity: 1; /* Normal opacity */
+    transition: transform 2s ease;
+  }
+  
+  #groupImage {
+    max-height: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+    transition: transform 2s ease, opacity 2s ease;
+   
+    @media (max-width: 700px) {
+        max-height: 100%;
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+        transition: transform 2s ease, opacity 2s ease;
+      
+    }
 
-}
 
+
+
+  }
+
+  #heading1 {
+    margin-top: 10%;
+    transition: transform 1s ease-out 1s, opacity 1s ease-out 1s;
+    padding-top:5rem;
+    padding-right: 5rem;
+    padding-left: 3rem;
+   font-size: 2rem;
+   color: #67114f;
+   text-align: justify;
+  }
+  
+ 
+
+/* Default hidden state for heading2 */
 #heading2 {
+  position: relative;
+  font-size: 3rem;
+  color: #67114f;
+  transform: translateX(50%) translateY(-50%); /* Start off-screen on the right */
+  transition: transform 1s ease-out 1s, opacity 1s ease-out 1s;
+  z-index: 2; /* Ensure it stays above the image */
+  margin-top: 5rem;
+
+
+  @media (max-width: 700px) {
+    position: relative;
     font-size: 1.5rem;
-    text-align: justify;
-    padding: 3rem;
-    margin: 1rem;
-    
-
-}
-
-
-
-.bold-vision-text {
-    font-weight: bold;
-    
-}
    
+    color: #ab6cb6;
+    transform: translateY(90%); /* Start off-screen on the right */
+    transition: transform 1s ease-out 1s, opacity 1s ease-out 1s;
+    z-index: 2; /* Ensure it stays above the image */
+  
+}
+
+}
+
+/* When heading 2 should appear (class 'visible' is added when in viewport) */
+.visible #heading2 {
+  opacity: 1; /* Fade in */
+  transform: translateX(70%); /* Move to original position */
+  transition: transform 4s ease-out, opacity 4s ease-out;
+
+  @media (max-width: 700px) {
+    #heading2 {
+      font-size: 1.5rem !important;
+    }
+}
+}
+
+
+
 
