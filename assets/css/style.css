@@ -11985,7 +11985,6 @@ body {
 }
 
 .display-3 {
-  font-family: "Jost", sans-serif;
   color: #DCE0D9;
 }
 
@@ -12410,7 +12409,7 @@ option+4 dollar*/
     left: 0;
     height: 100vh;
     width: 100%;
-    background-color: #A09ABC;
+    background-color: #DCE0D9;
     overflow-x: hidden !important;
     overflow-y: hidden !important;
   }
@@ -12464,12 +12463,6 @@ option+4 dollar*/
   clip-path: circle(150px at 0 0);
   overflow: hidden !important;
 }
-@media (max-width: 700px) {
-  .circle1 {
-    display: none;
-  }
-}
-
 .circle2 {
   position: absolute;
   width: 100%;
