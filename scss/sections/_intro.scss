@@ -2,6 +2,14 @@
 @use'../components/mixins' as *;
 
 
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  
+ 
+
 /* Ensure the loading container covers the entire screen */
 #loading-container {
     position: fixed;          /* Fixed position relative to the viewport */

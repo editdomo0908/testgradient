@@ -3,10 +3,9 @@
 option+shift+A to change for comment, 
 option+7 for brackets,
 option+4 dollar*/
-/* underscore to flag it should not be generated, it is to override bootstrap variables on theme.html */
 html, body {
-  margin: 0 !important;
-  padding: 0 !important;
+  margin: 0;
+  padding: 0;
   overflow-x: hidden !important;
 }
 
@@ -11986,6 +11985,7 @@ body {
 }
 
 .display-3 {
+  font-family: "Jost", sans-serif;
   color: #DCE0D9;
 }
 
@@ -12240,6 +12240,12 @@ body {
 option+shift+A to change for comment, 
 option+7 for brackets,
 option+4 dollar*/
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 /* Ensure the loading container covers the entire screen */
 #loading-container {
   position: fixed; /* Fixed position relative to the viewport */
@@ -12395,23 +12401,37 @@ option+4 dollar*/
   height: 100vh;
   width: 100%;
   background-color: #A09ABC;
-  overflow: hidden;
+  overflow-x: hidden !important;
+}
+@media (max-width: 700px) {
+  .statement {
+    top: 0;
+    left: 0;
+    height: 100vh;
+    max-width: 80%;
+    background-color: #A09ABC;
+    overflow-x: hidden !important;
+  }
 }
 
 .hello {
   position: absolute;
-  top: 150%;
-  transform: translateY(-50%) translateX(10%);
-  width: 100%;
+  transform: translateY(150%) translateX(20%);
   font-size: 3.2rem;
   color: #DCE0D9;
-  margin-left: 5%;
   z-index: 1000;
+  overflow: hidden !important;
+  margin-top: 200px;
 }
 @media (max-width: 700px) {
   .hello {
-    font-size: 2rem !important;
-    padding: 4rem !important;
+    max-width: 60%;
+    white-space: normal; /* Allow line wrapping */
+    line-height: 1.5; /* Increase the space between lines */
+    font-size: 1.4rem !important;
+    margin: 0;
+    overflow: hidden !important;
+    margin-top: 130px;
   }
 }
 
@@ -12472,19 +12492,20 @@ option+4 dollar*/
 /* Visible state will be fully opaque */
 .visible {
   opacity: 1;
-  transform: translateX(10%) translateY(0%); /* Start off-screen on the right */
+  transform: translateX(10%) translateY(-10%); /* Start off-screen on the right */
   transition: opacity 2s ease-in-out, transform 2s ease-in-out;
 }
 
 /* Scale image to double size */
 .scaled {
-  transform: scale(1.7) translateX(-20%);
+  transform: scale(2) translateX(-20%) translateY(-10%);
   opacity: 0.3 !important; /* When scaled up */
   z-index: -1000 !important;
 }
 @media (max-width: 700px) {
   .scaled {
-    transform: scale(1.1) translateX(0%);
+    transform: scale(1.5) translateY(-10%);
+    overflow: hidden !important;
     opacity: 0.3 !important; /* When scaled up */
     z-index: -1000 !important;
   }
@@ -12522,6 +12543,12 @@ option+4 dollar*/
   color: #67114f;
   text-align: start;
 }
+@media (max-width: 700px) {
+  #heading1 {
+    transform: translateY(30%);
+    font-size: 1rem;
+  }
+}
 
 /* Default hidden state for heading2 */
 #heading2 {
@@ -12536,7 +12563,7 @@ option+4 dollar*/
 @media (max-width: 700px) {
   #heading2 {
     position: relative;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: #ab6cb6;
     transform: translateY(90%); /* Start off-screen on the right */
     transition: transform 1s ease-out 1s, opacity 1s ease-out 1s;
