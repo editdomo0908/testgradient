@@ -38,7 +38,7 @@
 
 
     @media (max-width: 700px) {
-        transform: scale(1.1) translateY(-20%);
+        transform: scale(1.1) translateY(10%);
         overflow: hidden !important;
    
         opacity: 0.3 !important; /* When scaled up */
@@ -108,10 +108,10 @@
 
   @media (max-width: 700px) {
     position: relative;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
    
     color: #ab6cb6;
-    transform: translateY(90%); /* Start off-screen on the right */
+    transform: translateY(150%); /* Start off-screen on the right */
     transition: transform 1s ease-out 1s, opacity 1s ease-out 1s;
     z-index: 2; /* Ensure it stays above the image */
   
