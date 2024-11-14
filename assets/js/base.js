@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const colorCount = colors.length;
 
     let maxSize, minSize, initialSize;
-    const initialTop = 170;
+    const initialTop = 250;
     let initialLeft;
     let shrunkLeft;
     let isMinSizeReached = false;
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function updateSizes() {
         const windowWidth = window.innerWidth;
         if (windowWidth < 400) {
-            maxSize = 100; minSize = 100; initialLeft = 150; shrunkLeft = 150;
+            maxSize = 100; minSize = 100; initialLeft = 170; shrunkLeft = 170;
         } else if (windowWidth < 550) {
             maxSize = 120; minSize = 100; initialLeft = 250; shrunkLeft = 250;
         } else if (windowWidth < 750) {
