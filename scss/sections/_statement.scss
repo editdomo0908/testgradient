@@ -83,6 +83,7 @@ animation: animate 3s linear infinite;
     height: 100%;
     background: $primary;
     clip-path: circle(150px at 0 0 );
+    overflow: hidden !important;
   
 }
 
@@ -92,6 +93,7 @@ animation: animate 3s linear infinite;
     height: 100%;
     background: $secondary;
     clip-path: circle(150px at 100% 100% );
+    overflow:  hidden !important;
    
 }
 

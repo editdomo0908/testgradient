@@ -11985,7 +11985,6 @@ body {
 }
 
 .display-3 {
-  font-family: "Jost", sans-serif;
   color: #DCE0D9;
 }
 
@@ -12462,6 +12461,7 @@ option+4 dollar*/
   height: 100%;
   background: #DCE0D9;
   clip-path: circle(150px at 0 0);
+  overflow: hidden !important;
 }
 
 .circle2 {
@@ -12470,6 +12470,7 @@ option+4 dollar*/
   height: 100%;
   background: #B6A6CA;
   clip-path: circle(150px at 100% 100%);
+  overflow: hidden !important;
 }
 
 /* https://www.youtube.com/watch?v=iJKCj8uAHz8
@@ -12508,7 +12509,7 @@ option+4 dollar*/
 }
 @media (max-width: 700px) {
   .scaled {
-    transform: scale(1.5) translateY(-10%);
+    transform: scale(1.1) translateY(-20%);
     overflow: hidden !important;
     opacity: 0.3 !important; /* When scaled up */
     z-index: -1000 !important;
