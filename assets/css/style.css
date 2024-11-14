@@ -12408,7 +12408,7 @@ option+4 dollar*/
     top: 0;
     left: 0;
     height: 100vh;
-    max-width: 80%;
+    width: 100%;
     background-color: #A09ABC;
     overflow-x: hidden !important;
     overflow-y: hidden !important;
