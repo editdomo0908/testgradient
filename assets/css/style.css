@@ -12375,6 +12375,7 @@ option+4 dollar*/
   height: 100vh;
   width: 100%;
   background-color: #A09ABC;
+  overflow: hidden;
 }
 
 .hello {
@@ -12385,6 +12386,11 @@ option+4 dollar*/
   font-size: 4rem;
   color: azure;
   z-index: 1000;
+}
+@media (max-width: 700px) {
+  .hello #heading2 {
+    font-size: 1.5rem !important;
+  }
 }
 
 .circle1 {
