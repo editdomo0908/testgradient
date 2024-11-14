@@ -11985,7 +11985,6 @@ body {
 }
 
 .display-3 {
-  font-family: "Jost", sans-serif;
   color: #DCE0D9;
 }
 
@@ -12400,7 +12399,7 @@ option+4 dollar*/
   left: 0;
   height: 100vh;
   width: 100%;
-  background-color: #A09ABC;
+  background-color: #DCE0D9;
   overflow-x: hidden !important;
   overflow-y: hidden !important;
 }
@@ -12460,7 +12459,7 @@ option+4 dollar*/
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #DCE0D9;
+  background: #B6A6CA;
   clip-path: circle(150px at 0 0);
   overflow: hidden !important;
 }
@@ -12469,7 +12468,7 @@ option+4 dollar*/
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #B6A6CA;
+  background: #A09ABC;
   clip-path: circle(150px at 100% 100%);
   overflow: hidden !important;
 }
@@ -12480,7 +12479,7 @@ option+7 for brackets,
 option+4 dollar*/
 /* General section styling */
 .vision {
-  background-color: #f0f0f0; /* Replace with actual primary color */
+  background-color: #DCE0D9; /* Replace with actual primary color */
 }
 
 /* Title and heading styling */
