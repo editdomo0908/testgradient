@@ -12402,6 +12402,7 @@ option+4 dollar*/
   width: 100%;
   background-color: #A09ABC;
   overflow-x: hidden !important;
+  overflow-y: hidden !important;
 }
 @media (max-width: 700px) {
   .statement {
@@ -12411,6 +12412,7 @@ option+4 dollar*/
     max-width: 80%;
     background-color: #A09ABC;
     overflow-x: hidden !important;
+    overflow-y: hidden !important;
   }
 }
 
@@ -12421,6 +12423,7 @@ option+4 dollar*/
   color: #DCE0D9;
   z-index: 1000;
   overflow: hidden !important;
+  overflow-y: hidden !important;
   margin-top: 200px;
 }
 @media (max-width: 700px) {
@@ -12431,6 +12434,7 @@ option+4 dollar*/
     font-size: 1.4rem !important;
     margin: 0;
     overflow: hidden !important;
+    overflow-y: hidden !important;
     margin-top: 130px;
   }
 }
@@ -12846,6 +12850,7 @@ option+4 dollar*/
 }
 
 .first-bt-hover {
+  margin: 5px;
   font-size: 16px;
   font-weight: 600;
   color: #fff;
