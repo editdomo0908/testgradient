@@ -22,12 +22,21 @@ body {
 
  color: $primary !important;
  margin-left: 2rem;
+
+
+ @media (max-width: 992px) {
+ margin-left: 1rem;
+
+}
+
+
+
  
 }
 
 .btn-language:hover  {
   background-color: $secondary!important;
-  color: rgb(251, 251, 251) !important;
+  color: $primary !important;
   margin-left: 2rem;
  }
  
@@ -164,10 +173,9 @@ body {
     position: relative;
     padding-left: 0.5rem;
     color: $primary !important;
-    font-weight: bold;
 
-   
-   
+  
+
   }
   
   /* Curve effect: starts invisible */
@@ -241,11 +249,13 @@ body {
       align-items: center; /* Center align nav items */
       width: 100%;
       margin-bottom: 1rem; /* Add space below nav items */
+  
     }
   
     .navbar-nav .nav-item {
       margin: 0.5rem 0; /* Adds spacing between nav items */
       text-align: center;
+     
     }
   
     .form-inline {
@@ -272,7 +282,7 @@ body {
         text-decoration: none;
         color: $primary!important;
         font-weight: 800;
-        font-size: 2rem !important;
+        font-size: 1rem !important;
         text-transform: lowercase;
         padding: 2rem;
         margin-right: 2rem;
