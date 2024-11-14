@@ -20,9 +20,81 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Show the content
         document.getElementById('content').style.display = 'block';
-    }, 2000);  // 2000 milliseconds (2 seconds)
+    });  // 2000 milliseconds (2 seconds)
 });
 
+
+
+////////////////////////////////////////////////////////////////
+let circle1 = document.querySelector('.circle1');
+let circle2 = document.querySelector('.circle2');
+
+// Set specific initial colors using hex values or color names
+const initialColorCircle1 = "#B6A6CA";  // Initial color for circle1 (Red)
+const initialColorCircle2 = "#370926";  // Initial color for circle2 (Steel Blue)
+
+// Set specific target colors using hex values or color names
+const targetColorCircle1 = "#370926";   // Target color for circle1 (Yellow)
+const targetColorCircle2 = "#B6A6CA";   // Target color for circle2 (Orange)
+
+window.addEventListener('scroll', () => {
+    let scrollValue = window.scrollY;
+
+    // Size of the circles based on scroll value
+    let size = 150 + scrollValue * 0.75;
+
+    // Clip-path to update size of the circles
+    circle1.style.clipPath = `circle(${size}px at 0 0)`;
+    circle2.style.clipPath = `circle(${size}px at 100% 100%)`;
+
+    // If the circles have started growing (scrollValue > 0), start changing the color
+    if (scrollValue > 0) {
+        // Calculate the scroll ratio (as a percentage of the total scrollable area)
+        let scrollRatio = Math.min(scrollValue / document.body.scrollHeight, 1);
+
+        // Interpolate between the initial and target colors for circle1
+        let color1 = interpolateColors(initialColorCircle1, targetColorCircle1, scrollRatio);
+        // Interpolate between the initial and target colors for circle2
+        let color2 = interpolateColors(initialColorCircle2, targetColorCircle2, scrollRatio);
+
+        // Update the background color of both circles
+        circle1.style.backgroundColor = color1;
+        circle2.style.backgroundColor = color2;
+    }
+});
+
+// Helper function to interpolate between two colors (hex format)
+function interpolateColors(colorStart, colorEnd, ratio) {
+    // Convert hex color to RGB
+    function hexToRgb(hex) {
+        let r = parseInt(hex.substring(1, 3), 16);
+        let g = parseInt(hex.substring(3, 5), 16);
+        let b = parseInt(hex.substring(5, 7), 16);
+        return { r, g, b };
+    }
+
+    // Convert RGB to hex format
+    function rgbToHex(r, g, b) {
+        return `#${(1 << 24 | r << 16 | g << 8 | b).toString(16).slice(1).toUpperCase()}`;
+    }
+
+    // Get the RGB values for start and end colors
+    let startColor = hexToRgb(colorStart);
+    let endColor = hexToRgb(colorEnd);
+
+    // Interpolate each RGB component
+    let r = Math.round(startColor.r + (endColor.r - startColor.r) * ratio);
+    let g = Math.round(startColor.g + (endColor.g - startColor.g) * ratio);
+    let b = Math.round(startColor.b + (endColor.b - startColor.b) * ratio);
+
+    // Return the resulting color as hex
+    return rgbToHex(r, g, b);
+}
+
+
+
+
+//////////////////////////
 
 
 

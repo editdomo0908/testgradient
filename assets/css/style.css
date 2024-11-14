@@ -12001,7 +12001,7 @@ option+7 for brackets,
 option+4 dollar*/
 .menu {
   background: #370926;
-  z-index: 3;
+  z-index: 5000;
 }
 
 /* Container and Button Styling */
@@ -12135,6 +12135,7 @@ option+4 dollar*/
   position: relative;
   padding-left: 0.5rem;
   color: #A09ABC !important;
+  font-weight: bold;
 }
 
 /* Curve effect: starts invisible */
@@ -12358,6 +12359,44 @@ option+4 dollar*/
 
 .gradient-bg {
   background-color: grey;
+}
+
+/* https://www.youtube.com/watch?v=iJKCj8uAHz8
+option+shift+A to change for comment, 
+option+7 for brackets,
+option+4 dollar*/
+.statement {
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: #A09ABC;
+}
+
+.hello {
+  position: absolute;
+  top: 150%;
+  transform: translateY(-50%) translateX(10%);
+  width: 100%;
+  font-size: 4rem;
+  color: azure;
+  z-index: 1000;
+}
+
+.circle1 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #DCE0D9;
+  clip-path: circle(150px at 0 0);
+}
+
+.circle2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #B6A6CA;
+  clip-path: circle(150px at 100% 100%);
 }
 
 /* https://www.youtube.com/watch?v=iJKCj8uAHz8

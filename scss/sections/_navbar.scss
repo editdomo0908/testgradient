@@ -5,7 +5,7 @@
    background: #370926;
    
 // gradient at mixins
-    z-index: 3;
+    z-index: 5000;
 
 
 }
@@ -157,6 +157,7 @@
     position: relative;
     padding-left: 0.5rem;
     color: $third !important;
+    font-weight: bold;
    
    
   }
