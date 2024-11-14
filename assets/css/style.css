@@ -11985,6 +11985,7 @@ body {
 }
 
 .display-3 {
+  font-family: "Jost", sans-serif;
   color: #DCE0D9;
 }
 
@@ -12462,6 +12463,11 @@ option+4 dollar*/
   background: #B6A6CA;
   clip-path: circle(150px at 0 0);
   overflow: hidden !important;
+}
+@media (max-width: 700px) {
+  .circle1 {
+    display: none;
+  }
 }
 
 .circle2 {
