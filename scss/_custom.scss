@@ -1,6 +1,11 @@
 /* underscore to flag it should not be generated, it is to override bootstrap variables on theme.html */
 
-
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+  }
+  
 
 
 
@@ -34,21 +39,6 @@ $third:#A09ABC ;
 
 
 
-
-body {
-  background: linear-gradient(
-    to right,
-    var(--gradient-color-1),
-    var(--gradient-color-2),
-    var(--gradient-color-3),
-    var(--gradient-color-4),
-    var(--gradient-color-5),
-    var(--gradient-color-6),
-    var(--gradient-color-7),
-    var(--gradient-color-8),
-    var(--gradient-color-9)
-  );
-}
 
 
 

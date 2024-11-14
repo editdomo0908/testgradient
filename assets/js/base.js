@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function updateSizes() {
         const windowWidth = window.innerWidth;
         if (windowWidth < 400) {
-            maxSize = 120; minSize = 100; initialLeft = 180; shrunkLeft = 230;
+            maxSize = 120; minSize = 100; initialLeft = 180; shrunkLeft = 200;
         } else if (windowWidth < 550) {
             maxSize = 120; minSize = 100; initialLeft = 280; shrunkLeft = 280;
         } else if (windowWidth < 750) {

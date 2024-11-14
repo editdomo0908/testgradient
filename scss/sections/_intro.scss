@@ -80,41 +80,6 @@
 }
 
 
-/* Ensure the container height is sufficient for the wave to be visible */
-.wave-container {
-    position: relative;
-    width: 100%;
-    height: 200px; /* Adjust this height to ensure waves have enough space */
-    overflow: hidden;  /* Hide overflow */
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Top wave container */
-  .wave-container-top {
-    height: 200px; /* Adjust this height as needed */
-
-    margin: 0;
-    padding: 150px;
-  }
-  
-  /* Bottom wave container */
-  .wave-container-bottom {
-    height: 300px; /* Adjust this height as needed */
-
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Style for the wave SVG elements */
-  .wave1, .wave2 {
-    width: 100%;
-    height: auto;
-    position: absolute;
-    left: 0; /* Make sure the wave is positioned to the left */
-    bottom: 0; /* Align the wave to the bottom */
-  }
-  
 
 
 .wave1, .wave2 {
