@@ -11984,7 +11984,6 @@ body {
 }
 
 .display-3 {
-  font-family: "Jost", sans-serif;
   color: #DCE0D9;
 }
 
@@ -12003,6 +12002,10 @@ body {
 option+shift+A to change for comment, 
 option+7 for brackets,
 option+4 dollar*/
+body {
+  font-family: "Poppins", sans-serif !important;
+}
+
 .menu {
   background: #370926;
   z-index: 5000;
@@ -12010,7 +12013,7 @@ option+4 dollar*/
 
 /* Container and Button Styling */
 .btn-language {
-  color: #B6A6CA !important;
+  color: #DCE0D9 !important;
   margin-left: 2rem;
 }
 
@@ -12138,7 +12141,7 @@ option+4 dollar*/
 .navbar-nav .nav-link {
   position: relative;
   padding-left: 0.5rem;
-  color: #A09ABC !important;
+  color: #DCE0D9 !important;
   font-weight: bold;
 }
 
@@ -12298,10 +12301,44 @@ option+4 dollar*/
   z-index: 2000;
 }
 
+/* Ensure the container height is sufficient for the wave to be visible */
+.wave-container {
+  position: relative;
+  width: 100%;
+  height: 200px; /* Adjust this height to ensure waves have enough space */
+  overflow: hidden; /* Hide overflow */
+  margin: 0;
+  padding: 0;
+}
+
+/* Top wave container */
+.wave-container-top {
+  height: 200px; /* Adjust this height as needed */
+  margin: 0;
+  padding: 150px;
+}
+
+/* Bottom wave container */
+.wave-container-bottom {
+  height: 300px; /* Adjust this height as needed */
+  margin: 0;
+  padding: 0;
+}
+
+/* Style for the wave SVG elements */
+.wave1, .wave2 {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  left: 0; /* Make sure the wave is positioned to the left */
+  bottom: 0; /* Align the wave to the bottom */
+}
+
 .wave1, .wave2 {
   transition: transform 0.8s ease-in-out, fill 0.8s ease-in-out;
   transform: scale(1) translateX(0px);
   fill: #370926;
+  overflow: hidden !important;
 }
 
 .gradient-circle {
@@ -12335,30 +12372,44 @@ option+4 dollar*/
 
 .logo-text {
   text-align: center;
-  color: black;
-  font-family: "Arial", sans-serif;
-  z-index: 1; /* Ensures text is above the inner square */
+  color: rgba(0, 0, 0, 0.797);
+  font-family: "Jost", sans-serif;
 }
 
 .logo-text .main-title {
-  font-size: 28px;
-  font-weight: 800;
+  font-size: 3rem;
+  font-weight: 700;
   text-transform: lowercase;
+}
+@media (max-width: 700px) {
+  .logo-text .main-title {
+    font-size: 0.8rem !important;
+  }
 }
 
 .logo-text .subtitle {
-  font-size: 16px;
-  font-weight: 300;
+  font-size: 1.5rem;
+  font-weight: 400;
   letter-spacing: 1px;
   text-transform: lowercase;
 }
+@media (max-width: 700px) {
+  .logo-text .subtitle {
+    display: none;
+  }
+}
 
 .logo-text .location {
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: lowercase;
   margin-top: 4px;
+}
+@media (max-width: 700px) {
+  .logo-text .location {
+    font-size: 0.5rem !important;
+  }
 }
 
 .gradient-bg {
@@ -12383,18 +12434,20 @@ option+4 dollar*/
   top: 150%;
   transform: translateY(-50%) translateX(10%);
   width: 100%;
-  font-size: 4rem;
-  color: azure;
+  font-size: 3.2rem;
+  color: #DCE0D9;
+  margin-left: 5%;
   z-index: 1000;
 }
 @media (max-width: 700px) {
-  .hello #heading2 {
-    font-size: 1.5rem !important;
+  .hello {
+    font-size: 2rem !important;
+    padding: 4rem !important;
   }
 }
 
 .shade {
-  background: linear-gradient(90deg, #000, #fff, #000);
+  background: linear-gradient(90deg, #DCE0D9, grey, #A09ABC);
   background-repeat: no-repeat;
   background-size: 80%;
   animation: animate 3s linear infinite;
@@ -12493,25 +12546,23 @@ option+4 dollar*/
 }
 
 #heading1 {
-  margin-top: 10%;
+  margin-top: 5%;
   transition: transform 1s ease-out 1s, opacity 1s ease-out 1s;
-  padding-top: 5rem;
-  padding-right: 5rem;
-  padding-left: 3rem;
-  font-size: 2rem;
+  margin-right: 12%;
+  font-size: 1.6rem;
   color: #67114f;
-  text-align: justify;
+  text-align: start;
 }
 
 /* Default hidden state for heading2 */
 #heading2 {
   position: relative;
-  font-size: 3rem;
+  font-size: 2rem;
   color: #67114f;
   transform: translateX(50%) translateY(-50%); /* Start off-screen on the right */
   transition: transform 1s ease-out 1s, opacity 1s ease-out 1s;
   z-index: 2; /* Ensure it stays above the image */
-  margin-top: 5rem;
+  margin-top: 2rem;
 }
 @media (max-width: 700px) {
   #heading2 {
@@ -12745,7 +12796,7 @@ option+shift+A to change for comment,
 option+7 for brackets,
 option+4 dollar*/
 .portfolio {
-  background-color: #B6A6CA;
+  background-color: #A09ABC;
 }
 
 .portfolio-card-section {

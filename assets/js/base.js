@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const colorCount = colors.length;
 
     let maxSize, minSize, initialSize;
-    const initialTop = 150;
+    const initialTop = 170;
     let initialLeft;
     let shrunkLeft;
     let isMinSizeReached = false;
@@ -236,7 +236,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-
+////////////////////////////////////////////////////////////////vision
 
 
 window.addEventListener('scroll', handleScrollAnimation);
@@ -262,24 +262,24 @@ function handleScrollAnimation() {
 
   // Handle animations when at the top of the page
   if (window.scrollY === 0) {
-    heading1.classList.add('visible');
-    groupImage.classList.add('visible');
+    heading1.classList.remove('visible');
     heading2.classList.remove('visible');
     groupImage.classList.remove('scaled');
-    groupImage.classList.add('normal');
+    groupImage.classList.remove('normal');
+    groupImage.classList.remove('visible');
     isScaled = false;
     hasFadedOut = false;
     return; // Exit early to avoid unnecessary checks
   }
 
   // Fade in heading1 and groupImage when scrolling down
-  if (scrollProgress >= 0.3 && scrollProgress < 0.8) {
+  if (scrollProgress >= 0.3 && scrollProgress < 0.9) {
     heading1.classList.add('visible');
     groupImage.classList.add('visible');
     heading2.classList.remove('visible');
     groupImage.classList.remove('scaled');
     groupImage.classList.add('normal');
-  } else if (scrollProgress >= 0.6 && scrollProgress < 1) {
+  } else if (scrollProgress >= 0.7 && scrollProgress < 1) {
     // Fade in heading2, start scaling image and reduce opacity
     heading1.classList.remove('visible');
     heading2.classList.add('visible');
@@ -288,7 +288,7 @@ function handleScrollAnimation() {
   }
 
   // Keep the image scaled up after passing the breakpoint (scrollProgress >= 0.8)
-  if (scrollProgress >= 0.8 && !isScaled) {
+  if (scrollProgress >= 0.9 && !isScaled) {
     isScaled = true;  // Mark that the image has scaled up
     groupImage.classList.add('scaled');
     heading2.classList.add('visible');

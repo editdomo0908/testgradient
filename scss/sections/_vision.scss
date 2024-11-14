@@ -77,14 +77,12 @@
   }
 
   #heading1 {
-    margin-top: 10%;
+    margin-top: 5%;
     transition: transform 1s ease-out 1s, opacity 1s ease-out 1s;
-    padding-top:5rem;
-    padding-right: 5rem;
-    padding-left: 3rem;
-   font-size: 2rem;
-   color: #67114f;
-   text-align: justify;
+    margin-right: 12%;
+    font-size: 1.6rem;
+    color: #67114f;
+    text-align: start;
   }
   
  
@@ -92,12 +90,12 @@
 /* Default hidden state for heading2 */
 #heading2 {
   position: relative;
-  font-size: 3rem;
+  font-size: 2rem;
   color: #67114f;
   transform: translateX(50%) translateY(-50%); /* Start off-screen on the right */
   transition: transform 1s ease-out 1s, opacity 1s ease-out 1s;
   z-index: 2; /* Ensure it stays above the image */
-  margin-top: 5rem;
+  margin-top: 2rem;
 
 
   @media (max-width: 700px) {
@@ -125,7 +123,4 @@
     }
 }
 }
-
-
-
 

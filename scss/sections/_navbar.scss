@@ -1,6 +1,12 @@
 @use '../custom' as *;
 @use'../components/mixins' as *;
 
+
+body {
+  font-family: 'Poppins', sans-serif !important;
+
+}
+
 .menu {
    background: #370926;
    
@@ -14,8 +20,9 @@
 /* Container and Button Styling */
 .btn-language  {
 
- color: $secondary !important;
+ color: $primary !important;
  margin-left: 2rem;
+ 
 }
 
 .btn-language:hover  {
@@ -156,8 +163,9 @@
 .navbar-nav .nav-link {
     position: relative;
     padding-left: 0.5rem;
-    color: $third !important;
+    color: $primary !important;
     font-weight: bold;
+
    
    
   }

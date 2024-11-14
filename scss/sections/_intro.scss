@@ -80,11 +80,48 @@
 }
 
 
+/* Ensure the container height is sufficient for the wave to be visible */
+.wave-container {
+    position: relative;
+    width: 100%;
+    height: 200px; /* Adjust this height to ensure waves have enough space */
+    overflow: hidden;  /* Hide overflow */
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Top wave container */
+  .wave-container-top {
+    height: 200px; /* Adjust this height as needed */
+
+    margin: 0;
+    padding: 150px;
+  }
+  
+  /* Bottom wave container */
+  .wave-container-bottom {
+    height: 300px; /* Adjust this height as needed */
+
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Style for the wave SVG elements */
+  .wave1, .wave2 {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    left: 0; /* Make sure the wave is positioned to the left */
+    bottom: 0; /* Align the wave to the bottom */
+  }
+  
+
 
 .wave1, .wave2 {
     transition: transform 0.8s ease-in-out, fill 0.8s ease-in-out;
     transform: scale(1) translateX(0px);
     fill: #370926;
+    overflow:  hidden !important;
   }
   
 
@@ -136,30 +173,50 @@
 
 .logo-text {
     text-align: center;
-    color: black;
-    font-family: 'Arial', sans-serif;
-    z-index: 1; /* Ensures text is above the inner square */
+    color: rgba(0, 0, 0, 0.797);
+    font-family: 'Jost', sans-serif;
+       
 }
 
+
 .logo-text .main-title {
-    font-size: 28px;
-    font-weight: 800;
+    font-size: 3rem;
+    font-weight: 700;
     text-transform: lowercase;
+
+    @media (max-width: 700px) {
+       
+     font-size: 0.8rem !important;
+       
+}
 }
 
 .logo-text .subtitle {
-    font-size: 16px;
-    font-weight: 300;
+    font-size: 1.5rem;
+    font-weight: 400;
     letter-spacing: 1px;
     text-transform: lowercase;
+
+
+    @media (max-width: 700px) {
+       
+         display: none;
+        
+}
 }
 
 .logo-text .location {
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 600;
     letter-spacing: 1px;
     text-transform: lowercase;
     margin-top: 4px;
+
+    @media (max-width: 700px) {
+       
+       font-size: 0.5rem !important;
+       
+}
 }
 
 //GRADIENT BACKGROUND CLASS
