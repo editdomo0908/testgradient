@@ -11936,6 +11936,10 @@ option+4 dollar*/
 option+shift+A to change for comment, 
 option+7 for brackets,
 option+4 dollar*/
+body {
+  font-family: "Jost", sans-serif;
+}
+
 .display-2 {
   margin-bottom: 1rem;
   font-family: "Jost", sans-serif;
