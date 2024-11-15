@@ -12681,17 +12681,19 @@ option+4 dollar*/
   opacity: 1;
 }
 
+/* Card styles */
 .card {
   max-height: 500px;
   border: none !important; /* Override any other border settings */
   transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
 }
 
-.card:hover {
+.card:hover, .card.hover {
   transform: scale(1.05); /* Slightly enlarge the card on hover */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Adds a shadow effect on hover */
 }
 
+/* Image container styles */
 .img-container {
   height: 90%; /* Set the desired height */
   overflow: hidden; /* Hide overflow if the image is larger */
@@ -12705,6 +12707,7 @@ option+4 dollar*/
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Smooth transition for the hover effect */
 }
 
+/* Hover text styles */
 .hover-text {
   position: absolute;
   top: 0;
@@ -12727,12 +12730,15 @@ option+4 dollar*/
   border: none !important; /* Override any other border settings */
 }
 
-.card:hover .img-container img {
+/* Hover effect for image and text */
+.card:hover .img-container img,
+.card.hover .img-container img {
   opacity: 0;
   transform: scale(1.2); /* Slightly enlarge the image */
 }
 
-.card:hover .hover-text {
+.card:hover .hover-text,
+.card.hover .hover-text {
   opacity: 1;
   transform: translateX(100%); /* Slide in from the left */
 }
@@ -12749,16 +12755,6 @@ option+4 dollar*/
   align-items: center;
   padding: 15px;
   background: linear-gradient(to right, #ffffff, #B6A6CA, #A09ABC);
-}
-
-.card.hovered .img-container img {
-  opacity: 0;
-  transform: scale(1.2);
-}
-
-.card.hovered .hover-text {
-  opacity: 1;
-  transform: translateX(100%);
 }
 
 /* https://www.youtube.com/watch?v=iJKCj8uAHz8

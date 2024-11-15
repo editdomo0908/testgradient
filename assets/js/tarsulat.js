@@ -159,23 +159,24 @@ popup1.addEventListener('click', function(e) {
 
 
 
-//////////////mobile card hiver
-
+//////////////mobile card hover
 document.addEventListener('DOMContentLoaded', () => {
-    const cards = document.querySelectorAll('.card');
+    // Check if the device supports touch
+    if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+      const cards = document.querySelectorAll('.card');
   
-    cards.forEach(card => {
-      let isHovered = false;
-  
-      card.addEventListener('click', () => {
-        // Toggle hover effect on tap
-        isHovered = !isHovered;
-        if (isHovered) {
-          card.classList.add('hovered');
-        } else {
-          card.classList.remove('hovered');
-        }
+      cards.forEach(card => {
+        card.addEventListener('click', () => {
+          // Toggle the 'hover' class on click
+          if (card.classList.contains('hover')) {
+            card.classList.remove('hover'); // Reset the state on second tap
+          } else {
+            // Optionally remove 'hover' class from other cards
+            cards.forEach(otherCard => otherCard.classList.remove('hover'));
+            card.classList.add('hover'); // Apply the hover effect
+          }
+        });
       });
-    });
+    }
   });
   

@@ -110,88 +110,81 @@
 
 
 
+/* Card styles */
 .card {
   max-height: 500px;
-    border: none !important; /* Override any other border settings */
-      
-    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
-  }
-  
-  .card:hover {
-    transform: scale(1.05); /* Slightly enlarge the card on hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Adds a shadow effect on hover */
-  }
+  border: none !important; /* Override any other border settings */
+  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
 
+.card:hover, .card.hover {
+  transform: scale(1.05); /* Slightly enlarge the card on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Adds a shadow effect on hover */
+}
 
-
+/* Image container styles */
 .img-container {
-    height: 90%; /* Set the desired height */
-    overflow: hidden; /* Hide overflow if the image is larger */
-    position: relative; /* Needed for absolute positioning of hover text */
-  }
-  
-  .img-container img {
-    height: 100%; /* Ensure the image covers the container height */
-    width: 100%; /* Ensure the image covers the container width */
-    object-fit: cover; /* Cover the entire area (crops image if necessary) */
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Smooth transition for the hover effect */
-  }
-  
-  .hover-text {
-    position: absolute;
-    top: 0;
-    left: -100%; /* Start outside of the container */
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Poppins', sans-serif;
-    background-color: $third; /* Semi-transparent background */
-    color: black;
-    font-size: 0.8rem;
-    opacity: 0;
-    transform: translateX(0); /* Initial state */
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Smooth transition */
-    text-align: center;
-    padding: 3rem;
-    box-sizing: border-box; /* Ensures padding is included in the element's width */
-    border: none !important; /* Override any other border settings */
-  }
-  
-  .card:hover .img-container img {
-    opacity: 0;
-    transform: scale(1.2); /* Slightly enlarge the image */
-  }
-  
-  .card:hover .hover-text {
-    opacity: 1;
-    transform: translateX(100%); /* Slide in from the left */
-  }
-  
-  /* Optional: Adjust card title */
-  .card-title {
-    font-size: 1.2rem;
-    font-weight: 500;
-  }
-  
-  /* Center text and ensure consistency */
-  .card-body {
-    text-align: center;
-    align-items: center;
-    padding: 15px;
-    @include gradient-initial($color1: $primary, $color2: $secondary, $color3: $third);
-  
-  }
+  height: 90%; /* Set the desired height */
+  overflow: hidden; /* Hide overflow if the image is larger */
+  position: relative; /* Needed for absolute positioning of hover text */
+}
+
+.img-container img {
+  height: 100%; /* Ensure the image covers the container height */
+  width: 100%; /* Ensure the image covers the container width */
+  object-fit: cover; /* Cover the entire area (crops image if necessary) */
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Smooth transition for the hover effect */
+}
+
+/* Hover text styles */
+.hover-text {
+  position: absolute;
+  top: 0;
+  left: -100%; /* Start outside of the container */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  background-color: $third; /* Semi-transparent background */
+  color: black;
+  font-size: 0.8rem;
+  opacity: 0;
+  transform: translateX(0); /* Initial state */
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Smooth transition */
+  text-align: center;
+  padding: 3rem;
+  box-sizing: border-box; /* Ensures padding is included in the element's width */
+  border: none !important; /* Override any other border settings */
+}
+
+/* Hover effect for image and text */
+.card:hover .img-container img,
+.card.hover .img-container img {
+  opacity: 0;
+  transform: scale(1.2); /* Slightly enlarge the image */
+}
+
+.card:hover .hover-text,
+.card.hover .hover-text {
+  opacity: 1;
+  transform: translateX(100%); /* Slide in from the left */
+}
+
+/* Optional: Adjust card title */
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+/* Center text and ensure consistency */
+.card-body {
+  text-align: center;
+  align-items: center;
+  padding: 15px;
+  @include gradient-initial($color1: $primary, $color2: $secondary, $color3: $third);
+}
+
   
 
-  .card.hovered .img-container img {
-    opacity: 0;
-    transform: scale(1.2);
-  }
-  
-  .card.hovered .hover-text {
-    opacity: 1;
-    transform: translateX(100%);
-  }
-  
