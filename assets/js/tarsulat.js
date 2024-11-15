@@ -165,8 +165,12 @@ if ('ontouchstart' in window || navigator.maxTouchPoints) {
     document.querySelectorAll('.card').forEach(card => {
         const hoverText = card.querySelector('.hover-text');
         card.addEventListener('click', function (event) {
-            // Check if the click is inside the card and not specifically on the hover-text
-            if (card.contains(event.target)) {
+            // Ensure the click is within the card but not only on the hover-text
+            if (hoverText.contains(event.target)) {
+                // If the tap is on the hover-text, reset it
+                hoverText.style.opacity = '0';
+                card.classList.remove('touch-active');
+            } else {
                 if (hoverText.style.opacity === '1') {
                     hoverText.style.opacity = '0';
                     card.classList.remove('touch-active');

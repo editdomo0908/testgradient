@@ -8,7 +8,7 @@ body {
 }
 
 .menu {
-   background: #370926;
+   background: $primary;
    
 // gradient at mixins
     z-index: 5000;
@@ -172,7 +172,7 @@ body {
 .navbar-nav .nav-link {
     position: relative;
     padding-left: 0.5rem;
-    color: $primary !important;
+    color: #80768c !important;
 
   
 
@@ -269,7 +269,7 @@ body {
 
 .nav-link {
     text-decoration: none;
-    color: $primary!important;
+ 
     font-weight: 800;
     font-size: 1rem!important;
     text-transform: lowercase;
@@ -280,7 +280,7 @@ body {
 
     @media (max-width: 992px) {
         text-decoration: none;
-        color: $primary!important;
+     
         font-weight: 800;
         font-size: 1rem !important;
         text-transform: lowercase;

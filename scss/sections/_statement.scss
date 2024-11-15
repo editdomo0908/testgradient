@@ -84,11 +84,6 @@ animation: animate 3s linear infinite;
     background: $secondary;
     clip-path: circle(150px at 0 0 );
     overflow: hidden !important;
-
-    @media (max-width: 700px) {
-        
-        
-  }
   
 }
 

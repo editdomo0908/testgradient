@@ -382,33 +382,6 @@ observer.observe(triggerElement);
 
 
 
-////////////////////////////////////////
-///FILTERING on landing page
-
-// Function to filter items by data-id
-function filterById(id) {
-    const items = document.querySelectorAll('.choice');
-    
-    items.forEach(item => {
-      // Check if item data-id matches the selected id
-      if (item.getAttribute('data-id') === id.toString()) {
-        item.style.display = 'block';  // Show matching items
-      } else {
-        item.style.display = 'none';  // Hide non-matching items
-      }
-    });
-  }
-  
-  // Function to show all items
-  function showAll() {
-    const items = document.querySelectorAll('.choice');
-    
-    items.forEach(item => {
-      item.style.display = 'block';  // Show all items
-    });
-  }
-  
-
 
 ////////////////////////////////POP_UP from landing //////////////////////////////////
 
@@ -439,27 +412,7 @@ window.addEventListener('click', (event) => {
 
 
 
-//////////////////POP UP FILTER on CALENDAR //////////////////
 
-// Function to filter cards by data-id
-function filterById2(id) {
-    const cards = document.querySelectorAll('.calendar-card');
-    cards.forEach(card => {
-      if (card.getAttribute('data-id') === String(id)) {
-        card.style.display = 'block'; // Show the card if it matches the filter
-      } else {
-        card.style.display = 'none'; // Hide the card if it doesn't match
-      }
-    });
-  }
-  
-  // Function to show all cards
-  function showAll1() {
-    const cards = document.querySelectorAll('.calendar-card');
-    cards.forEach(card => {
-      card.style.display = 'block'; // Show all cards
-    });
-  }
   
   ///////Calendar opens popup
 
@@ -485,3 +438,88 @@ popup1.addEventListener('click', function(e) {
     }
 });
 }
+
+
+  ///FILTERING on landing page
+
+ 
+/////// Calendar opens popup ///////
+
+// Select the open and close buttons
+const openPopupButton1 = document.getElementById('openPopupButton');
+const closePopupButton1 = document.querySelector('.close-popup-button');
+const popup1 = document.querySelector('.popup');
+
+// Function to open the pop-up
+openPopupButton1.addEventListener('click', function() {
+    console.log("Pop-up opening..."); // Debugging
+    popup1.style.display = 'flex'; // Show the pop-up
+    filterById(1); // Trigger the filter when the pop-up opens (replace 1 with any id you want to filter by)
+});
+
+// Function to close the pop-up
+closePopupButton1.addEventListener('click', function() {
+    popup1.style.display = 'none'; // Hide the pop-up
+});
+
+// Optional: Close pop-up when clicking outside of it
+popup1.addEventListener('click', function(e) {
+    if (e.target === popup1) {
+        popup1.style.display = 'none'; // Close the pop-up if clicked outside
+    }
+});
+
+//////// Filter Functions ////////
+
+// Function to filter cards by data-id
+function filterById2(id) {
+    const popup = document.querySelector('.popup');
+    const cards = document.querySelectorAll('.popup .calendar-card'); // Ensure filtering is only on cards inside the pop-up
+
+    if (popup.style.display === 'none') {
+        return; // Prevent filtering if the popup is hidden
+    }
+
+    cards.forEach(card => {
+        if (card.getAttribute('data-id') === String(id)) {
+            card.style.display = 'block'; // Show the card if it matches the filter
+        } else {
+            card.style.display = 'none'; // Hide the card if it doesn't match
+        }
+    });
+}
+
+
+function showAll1() {
+    const cards = document.querySelectorAll('.calendar-card');
+    cards.forEach(card => {
+      card.style.display = 'block'; // Show all cards
+    });
+  }
+
+
+
+////////////////////////////////////////
+///FILTERING on landing page
+
+function filterById(id) {
+    const cards = document.querySelectorAll('.choice');
+    cards.forEach(card => {
+      if (card.getAttribute('data-id') === String(id)) {
+        card.style.display = 'block'; // Show the card if it matches the filter
+      } else {
+        card.style.display = 'none'; // Hide the card if it doesn't match
+      }
+    });
+  }
+  
+  // Function to show all cards
+  function showAll() {
+    const cards = document.querySelectorAll('.choice');
+    cards.forEach(card => {
+      card.style.display = 'block'; // Show all cards
+    });
+  }
+
+
+
