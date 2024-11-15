@@ -277,8 +277,9 @@ function handleScrollAnimation() {
     heading1.classList.add('visible');
     groupImage.classList.add('visible');
     heading2.classList.remove('visible');
-    groupImage.classList.remove('scaled');
     groupImage.classList.add('normal');
+    groupImage.classList.remove('scaled');
+  
   } else if (scrollProgress >= 1 && scrollProgress < 1.1) {
     // Fade in heading2, start scaling image and reduce opacity
     heading1.classList.remove('visible');
