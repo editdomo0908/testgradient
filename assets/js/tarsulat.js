@@ -165,14 +165,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const cards = document.querySelectorAll('.card');
   
     cards.forEach(card => {
+      let isHovered = false;
+  
       card.addEventListener('click', () => {
-        // Check if the card already has the hover class
-        if (card.classList.contains('hovered')) {
-          // Remove the class to reset the state
-          card.classList.remove('hovered');
-        } else {
-          // Add the class to apply the hover effect
+        // Toggle hover effect on tap
+        isHovered = !isHovered;
+        if (isHovered) {
           card.classList.add('hovered');
+        } else {
+          card.classList.remove('hovered');
         }
       });
     });
