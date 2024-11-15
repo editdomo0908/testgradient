@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const subtitle = document.querySelector('.logo-text .subtitle');
     const locationText = document.querySelector('.logo-text .location');
 
-    const colors = ['#878ca9','#A09ABC','#DCE0D9','#B6A6CA','#b88ab8','#A09ABC' ];
+    const colors = ['#878ca9','#A09ABC','#DCE0D9','#B6A6CA','#A09ABC' ];
     const colorCount = colors.length;
 
     let maxSize, minSize, initialSize;

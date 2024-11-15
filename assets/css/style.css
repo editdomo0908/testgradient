@@ -12014,7 +12014,7 @@ body {
 
 /* Container and Button Styling */
 .btn-language {
-  color: #ffffff !important;
+  color: #80768c !important;
   margin-left: 2rem;
 }
 @media (max-width: 992px) {
@@ -12563,7 +12563,7 @@ option+4 dollar*/
 #heading2 {
   position: relative;
   font-size: 2rem;
-  color: #67114f;
+  color: #954881;
   transform: translateX(50%) translateY(-50%); /* Start off-screen on the right */
   transition: transform 1s ease-out 1s, opacity 1s ease-out 1s;
   z-index: 2; /* Ensure it stays above the image */
@@ -13110,6 +13110,10 @@ option+4 dollar*/
     margin-top: 10px; /* Add some spacing above the button */
   }
 }
+.filter-buttons {
+  background-color: #A09ABC !important;
+}
+
 /* https://www.youtube.com/watch?v=iJKCj8uAHz8
 option+shift+A to change for comment, 
 option+7 for brackets,
@@ -13148,7 +13152,7 @@ option+4 dollar*/
   height: 50px;
   border-radius: 50%; /* Makes it circular */
   background-color: #f0f0f0; /* Light gray background */
-  color: white;
+  color: rgb(10, 10, 10);
   text-decoration: none;
   margin: 1rem; /* Adds space between icons */
   transition: background-color 0.3s;
@@ -13156,19 +13160,19 @@ option+4 dollar*/
 }
 
 .icon.facebook {
-  background: radial-gradient(circle at 30% 30%, #ebe7e3, #b09ce4, #ad8fb9, #c7a5d4, #4c0530);
+  background: linear-gradient(to right, #B6A6CA, #DCE0D9, #878ca9);
 }
 
 .icon.facebook:hover {
-  background: linear-gradient(to right, #B6A6CA, #DCE0D9, #878ca9);
-}
-
-.icon.instagram {
   background: radial-gradient(circle at 30% 30%, #ebe7e3, #b09ce4, #ad8fb9, #c7a5d4, #4c0530);
 }
 
-.icon.instagram:hover {
+.icon.instagram {
   background: linear-gradient(to right, #B6A6CA, #DCE0D9, #878ca9);
+}
+
+.icon.instagram:hover {
+  background: radial-gradient(circle at 30% 30%, #ebe7e3, #b09ce4, #ad8fb9, #c7a5d4, #4c0530);
 }
 
 .icon i {

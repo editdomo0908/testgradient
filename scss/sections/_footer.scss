@@ -41,7 +41,7 @@
     height: 50px;
     border-radius: 50%; /* Makes it circular */
     background-color: #f0f0f0; /* Light gray background */
-    color: white;
+    color: rgb(10, 10, 10);
     text-decoration: none;
     margin: 1rem; /* Adds space between icons */
     transition: background-color 0.3s;
@@ -49,17 +49,19 @@
   }
   
   .icon.facebook {
-    background: radial-gradient(circle at 30% 30%, #ebe7e3, #b09ce4, #ad8fb9, #c7a5d4, #4c0530);
+    @include gradient-initial;
   }
   
   .icon.facebook:hover {
-    @include gradient-initial /* Darker Instagram gradient */
+    background: radial-gradient(circle at 30% 30%, #ebe7e3, #b09ce4, #ad8fb9, #c7a5d4, #4c0530) /* Darker Instagram gradient */
   }
   
-  .icon.instagram { background: radial-gradient(circle at 30% 30%, #ebe7e3, #b09ce4, #ad8fb9, #c7a5d4, #4c0530);  }
+  .icon.instagram { 
+    @include gradient-initial;
+}
   
   .icon.instagram:hover {
-    @include gradient-initial
+    background: radial-gradient(circle at 30% 30%, #ebe7e3, #b09ce4, #ad8fb9, #c7a5d4, #4c0530); 
   }
   
   .icon i {
