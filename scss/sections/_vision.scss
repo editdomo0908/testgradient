@@ -86,8 +86,9 @@
     text-align: start;
 
     @media (max-width: 700px) {
-       transform: translateY(30%);
+       transform: translateY(10%);
        font-size: 1rem;
+       padding: 2rem;
       
     }
    
@@ -111,7 +112,8 @@
     font-size: 1.2rem;
    
     color: #ab6cb6;
-    transform: translateY(150%); /* Start off-screen on the right */
+    transform: translateY(200%); /* Start off-screen on the right */
+    padding: 2rem;
     transition: transform 1s ease-out 1s, opacity 1s ease-out 1s;
     z-index: 2; /* Ensure it stays above the image */
   

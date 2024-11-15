@@ -160,23 +160,24 @@ popup1.addEventListener('click', function(e) {
 
 
 //////////////mobile card hover
+// Check if the device supports touch
 if ('ontouchstart' in window || navigator.maxTouchPoints) {
     document.querySelectorAll('.card').forEach(card => {
-        card.addEventListener('click', function (event) {
-            // Check if the tap is on the hover-text area
-            const hoverText = card.querySelector('.hover-text');
-            if (hoverText && hoverText.contains(event.target)) {
-                // Reset the hover effect when tapping inside the hover-text area
+        const hoverText = card.querySelector('.hover-text');
+        card.addEventListener('click', function () {
+            // Toggle the opacity of the hover-text when the card is tapped
+            if (hoverText.style.opacity === '1') {
+                hoverText.style.opacity = '0';
                 card.classList.remove('touch-active');
             } else {
-                // Toggle the 'touch-active' class for touch screens to show/hide hover effect
-                if (card.classList.contains('touch-active')) {
-                    card.classList.remove('touch-active');
-                } else {
-                    // Remove 'touch-active' class from other cards if needed
-                    document.querySelectorAll('.card').forEach(c => c.classList.remove('touch-active'));
-                    card.classList.add('touch-active');
-                }
+                // Remove 'touch-active' class and reset opacity for other cards
+                document.querySelectorAll('.card').forEach(c => {
+                    c.classList.remove('touch-active');
+                    const otherHoverText = c.querySelector('.hover-text');
+                    if (otherHoverText) otherHoverText.style.opacity = '0';
+                });
+                hoverText.style.opacity = '1';
+                card.classList.add('touch-active');
             }
         });
     });
