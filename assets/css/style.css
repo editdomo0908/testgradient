@@ -11985,6 +11985,7 @@ body {
 }
 
 .display-3 {
+  font-family: "Jost", sans-serif;
   color: #ffffff;
 }
 
@@ -12692,7 +12693,7 @@ option+4 dollar*/
 }
 
 .img-container {
-  height: 80%; /* Set the desired height */
+  height: 90%; /* Set the desired height */
   overflow: hidden; /* Hide overflow if the image is larger */
   position: relative; /* Needed for absolute positioning of hover text */
 }
@@ -12713,15 +12714,15 @@ option+4 dollar*/
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: "Poppins", sans-serif;
   background-color: #A09ABC; /* Semi-transparent background */
   color: black;
-  font-size: 1.5rem;
+  font-size: 0.8rem;
   opacity: 0;
   transform: translateX(0); /* Initial state */
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Smooth transition */
   text-align: center;
-  padding: 20px;
+  padding: 3rem;
   box-sizing: border-box; /* Ensures padding is included in the element's width */
   border: none !important; /* Override any other border settings */
 }
@@ -12738,15 +12739,26 @@ option+4 dollar*/
 
 /* Optional: Adjust card title */
 .card-title {
-  font-size: 1.25rem;
-  font-weight: bold;
+  font-size: 1.2rem;
+  font-weight: 500;
 }
 
 /* Center text and ensure consistency */
 .card-body {
   text-align: center;
+  align-items: center;
   padding: 15px;
   background: linear-gradient(to right, #ffffff, #B6A6CA, #A09ABC);
+}
+
+.card.hovered .img-container img {
+  opacity: 0;
+  transform: scale(1.2);
+}
+
+.card.hovered .hover-text {
+  opacity: 1;
+  transform: translateX(100%);
 }
 
 /* https://www.youtube.com/watch?v=iJKCj8uAHz8

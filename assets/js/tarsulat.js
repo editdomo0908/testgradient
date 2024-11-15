@@ -155,3 +155,26 @@ popup1.addEventListener('click', function(e) {
         popup.style.display = 'none';
     }
 });
+
+
+
+
+//////////////mobile card hiver
+
+document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.card');
+  
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        // Check if the card already has the hover class
+        if (card.classList.contains('hovered')) {
+          // Remove the class to reset the state
+          card.classList.remove('hovered');
+        } else {
+          // Add the class to apply the hover effect
+          card.classList.add('hovered');
+        }
+      });
+    });
+  });
+  
