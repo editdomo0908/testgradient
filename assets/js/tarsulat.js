@@ -160,23 +160,20 @@ popup1.addEventListener('click', function(e) {
 
 
 //////////////mobile card hover
-document.addEventListener('DOMContentLoaded', () => {
-    // Check if the device supports touch
-    if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
-      const cards = document.querySelectorAll('.card');
-  
-      cards.forEach(card => {
-        card.addEventListener('click', () => {
-          // Toggle the 'hover' class on click
-          if (card.classList.contains('hover')) {
-            card.classList.remove('hover'); // Reset the state on second tap
-          } else {
-            // Optionally remove 'hover' class from other cards
-            cards.forEach(otherCard => otherCard.classList.remove('hover'));
-            card.classList.add('hover'); // Apply the hover effect
-          }
-        });
+// Check if the device supports touch
+// Check if the device supports touch
+if ('ontouchstart' in window || navigator.maxTouchPoints) {
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('click', function () {
+        // Toggle the 'touch-active' class for touch screens to show/hide hover effect
+        if (card.classList.contains('touch-active')) {
+          card.classList.remove('touch-active');
+        } else {
+          // Remove 'touch-active' class from other cards if needed
+          document.querySelectorAll('.card').forEach(c => c.classList.remove('touch-active'));
+          card.classList.add('touch-active');
+        }
       });
-    }
-  });
+    });
+  }
   
