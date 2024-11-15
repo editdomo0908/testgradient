@@ -164,20 +164,22 @@ popup1.addEventListener('click', function(e) {
 if ('ontouchstart' in window || navigator.maxTouchPoints) {
     document.querySelectorAll('.card').forEach(card => {
         const hoverText = card.querySelector('.hover-text');
-        card.addEventListener('click', function () {
-            // Toggle the opacity of the hover-text when the card is tapped
-            if (hoverText.style.opacity === '1') {
-                hoverText.style.opacity = '0';
-                card.classList.remove('touch-active');
-            } else {
-                // Remove 'touch-active' class and reset opacity for other cards
-                document.querySelectorAll('.card').forEach(c => {
-                    c.classList.remove('touch-active');
-                    const otherHoverText = c.querySelector('.hover-text');
-                    if (otherHoverText) otherHoverText.style.opacity = '0';
-                });
-                hoverText.style.opacity = '1';
-                card.classList.add('touch-active');
+        card.addEventListener('click', function (event) {
+            // Check if the click is inside the card and not specifically on the hover-text
+            if (card.contains(event.target)) {
+                if (hoverText.style.opacity === '1') {
+                    hoverText.style.opacity = '0';
+                    card.classList.remove('touch-active');
+                } else {
+                    // Remove 'touch-active' class and reset opacity for other cards
+                    document.querySelectorAll('.card').forEach(c => {
+                        c.classList.remove('touch-active');
+                        const otherHoverText = c.querySelector('.hover-text');
+                        if (otherHoverText) otherHoverText.style.opacity = '0';
+                    });
+                    hoverText.style.opacity = '1';
+                    card.classList.add('touch-active');
+                }
             }
         });
     });

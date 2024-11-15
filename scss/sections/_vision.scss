@@ -86,9 +86,10 @@
     text-align: start;
 
     @media (max-width: 700px) {
-       transform: translateY(10%);
-       font-size: 1rem;
-       padding: 2rem;
+       transform: translateY(0%);
+       font-size: 1.1rem;
+       padding-left: 1.7rem;
+       margin-top: 10%;
       
     }
    

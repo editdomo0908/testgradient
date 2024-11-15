@@ -11985,6 +11985,7 @@ body {
 }
 
 .display-3 {
+  font-family: "Jost", sans-serif;
   color: #ffffff;
 }
 
@@ -12553,9 +12554,10 @@ option+4 dollar*/
 }
 @media (max-width: 700px) {
   #heading1 {
-    transform: translateY(10%);
-    font-size: 1rem;
-    padding: 2rem;
+    transform: translateY(0%);
+    font-size: 1.1rem;
+    padding-left: 1.7rem;
+    margin-top: 10%;
   }
 }
 
