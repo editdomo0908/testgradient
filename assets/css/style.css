@@ -12751,7 +12751,7 @@ body {
   color: #ffffff;
   line-height: 2rem;
   font-weight: 200;
-  text-align: justify;
+  text-align: start;
   font-size: 1rem;
 }
 @media (max-width: 1400px) {
@@ -12760,7 +12760,6 @@ body {
     padding-left: 4rem !important;
     line-height: 2rem;
     font-weight: 200;
-    text-align: justify;
     font-size: 1rem;
   }
 }
@@ -12770,7 +12769,6 @@ body {
     padding-left: 6rem !important;
     line-height: 2rem;
     font-weight: 200;
-    text-align: justify;
     font-size: 1rem;
   }
 }
@@ -12780,7 +12778,6 @@ body {
     padding-left: 3rem !important;
     line-height: 1.2rem;
     font-weight: 200;
-    text-align: justify;
     font-size: 1rem;
   }
 }
