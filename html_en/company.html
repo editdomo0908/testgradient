@@ -1,0 +1,567 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Társulat</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/fontawesome.css">
+    <link rel="stylesheet" href="../assets/vendors/css/glightbox.min.css">
+    
+
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500;600;700;800;900&family=Nunito+Sans:opsz,wght@6..12,200;6..12,400;6..12,500;6..12,600;6..12,700;6..12,800;6..12,900&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    
+
+  </head>
+<body>
+
+
+
+
+  <div class="popup" style="display: none;">
+    <div class="popup-content">
+  
+      <span class="close-popup-button">&times;</span> <!-- Close Button -->
+      
+      <div class="row text-center">
+        <div class="col-md-12 filter-buttons">
+          
+          <button onclick="filterById2(3)" class="btn-calendar btn-portfolio first-bt-hover color-1" type="button">Táncelőadás</button>
+          <button onclick="filterById2(4)" class="btn-calendar btn-portfolio first-bt-hover color-1" type="button">Színházi produkció</button>
+          <button onclick="showAll1()" class="btn-calendar btn-portfolio first-bt-hover color-1" type="button">Összes</button>
+        </div>
+        </div>
+
+      <div class="popup-inner">
+        <div class="calendar-card-container">
+
+          <div class="calendar-card" data-id="3">
+            <div class="card-content">
+              <div class="card-header">
+                <div class="calendar-box">
+                  <div class="day">27</div>
+                  <div class="month">Sep
+                    <div class="date">Hétfő</div>
+                  </div>
+                </div>
+                <div class="card-text-aside">
+                  <div class="day-name">Scaevola</div>
+                  <div class="time">19:00</div>
+                  <div class="location">Latinovits</div>
+                </div>
+              </div>
+              <div class="button-container">
+                <a href="#" class="btn btn-primary first-bt-hover color-1 btn-pop">
+                  <i class="fas fa-cart-plus"></i>Információ és jegyek
+                </a>
+              </div>
+            </div>
+          </div> 
+
+          <div class="calendar-card" data-id="4">
+            <div class="card-content">
+              <div class="card-header">
+                <div class="calendar-box">
+                  <div class="day">27</div>
+                  <div class="month">Sep
+                    <div class="date">Hétfő</div>
+                  </div>
+                </div>
+                <div class="card-text-aside">
+                  <div class="day-name">Scaevola</div>
+                  <div class="time">19:00</div>
+                  <div class="location">Latinovits</div>
+                </div>
+              </div>
+              <div class="button-container">
+                <a href="#" class="btn btn-primary first-bt-hover color-1 btn-pop">
+                  <i class="fas fa-cart-plus"></i>Információ és jegyek
+                </a>
+              </div>
+            </div>
+          </div> 
+
+          <div class="calendar-card" data-id="4">
+            <div class="card-content">
+              <div class="card-header">
+                <div class="calendar-box">
+                  <div class="day">27</div>
+                  <div class="month">Sep
+                    <div class="date">Hétfő</div>
+                  </div>
+                </div>
+                <div class="card-text-aside">
+                  <div class="day-name">Scaevola</div>
+                  <div class="time">19:00</div>
+                  <div class="location">Latinovits</div>
+                </div>
+              </div>
+              <div class="button-container">
+                <a href="#" class="btn btn-primary first-bt-hover color-1 btn-pop">
+                  <i class="fas fa-cart-plus"></i>Információ és jegyek
+                </a>
+              </div>
+            </div>
+          </div> 
+
+
+
+        </div>
+      </div>
+
+          <!-- Repeat calendar-card as needed -->
+        </div>
+      
+      </div>
+    </div>
+  </div>
+  
+
+
+
+
+
+
+
+
+
+<!-- Navbar -->
+
+<nav class="navbar navbar-light menu fix-top sticky-top navbar-expand-lg shadow">
+  <div class="container">
+    <!-- Brand -->
+    <a class="navbar-brand" href="../index.html">
+      
+        <div class="logo-circle"></div>
+    </a>
+    
+    
+
+  <!-- Toggler button for small screens -->
+  <div class="navbutton-container">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      onclick="this.classList.toggle('active')"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" class="hamburger-icon">
+        <g stroke-width="6.5" stroke-linecap="round">
+          <path d="M72 82.286h28.75" fill="#009100" fill-rule="evenodd" stroke="#502651" />
+          <path d="M100.75 103.714l72.482-.143c.043 39.398-32.284 71.434-72.16 71.434-39.878 0-72.204-32.036-72.204-71.554" fill="none" stroke="#502651" />
+          <path d="M72 125.143h28.75" fill="#009100" fill-rule="evenodd" stroke="#502651" />
+          <path d="M100.75 103.714l-71.908-.143c.026-39.638 32.352-71.674 72.23-71.674 39.876 0 72.203 32.036 72.203 71.554" fill="none" stroke="#502651" />
+          <path d="M100.75 82.286h28.75" fill="#009100" fill-rule="evenodd" stroke="#502651" />
+          <path d="M100.75 125.143h28.75" fill="#009100" fill-rule="evenodd" stroke="#502651" />
+        </g>
+      </svg>
+    </button>
+  </div>
+  
+  
+  
+
+    <!-- Navbar links and form -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a href="../index.html" class="nav-link">Bemutatkozás</a>
+        </li>
+        <li class="nav-item">
+          <a href="../html_hu/tarsulat.html" class="nav-link">Társulat</a>
+        </li>
+        <li class="nav-item">
+          <a href="../index.html#productions" class="nav-link">Produkciók</a>
+        </li>
+        <li class="nav-item">
+          <a id="openPopupLink" href="#" class="nav-link">Naptár</a>
+        </li>
+      </ul>
+
+
+      <!-- Language Switch Button -->
+      <form class="form-inline">
+        <button class="btn btn-sm btn-language" type="button">EN</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+
+<!-- Company ---------------------------------------->
+
+
+
+   
+    <section>
+    
+      <div class="row">
+        <div class="image-container-group">
+            <img id="groupImage2" src="../images/walkingall.jpg" alt="group image">
+            <div class="title-container">
+              <h1 class="company-name text-center gold-title">Társulat</h1>
+          </div>
+        </div>
+       
+    </div>
+
+<!-- Company ----------------------------------
+
+    <div class="dancers-title">
+      <h1 class="dancers fw-bold text-center gold-title">Táncművészek</h1>
+  </div>
+  ------>
+
+  <div class="diversity">
+    <p class="diversity-text">
+  Büszkék vagyunk sokszínű táncművész csapatunkra.
+    </p>
+  </div>
+ 
+
+      <div id="company">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col swim-in">
+            <div class="card h-100">
+              <div class="img-container">
+                <img loading="lazy" src="../images/martina1.jpg" class="card-img-top" alt="Martina Balzamo" width="300" height="400">
+                <div class="hover-text">
+                  <p>2001 februárjában született Olaszországban.
+
+                    A Zürich University of the Arts hallgatójaként bejárta Svájcot, ahol Annie Hanauer koreográfiáiban szereplve turnézott. Később a Plauen Zwickeu Színház gyakornoka volt.
+                    
+                    2023-ban, tanulmányai elvégzése után, csatlakozott a Csokonai Nemzeti Színház Debrecen társulatához</p>
+                </div>
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title">Martina Balzamo</h5>
+                <p class="card-text"></p>
+              </div>
+            </div>
+          </div>
+          <div class="col swim-in">
+            <div class="card h-100">
+              <div class="img-container">
+                <img loading="lazy" src="../images/chiara.webp" class="card-img-top" alt="Chiara Cascino" width="300" height="400">
+                <div class="hover-text">
+                  <p>
+                    
+                    7 éves korában, Palmeroban kezdett táncolni. 2015 és 2017 között a Római Balett tanulója volt, ahol Paola Jorio vezetése alatt szerzett balettáncos végzettséget. 2019 és 2022 között a DAF (Dance Arts Faculty) három éves programjában kortárs táncot tanult. Ezután továbbképzésen is részt vett. 2024-ben kortárs tánctanár végzettséget is szerzett.
+                    
+                    Eddigi karrierje során szerepelt már koreográfus-asszisztensként a St. Gallen Táncegyüttesnél, Mauro Astolfi mellett (2022), volt a Spellbound Kortárs Balett gyakornoka (2022), majd szintén koreográfus-asszisztensként tűnt fel Yoshito Sakuraba, Anne Jung és Luis Stiens mellett (2023-2024). 2023-ban a kínai "Mongrove Festival" keretein belül lépett fel vendégtáncosként.
+                    
+                    2024 szeptemberétől a Csokonai Nemzeti Színház Debrecen tánctagozatának tagja.</p>
+                </div>
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title">Chiara Cascino</h5>
+                <p class="card-text"></p>
+          
+              </div>
+            </div>
+          </div>
+          <div class="col swim-in">
+            <div class="card h-100">
+              <div class="img-container">
+                <img loading="lazy" src="../images/frenl.webp" class="card-img-top" alt="Fernando Gabriel Luis" width="300" height="400">
+                <div class="hover-text">
+                  <p> Profi táncművészként a Tenerifei Balettnél kezdte pályafutását, ahol több főszerepben is látható volt. Ezután Madridban a María de Ávila Superior Tánckonzervatóriumban olyan koreográfusokkal dolgozott, mint Nacho Duato és Tony Fabre. 2016-ban a Dantzaz Company-hez szerződött, itt Itzik Galili, Lukas Timulak, Jone San Martin, Christine Hassid és Paolo Mohovich koreográfiáiban lépett fel. Két évvel később érkezett a Székesfehérvári Balett Színházhoz. Itt újból számos alkalommal láthatta a közönség főszerepekben, amelyek közül sokat kifejezett stílusához koreografáltak. Lehetősége volt Alexander Ekman és Jiri Kylian koreográfiáiban is táncolni, továbbá a táncművészet mellett balettmesterként és koreográfus-asszisztensként is tevékenykedni kezdett.
+
+                    2023-ban csatlakozott a Csokonai Nemzeti Színház Debrecen tánctagozatához.</p>
+                </div>
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title">Fernando Gabriel Luis</h5>
+                <p class="card-text"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col swim-in">
+            <div class="card h-100">
+              <div class="img-container">
+                <img loading="lazy" src="../images/rut.jpg" class="card-img-top" alt="Rut Nache Lopez" width="300" height="400">
+                <div class="hover-text">
+                  <p>
+
+                    A Trinity Laban Zene- és Tánckonzervatóriumban kortárs tánc szakon szerzett diplomát 2022-ben.
+                    
+                    2021-ben Alison Curtis-Jones úraértelmezett Lábán Rudolf koreográfiájában szerepelt, 
+                    2024-ben szólótáncosként léphetett fel Astor Piazzolla-Horacio Ferrer: María de Buenos Aires című tangó-operájában. 
+                    Kiváló alakításáért a színház Nívódíjban tüntette ki.
+                    2023-2024 között a Csokonai Nemzeti Színház Debrecen tánctagozatának gyakornoka volt.
+                    
+                    2024-ben állandó tagként csatlakozott a Csokonai Nemzeti Színház tánctagozatához.
+                    
+                     
+                    
+                </p>
+                </div>
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title">Rut Nache Lopez</h5>
+                <p class="card-text"></p>
+              </div>
+            </div>
+          </div>
+          <div class="col swim-in">
+            <div class="card h-100">
+              <div class="img-container">
+                <img loading="lazy" src="../images/fernando1.jpg" class="card-img-top" alt="Fernando Perez Hernandez" width="300" height="400">
+                <div class="hover-text">
+                  <p>
+
+                    2022-ben és 2023-ban is volt lehetősége, hogy a Velencei Biennálé közönsége előtt lépjen fel. Itt 2022-ben Wayne McGregor koreográfussal dolgozva Domoszlai Edit, Merce Cunningham and Saburo Teshigawara koreográfiáit adta elő. 2023-ban William Forsythe, Xie Xin, Scott Elstermann és Simone Forti műveit adta elő.
+                    
+                    Mexikóban együtt dolgozott César Brothermann-nal, 2022 óta pedig Yume Takojima-val is együttműködik. Mi senti? I am here és How can I stretch my heart című előadásaival beutazta Mexikót, Olaszországot és Spanyolországot.
+                    
+                    2024 márciusa óta a Csokonai Nemzeti Színház tánctagozatának tagja.</p>
+                </div>
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title">Fernando Perez Hernandez</h5>
+                <p class="card-text"></p>
+              </div>
+            </div>
+          </div>
+          <div class="col swim-in">
+            <div class="card h-100">
+              <div class="img-container">
+                <img loading="lazy" src="../images/kristof.jpg" class="card-img-top" alt="Kristóf Juhász" width="300" height="400">
+                <div class="hover-text">
+                  <p>A balmazújvárosi Himes Néptáncegyüttesben kezdett ttáncolni, majd a debreceni Főnix Néptáncegyüttes tagja lett. A modern- és kortárstánccal a Modern Tánc-Játék Stúdióban ismerkedett meg.
+
+                    A Debreceni Ady Endre Gimnáziumban, dráma szakon végezte középiskolai tanulmányait. 2024-ben a Magyar Táncművészeti Egyetemen diplomát szerzett moderntánc szakirányon.  Diákévei alatt többször táncolt, illetve játszott a Csokonai Színházban.
+                    
+                    2024. augusztusától a Csokonai Nemzeti Színház társulatának tagja.</p>
+                </div>
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title">Juhász Kristóf</h5>
+                <p class="card-text"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col swim-in">
+            <div class="card h-100">
+              <div class="img-container">
+                <img loading="lazy" src="../images/elise1.jpg" class="card-img-top" alt="Elise Paris Turco" width="300" height="400">
+                <div class="hover-text">
+                  <p>2014-ben, az Allegria Ballet Studionál kezdett táncolni, majd később a Rudra Bejart Ballet Lausanne tagja, a Sydney Dance Company "pre-professional program" résztvevője és a Kibbutz Contemporary Dance Company Masa programjának táncosa volt.
+
+                    Tanulmányai befejezése után megkezdte karrierjét profi táncművészként: Először a Kibbutz Contemporary Dance Company másodegyüttesében, majd 2023-tól a Csokonai Nemzeti Színház Debrecen tánctagozatának állandó tagjaként.
+                    
+                    2024-ben a Sydney Operaház Robert & Elizabeth Albert junior klasszikus balett pályázatán második helyet ért el koreográfiája, amelyet a Sydney Operaházban elő is adtak.</p>
+                </div>
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title">Elise Paris Turco</h5>
+                <p class="card-text"></p>
+              </div>
+            </div>
+          </div>
+          <div class="col swim-in">
+            <div class="card h-100">
+              <div class="img-container">
+                <img loading="lazy" src="../images/matt.jpg" class="card-img-top" alt="Matthew Joseph Retcho" width="300" height="400">
+                <div class="hover-text">
+                  <p>2019 és 2023 között a Joffrey Ballet School gyakornok táncosa volt. 2022-ben a montreali Springboard Danse tagjaként együtt dolgozhatott Kyle Abraham és Annamari Keskinen nemzetközileg elismert koreográfusokkal.
+
+                    Tanulmányai befejeztével először az izraeli Fresco Dance Company tagja lett, majd 2024 telén csatlakozott a Csokonai Nemzeti Színház Debrecen tánctagozatához.</p>
+                </div>
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title">Matthew Joseph Retcho</h5>
+                <p class="card-text"></p>
+              </div>
+            </div>
+          </div>
+          <div class="col swim-in">
+            <div class="card h-100">
+              <div class="img-container">
+                <img loading="lazy" src="../images/valerio1.jpg" class="card-img-top" alt="Valerio" width="300" height="400">
+                <div class="hover-text">
+                  <p>2014-ben felvételt nyert a milánói La Scala Ballet Színházi Akadémiára,majd 2016-tól a londoni English National Ballet School növendéke volt.
+                    2019-ben a londoni Trinity College-ben szerzett diplomát Professional Dance szakon. 
+                    Itt töltött évei alatt az English National Ballet számos előadásában szerepelt, 
+                    többek között Christopher Wheeldon, Antonio Castilla és Akram Khan koreográfiáiban. 
+                    2019-től a Székesfehérvári Balett Színház táncosaként hívta fel magára a hazai közönség figyelmét. 
+                    Itt táncolt Alexander Ekman, Lukas Timulak, Christian Ole Tangen, Egerházi Attila és Jiri Kylian koreográfiáiban. 
+                    Ebben az időszakban megtette első lépéseit sajáit koreográfiáinak megalkotása felé is, mára több fesztiválon is feltűnt alkotóként.
+
+                    2023-ban csatlakozott a Csokonai Nemzeti Színház Debrecen tánctagozatához.</p>
+                </div>
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title">Valerio Zaffalon</h5>
+                <p class="card-text"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+
+   
+
+
+    <div class="management">
+      <h3 class="management-title">
+        Művészeti Menedzsment
+      </h3>
+    
+      <div class="row mt-4">
+        <div class="col-lg-3 col-12 manimg-container">
+          <img src="../images/IMG_1151 (1).jpg" alt="Image 1" class="man-img">
+        </div>
+        <div class="col-lg-9 col-12 man-text">
+          <h2 class="man-name">Domoszlai Edit</h2>
+          <h3 class="man-position">Tánctagozat vezető</h3>
+          <p> Táncművészként 2009-ben, a Pécsi Balettnél kezdte meg pályáját, ahol olyan koreográfusokkal dolgozott, 
+            mint Vincze Balázs, Zachár Lóránd, Leo Mujic és Cameron McMillan. <br>
+            2014-ben csatlakozott a londoni Rambert Dance Company társulatához, 
+            ahol többek között Wayne McGregor, Sharon Eyal, Kim Brandstrup koreográfiáiban szerepelt. <br>
+            2022-től szabadúszóként tevékenykedett, 
+            ebben az időszakban együtt dolgozott az izraeli L-E-V társulattal és az Opera Bonn táncművészeként is látható volt. <br>
+    
+            Koreográfusként szerepelt az 59. Velencei Biennálén, készített darabot a római Dance Arts Faculty programban, és a Magyar Táncművészeti Egyetemen is alkotott.
+            <br>
+            
+            2018 és 2022 között A Dancers Career Development szervezet nagykövete volt.
+
+            <br>
+            
+            Művészeti tevékenysége mellett 2012-ben a Pécsi Tudományegyetemen andragógiát hallgatott, majd ugyanitt mesterképzésen folytatta tanulmányait és 
+            MA emberi erőforrás tanácsadó képzettséget szerzett. 
+            <br>
+            Később Londonban 2017-ben CIPD Level 3 diplomát szerzett 'Learning and Development' területen,
+             majd 2023-ban a University College of London 'MA Education and Technology' képzését is elvégezte.
+<br>
+           
+            
+            2024-ben csatlakozott a Csokonai Nemzeti Színház Debrecen társulatához, tánctagozat-vezetőként.</p>
+        </div>
+      </div>
+    
+      <div class="row mt-4">
+        <div class="col-lg-3 col-12 manimg-container">
+          <img src="../images/frenl.webp" alt="Image 2" class="man-img">
+        </div>
+        <div class="col-lg-9 col-12 man-text">
+          <h2 class="man-name">Fernando Gabriel Luis</h2>
+          <h3 class="man-position">Próbavezető</h3>
+          <p>A tenerifei Santa Úrsulában született és nőtt fel.
+
+            A helyi El Sauzal Balettiskolában kezdett táncolni, majd 2010-ben Rosalina Ripoll és Miguel Navarro felügyelete alatt lépett komolyabb szintre. Profi táncművészként a Tenerifei Balettnél debütált, ahol több főszerepben is látható volt. Ezután Madridban folytatta pályafutását, ahol a María de Ávila Superior Tánckonzervatóriumban bővíthette tudását és dolgozhatott olyan koreográfusokkal, mint Nacho Duato és Tony Fabre. 2016-ban a Dantzaz Company-hez szerződött, itt Itzik Galili, Lukas Timulak, Jone San Martin, Christine Hassid és Paolo Mohovich koreográfiáiban lépett fel. Két évvel később érkezett Magyarországra, a Székesfehérvári Balett Színházhoz. Itt újból számos alkalommal láthatta a közönség főszerepekben, amelyek közül sokat kifejezett stílusához koreografáltak. Lehetősége volt Alexander Ekman és Jiri Kylian koreográfiáiban is táncolni, továbbá a táncművészet mellett balettmesterként és koreográfus-asszisztensként is tevékenykedni kezdett.
+            
+            2023-ban csatlakozott a Csokonai Nemzeti Színház Debrecen tánctagozatához táncművészként, 2024 óta pedig mint próbavezető is.</p>
+        </div>
+      </div>
+    
+    </div>
+    
+    
+
+
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#000000" fill-opacity="1" d="M0,192L34.3,181.3C68.6,171,137,149,206,138.7C274.3,128,343,128,411,144C480,160,549,192,617,197.3C685.7,203,754,181,823,160C891.4,139,960,117,1029,112C1097.1,107,1166,117,1234,128C1302.9,139,1371,149,1406,154.7L1440,160L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z"></path></svg>
+
+
+
+<!-- Footer ---------------->
+
+<section class="footer">
+
+  <div class="footer-container">
+    <div class="img-container col-lg-4 col-m-4 col-12">
+      <img class="img-theatre" src="../images/Csokonai_Nemzeti_Színház_Debrecen_logo_2023_v4_normal_BW_150dpi.jpg" class="card-img-top" alt="...">
+      <div>
+        <p></p>
+      </div>
+    </div>
+
+
+   
+    <div class="icon-container col-lg-4 col-m-4 col-sm-12">
+      <div class="content">
+        <div class="icon_group">
+          <a class="icon facebook"><i class="fa-brands fa-facebook fa-2x" aria-hidden="true"></i><div class="background_circle"></div></a>
+          <a class="icon instagram"><i class="fa-brands fa-instagram fa-2x" aria-hidden="true"></i><div class="background_circle"></div></a>
+          <a class="icon instagram"><i class="fa-solid fa-envelope" aria-hidden="true"></i><div class="background_circle"></div></a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class=" credit-container col-lg-4 col-m-4 col-12">
+      <div>
+        <p class="credit-text">Készítette: edit_ed. Minden jog fenntartva. 2024. <br>
+        Fotók: viviennaomiphotography <br>
+        Producer: Csokonai Nemzeti Színház Debrecen</p>
+        
+      </div>
+    </div>
+
+
+
+  </div>
+</section>
+
+
+
+
+
+
+  <!-- JS SCRIPTS ---------------->
+
+<!-- Circle Animation -->
+
+<script src="../assets/js/tarsulat.js"></script>
+
+
+<!-- Lightbox -->
+<script src="../assets/vendors/js/glightbox.min.js"></script>
+<script type="text/javascript">
+  const lightbox = GLightbox({
+    'href': 'https://www.youtube.com/watch?v=Ga6RYejo6Hk',
+            'type': 'video',
+            'source': 'youtube', //vimeo, youtube or local
+            'width': 900,
+            'autoPlayVideos': true,
+});
+</script>
+
+<!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  
+
+
+</body>
+</html>
