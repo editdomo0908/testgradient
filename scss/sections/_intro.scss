@@ -147,14 +147,14 @@ html, body {
 .logo-text {
     text-align: center;
     color: rgba(0, 0, 0, 0.797);
-    font-family: 'Jost', sans-serif;
+   
        
 }
 
 
 .logo-text .main-title {
     font-size: 2.5rem;
-    font-weight: 600;
+    font-weight: 400;
     text-transform: lowercase;
 
     @media (max-width: 700px) {
@@ -166,7 +166,7 @@ html, body {
 
 .logo-text .subtitle {
     font-size: 1.5rem;
-    font-weight: 400;
+    font-weight: 300;
     letter-spacing: 1px;
     text-transform: lowercase;
 
@@ -180,7 +180,7 @@ html, body {
 
 .logo-text .location {
     font-size: 2rem;
-    font-weight: 600;
+    font-weight: 400;
     letter-spacing: 1px;
     text-transform: lowercase;
     margin-top: 4px;

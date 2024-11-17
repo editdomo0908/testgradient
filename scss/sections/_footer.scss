@@ -5,32 +5,98 @@
 
 
 
-.footer-container {
+  
+ 
+
+  .footer-container {
     display: flex;
+    justify-content: space-evenly; /* Pushes items to the ends on larger screens */
+    align-items: center; /* Vertically centers items */
     flex-wrap: wrap;
     width: 100%; /* Ensures the container spans the full width */
+  padding-bottom: 50px;
+
   }
   
-  .footer-container .img-container {
+  .footer-container .img-container,
+  .footer-container .icon-container,
+  .footer-container .credit-container {
     flex: 1; /* Takes up available space */
-    max-width: 300px;
-    max-height: 300px;
+    display: flex; /* Allows alignment within the container */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
   }
   
-  .footer-container .icon-container {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center; /* Vertically aligns the content */
-    flex: 1; /* Takes up available space */
-    margin-right: 2rem;
+  /* Media query for smaller screens */
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column; /* Switch to vertical layout on mobile */
+      justify-content: center; /* Centers the containers in column layout */
+    }
+  
+    .footer-container .img-container,
+    .footer-container .icon-container,
+    .footer-container .credit-container {
+      flex: none; /* Allows natural width in vertical layout */
+      width: 100%; /* Makes them take full width */
+      display: flex; /* Ensure flex behavior is retained */
+      justify-content: center; /* Centers content horizontally */
+      align-items: center; /* Centers content vertically */
+      margin: 1rem;
+    }
+  
+    .footer-container .img-container img {
+      display: block; /* Ensures the image itself doesn't override centering */
+      margin: 0 auto; /* Centers the image */
+    }
+ 
+
   }
   
+
+
   .footer-container .icon_group {
     display: flex; /* Ensures icons are in a row */
     gap: 10px; /* Adds space between icons */
     align-items: center; /* Vertically aligns the icons */
+    justify-content: center;
  
   }
+
+
+
+  .footer-container .img-theatre {
+    max-height: 50%;
+    max-width: 50%;
+ 
+    @media (max-width: 700px) {
+     height: 100%;
+     width: 100%;
+   
+ }
+
+
+
+
+
+
+   }
+
+  .credit-text {
+   font-size: 0.8rem;
+   text-align: end;
+   padding: 1rem;
+
+   @media (max-width: 700px) {
+ font-size: 0.5rem;
+ text-align: center;
+  
+}
+
+
+  }
+  
+
  
 
   .icon {

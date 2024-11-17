@@ -11888,7 +11888,7 @@ option+4 dollar*/
   padding: 0.9375rem 4.375rem 0.9375rem 1.25rem;
   font-weight: 500;
   margin: 0;
-  font-weight: 600;
+  font-weight: 400;
   text-decoration: none;
 }
 @media (max-width: 575.98px) {
@@ -11938,7 +11938,7 @@ option+shift+A to change for comment,
 option+7 for brackets,
 option+4 dollar*/
 body {
-  font-family: "Jost", sans-serif;
+  font-family: "Open Sans", sans-serif !important;
 }
 
 .display-2 {
@@ -11993,20 +11993,10 @@ body {
   height: 100%;
 }
 
-.company-name {
-  font-family: "Jost", sans-serif;
-  color: #ffffff;
-  font-size: 5rem;
-}
-
 /* https://www.youtube.com/watch?v=iJKCj8uAHz8
 option+shift+A to change for comment, 
 option+7 for brackets,
 option+4 dollar*/
-body {
-  font-family: "Poppins", sans-serif !important;
-}
-
 .menu {
   background: #ffffff;
   z-index: 5000;
@@ -12349,12 +12339,11 @@ html, body {
 .logo-text {
   text-align: center;
   color: rgba(0, 0, 0, 0.797);
-  font-family: "Jost", sans-serif;
 }
 
 .logo-text .main-title {
   font-size: 2.5rem;
-  font-weight: 600;
+  font-weight: 400;
   text-transform: lowercase;
 }
 @media (max-width: 700px) {
@@ -12365,7 +12354,7 @@ html, body {
 
 .logo-text .subtitle {
   font-size: 1.5rem;
-  font-weight: 400;
+  font-weight: 300;
   letter-spacing: 1px;
   text-transform: lowercase;
 }
@@ -12377,7 +12366,7 @@ html, body {
 
 .logo-text .location {
   font-size: 2rem;
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: 1px;
   text-transform: lowercase;
   margin-top: 4px;
@@ -12421,11 +12410,23 @@ option+4 dollar*/
   position: absolute;
   transform: translateY(150%) translateX(20%);
   font-size: 3.2rem;
+  font-weight: 200;
   color: #ffffff;
   z-index: 1000;
   overflow: hidden !important;
   overflow-y: hidden !important;
   margin-top: 200px;
+}
+@media (max-width: 1400px) {
+  .hello {
+    white-space: normal; /* Allow line wrapping */
+    line-height: 1.5; /* Increase the space between lines */
+    font-size: 2.5rem !important;
+    margin: 0;
+    overflow: hidden !important;
+    overflow-y: hidden !important;
+    margin-top: 50%;
+  }
 }
 @media (max-width: 700px) {
   .hello {
@@ -12437,6 +12438,18 @@ option+4 dollar*/
     overflow: hidden !important;
     overflow-y: hidden !important;
     margin-top: 130px;
+  }
+}
+@media (max-width: 1000px) {
+  .hello {
+    max-width: 70%;
+    white-space: normal; /* Allow line wrapping */
+    line-height: 1.5; /* Increase the space between lines */
+    font-size: 2rem !important;
+    margin: 0;
+    overflow: hidden !important;
+    overflow-y: hidden !important;
+    margin-top: 50%;
   }
 }
 
@@ -12545,35 +12558,61 @@ option+4 dollar*/
 #heading1 {
   margin-top: 5%;
   transition: transform 1s ease-out 1s, opacity 1s ease-out 1s;
-  margin-right: 12%;
+  margin-right: 16%;
   font-size: 1.6rem;
   color: #67114f;
   text-align: start;
+  padding-right: 2rem;
+  font-weight: 100;
+  line-height: 2rem;
 }
 @media (max-width: 700px) {
   #heading1 {
     transform: translateY(0%);
-    font-size: 1.1rem;
+    font-size: 1rem;
     padding-left: 1.7rem;
     margin-top: 10%;
+    margin-right: 0%;
+    line-height: 1.5rem;
+  }
+}
+@media (max-width: 1000px) {
+  #heading1 {
+    transform: translateY(0%);
+    font-size: 1rem;
+    padding-left: 1.7rem;
+    margin-top: 30%;
+    margin-right: 0%;
+    line-height: 1.5rem;
+  }
+}
+@media (max-width: 1400px) {
+  #heading1 {
+    transform: translateY(0%);
+    font-size: 1rem;
+    padding-left: 1.7rem;
+    margin-top: 40%;
+    margin-right: 0%;
+    line-height: 1.5rem;
   }
 }
 
 /* Default hidden state for heading2 */
 #heading2 {
   position: relative;
-  font-size: 2rem;
-  color: #954881;
+  font-weight: 400;
+  font-size: 1.8rem;
+  color: #642d56;
   transform: translateX(50%) translateY(-50%); /* Start off-screen on the right */
   transition: transform 1s ease-out 1s, opacity 1s ease-out 1s;
   z-index: 2; /* Ensure it stays above the image */
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 @media (max-width: 700px) {
   #heading2 {
     position: relative;
     font-size: 1.2rem;
-    color: #ab6cb6;
+    color: #5b3a61;
     transform: translateY(200%); /* Start off-screen on the right */
     padding: 2rem;
     transition: transform 1s ease-out 1s, opacity 1s ease-out 1s;
@@ -12597,6 +12636,16 @@ option+4 dollar*/
 option+shift+A to change for comment, 
 option+7 for brackets,
 option+4 dollar*/
+body {
+  font-family: "Open Sans", sans-serif !important;
+}
+
+.company-name {
+  font-weight: 300;
+  color: #ffffff;
+  font-size: 3.8rem;
+}
+
 #wave {
   background-color: #B6A6CA;
 }
@@ -12607,6 +12656,180 @@ option+4 dollar*/
   overflow: hidden;
 }
 
+.dancers-title {
+  top: 50%;
+}
+
+.dancers {
+  top: 50%;
+  background-color: black;
+  margin: 0;
+  padding-top: 2rem;
+}
+
+.diversity {
+  height: 300px;
+  background-color: rgb(0, 0, 0);
+  padding-top: 5rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.diversity-text {
+  font-size: 3rem;
+  font-weight: 100;
+  color: #B6A6CA;
+}
+@media (max-width: 1400px) {
+  .diversity-text {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 700px) {
+  .diversity-text {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 1000px) {
+  .diversity-text {
+    font-size: 1.5rem;
+  }
+}
+
+.management {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+}
+
+.management-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap; /* Allow for wrapping on smaller screens */
+  align-items: center; /* Align content vertically in the row */
+}
+
+.manimg-container {
+  padding: 10px; /* Add padding to image container for some spacing */
+  padding-left: 6rem !important; /* Add left padding for space between image and container */
+}
+@media (max-width: 1000px) {
+  .manimg-container {
+    padding-left: 0rem !important; /* Add left padding for space between image and container */
+  }
+}
+@media (max-width: 700px) {
+  .manimg-container {
+    padding-left: 0rem !important; /* Add left padding for space between image and container */
+  }
+}
+@media (max-width: 400px) {
+  .manimg-container {
+    padding-left: 0rem !important; /* Add left padding for space between image and container */
+  }
+}
+
+.man-img {
+  width: 100%;
+  height: auto; /* Ensure the image maintains its aspect ratio */
+}
+
+.man-text {
+  padding-right: 14rem !important;
+  padding-left: 10rem !important;
+  padding-top: 3rem;
+  color: #ffffff;
+  line-height: 2rem;
+  font-weight: 200;
+  text-align: justify;
+  font-size: 1rem;
+}
+@media (max-width: 1400px) {
+  .man-text {
+    padding-right: 6rem !important;
+    padding-left: 4rem !important;
+    line-height: 2rem;
+    font-weight: 200;
+    text-align: justify;
+    font-size: 1rem;
+  }
+}
+@media (max-width: 1000px) {
+  .man-text {
+    padding-right: 8rem !important;
+    padding-left: 6rem !important;
+    line-height: 2rem;
+    font-weight: 200;
+    text-align: justify;
+    font-size: 1rem;
+  }
+}
+@media (max-width: 700px) {
+  .man-text {
+    padding-right: 3rem !important;
+    padding-left: 3rem !important;
+    line-height: 1.2rem;
+    font-weight: 200;
+    text-align: justify;
+    font-size: 1rem;
+  }
+}
+@media (max-width: 400px) {
+  .man-text {
+    padding-right: 3rem !important;
+    padding-left: 3rem !important;
+    line-height: 1rem;
+    font-weight: 200;
+    text-align: justify;
+    font-size: 0.7rem;
+  }
+}
+
+.man-name {
+  font-size: 1.2rem;
+}
+
+.man-position {
+  font-size: 1rem;
+}
+
+/* Bootstrap grid adjustment */
+.col-lg-3 {
+  flex: 0 0 25%; /* Image container takes up 1/4 of the width on large screens */
+}
+
+.col-lg-9 {
+  flex: 0 0 75%; /* Text container takes up 3/4 of the width on large screens */
+}
+
+/* For mobile screens, stack the items (full width) */
+@media (max-width: 768px) {
+  .manimg-container,
+  .col-lg-9 {
+    flex: 0 0 100%; /* Both image and text take up 100% width on small screens */
+    margin-left: 0; /* Reset left margin on mobile */
+  }
+  .man-img {
+    width: 50%; /* Image takes 50% of the width on mobile (adjust as needed) */
+    margin: 0 auto; /* Center the image */
+    display: block; /* Ensure image is a block element to center */
+  }
+  .manimg-container {
+    display: flex;
+    justify-content: center; /* Centers the image horizontally */
+    align-items: center;
+  }
+}
 .row-cols-1 {
   position: relative;
   margin-bottom: 50px; /* Adjust this value as needed for spacing */
@@ -12684,7 +12907,7 @@ option+4 dollar*/
 
 /* Original Card Styling */
 .card {
-  max-height: 500px;
+  max-height: 600px;
   border: none !important; /* Override any other border settings */
   transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
 }
@@ -12716,17 +12939,40 @@ option+4 dollar*/
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Poppins", sans-serif;
   background-color: #A09ABC; /* Semi-transparent background */
   color: black;
   font-size: 0.8rem;
   opacity: 0;
   transform: translateX(0); /* Initial state */
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Smooth transition */
-  text-align: center;
+  text-align: justify;
   padding: 3rem;
   box-sizing: border-box; /* Ensures padding is included in the element's width */
   border: none !important; /* Override any other border settings */
+}
+@media (max-width: 1400px) {
+  .hover-text {
+    font-size: 0.7rem;
+    padding: 1rem;
+  }
+}
+@media (max-width: 1000px) {
+  .hover-text {
+    font-size: 0.5rem;
+    padding: 0.5rem;
+  }
+}
+@media (max-width: 700px) {
+  .hover-text {
+    font-size: 0.9rem;
+    padding: 1rem;
+  }
+}
+@media (max-width: 400px) {
+  .hover-text {
+    font-size: 0.8rem;
+    padding: 1rem;
+  }
 }
 
 .card:hover .img-container img {
@@ -12741,8 +12987,23 @@ option+4 dollar*/
 
 /* Optional: Adjust card title */
 .card-title {
-  font-size: 1.2rem;
-  font-weight: 500;
+  font-size: 1rem;
+  font-weight: 400;
+}
+@media (max-width: 1400px) {
+  .card-title {
+    font-size: 0.7rem;
+  }
+}
+@media (max-width: 1000px) {
+  .card-title {
+    font-size: 0.7rem;
+  }
+}
+@media (max-width: 700px) {
+  .card-title {
+    font-size: 0.9rem;
+  }
 }
 
 /* Center text and ensure consistency */
@@ -12871,7 +13132,7 @@ option+4 dollar*/
 .first-bt-hover {
   margin: 5px;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 400;
   color: #fff;
   cursor: pointer;
   text-align: center;
@@ -13120,28 +13381,71 @@ option+7 for brackets,
 option+4 dollar*/
 .footer-container {
   display: flex;
+  justify-content: space-evenly; /* Pushes items to the ends on larger screens */
+  align-items: center; /* Vertically centers items */
   flex-wrap: wrap;
   width: 100%; /* Ensures the container spans the full width */
+  padding-bottom: 50px;
 }
 
-.footer-container .img-container {
+.footer-container .img-container,
+.footer-container .icon-container,
+.footer-container .credit-container {
   flex: 1; /* Takes up available space */
-  max-width: 300px;
-  max-height: 300px;
+  display: flex; /* Allows alignment within the container */
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
 }
 
-.footer-container .icon-container {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center; /* Vertically aligns the content */
-  flex: 1; /* Takes up available space */
-  margin-right: 2rem;
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column; /* Switch to vertical layout on mobile */
+    justify-content: center; /* Centers the containers in column layout */
+  }
+  .footer-container .img-container,
+  .footer-container .icon-container,
+  .footer-container .credit-container {
+    flex: none; /* Allows natural width in vertical layout */
+    width: 100%; /* Makes them take full width */
+    display: flex; /* Ensure flex behavior is retained */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    margin: 1rem;
+  }
+  .footer-container .img-container img {
+    display: block; /* Ensures the image itself doesn't override centering */
+    margin: 0 auto; /* Centers the image */
+  }
 }
-
 .footer-container .icon_group {
   display: flex; /* Ensures icons are in a row */
   gap: 10px; /* Adds space between icons */
   align-items: center; /* Vertically aligns the icons */
+  justify-content: center;
+}
+
+.footer-container .img-theatre {
+  max-height: 50%;
+  max-width: 50%;
+}
+@media (max-width: 700px) {
+  .footer-container .img-theatre {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.credit-text {
+  font-size: 0.8rem;
+  text-align: end;
+  padding: 1rem;
+}
+@media (max-width: 700px) {
+  .credit-text {
+    font-size: 0.5rem;
+    text-align: center;
+  }
 }
 
 .icon {

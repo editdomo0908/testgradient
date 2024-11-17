@@ -5,7 +5,7 @@ const groupImage = document.getElementById('groupImage2');
 
 // Set the initial opacity
 window.addEventListener('load', function() {
-    groupImage.style.opacity = 0.3; // Initial opacity
+    groupImage.style.opacity = 0.6; // Initial opacity
 
     // Function to handle scroll event
     function handleScroll() {
@@ -13,10 +13,10 @@ window.addEventListener('load', function() {
 
         if (scrollTop > lastScrollTop) {
             // Scrolling down
-            groupImage.style.opacity = 0.7; // Set opacity to 0.6
+            groupImage.style.opacity = 1; // Set opacity to 0.6
         } else {
             // Scrolling up
-            groupImage.style.opacity = 0.4; // Set opacity back to 0.3
+            groupImage.style.opacity = 0.6; // Set opacity back to 0.3
         }
 
         lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Update last scroll position

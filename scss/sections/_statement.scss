@@ -34,24 +34,58 @@
    position: absolute;
    transform: translateY(150%) translateX(20%);
    font-size: 3.2rem;
+   font-weight: 200;
    color: $primary;
    z-index: 1000;
    overflow:  hidden !important;
    overflow-y: hidden !important;
    margin-top: 200px;
 
-   @media (max-width: 700px) {
 
-      max-width: 60%; 
-      white-space: normal; /* Allow line wrapping */
-      line-height: 1.5; /* Increase the space between lines */
-      font-size: 1.4rem !important;
-      margin: 0;
-      overflow:  hidden !important;
-      overflow-y: hidden !important;
-      margin-top: 130px;
-    
+
+
+
+
+ @media (max-width: 1400px) {
+   
+    white-space: normal; /* Allow line wrapping */
+    line-height: 1.5; /* Increase the space between lines */
+    font-size: 2.5rem !important;
+    margin: 0;
+    overflow:  hidden !important;
+    overflow-y: hidden !important;
+    margin-top: 50%;
+   
+ }
+
+ @media (max-width: 700px) {
+
+    max-width: 60%; 
+    white-space: normal; /* Allow line wrapping */
+    line-height: 1.5; /* Increase the space between lines */
+    font-size: 1.4rem !important;
+    margin: 0;
+    overflow:  hidden !important;
+    overflow-y: hidden !important;
+    margin-top: 130px;
+  
 }
+
+
+
+
+@media (max-width: 1000px) {
+    max-width: 70%; 
+    white-space: normal; /* Allow line wrapping */
+    line-height: 1.5; /* Increase the space between lines */
+    font-size: 2rem !important;
+    margin: 0;
+    overflow:  hidden !important;
+    overflow-y: hidden !important;
+    margin-top: 50%;
+  
+}
+
 
 }
 

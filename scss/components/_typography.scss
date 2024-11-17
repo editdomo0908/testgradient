@@ -4,8 +4,10 @@
 
 
 body {
-    font-family: 'Jost', sans-serif;
-}
+    font-family: 'Open Sans', sans-serif !important;
+  
+  }
+  
 
 .display-2 {
  
@@ -77,8 +79,3 @@ body {
     height: 100%;
 }
 
-.company-name {
-    font-family: 'Jost', sans-serif;
-    color:  $primary;
-    font-size: 5rem;
-};
