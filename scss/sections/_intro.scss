@@ -52,6 +52,7 @@ html, body {
 
 
 .bg-video {
+  
     position: absolute;
     left: 0;
     height: 100vh;
@@ -65,6 +66,14 @@ html, body {
         width: 100%;
         object-fit: cover;
     }
+
+
+    @media (max-width: 768px) {
+        .bg-video {
+            height: auto; /* Adjust if needed */
+        }
+    }
+    
 }
 
 ////Sections fade in

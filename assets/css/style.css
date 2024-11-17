@@ -12286,6 +12286,11 @@ html, body {
   width: 100%;
   object-fit: cover;
 }
+@media (max-width: 768px) {
+  .bg-video .bg-video {
+    height: auto; /* Adjust if needed */
+  }
+}
 
 .landing {
   background: linear-gradient(to right, #B6A6CA, #DCE0D9, #878ca9);
