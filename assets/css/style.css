@@ -11938,7 +11938,7 @@ option+shift+A to change for comment,
 option+7 for brackets,
 option+4 dollar*/
 body {
-  font-family: "Open Sans", sans-serif !important;
+  font-family: "Roboto", sans-serif !important;
 }
 
 .display-2 {
@@ -12383,6 +12383,10 @@ html, body {
   }
 }
 
+.bold-vision-text {
+  font-weight: 500;
+}
+
 .gradient-bg {
   background-color: grey;
 }
@@ -12566,10 +12570,10 @@ option+4 dollar*/
   transition: transform 1s ease-out 1s, opacity 1s ease-out 1s;
   margin-right: 16%;
   font-size: 1.6rem;
-  color: #67114f;
+  color: #226174;
   text-align: start;
   padding-right: 2rem;
-  font-weight: 100;
+  font-weight: 400;
   line-height: 2rem;
 }
 @media (max-width: 700px) {
@@ -12606,9 +12610,9 @@ option+4 dollar*/
 /* Default hidden state for heading2 */
 #heading2 {
   position: relative;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 1.8rem;
-  color: #642d56;
+  color: #1c596e;
   transform: translateX(50%) translateY(-50%); /* Start off-screen on the right */
   transition: transform 1s ease-out 1s, opacity 1s ease-out 1s;
   z-index: 2; /* Ensure it stays above the image */
@@ -12636,6 +12640,12 @@ option+4 dollar*/
   .visible #heading2 #heading2 {
     font-size: 1.5rem !important;
   }
+}
+
+.bold-vision-text {
+  font-weight: 500;
+  color: #b346b0;
+  transition: color 2s ease-in-out;
 }
 
 /* https://www.youtube.com/watch?v=iJKCj8uAHz8
