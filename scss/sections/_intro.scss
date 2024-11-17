@@ -60,6 +60,7 @@ html, body {
     opacity: .25;
     z-index: 1; // Ensure the video is behind the text
     overflow: hidden;
+    background: #ab9c70;
 
     &__content {
         height: 100%;
