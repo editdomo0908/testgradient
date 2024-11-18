@@ -77,6 +77,30 @@ html, body {
     
 }
 
+
+.video-frame {
+  
+  }
+  
+
+  
+  .video-frame::after {
+    content: '';
+    position: absolute;
+    top: 70px;
+    left: 70px;
+    right: 70px;
+    bottom: 70px;
+    border: 2px solid white; /* Adjust thickness as needed */
+    z-index: 5000; /* Ensure it is above the video */
+    pointer-events: none; /* Allows interaction with the video */
+    box-sizing: border-box;
+  }
+  
+  
+
+
+
 ////Sections fade in
 
   ////////////////////////////////////////////////////////////////
@@ -202,11 +226,6 @@ html, body {
 }
 }
 
-
-
-.bold-vision-text {
-  font-weight: 500;
-}
 
 
 

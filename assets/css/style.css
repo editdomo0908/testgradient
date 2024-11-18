@@ -12293,6 +12293,19 @@ html, body {
   }
 }
 
+.video-frame::after {
+  content: "";
+  position: absolute;
+  top: 70px;
+  left: 70px;
+  right: 70px;
+  bottom: 70px;
+  border: 2px solid white; /* Adjust thickness as needed */
+  z-index: 5000; /* Ensure it is above the video */
+  pointer-events: none; /* Allows interaction with the video */
+  box-sizing: border-box;
+}
+
 .landing {
   background: linear-gradient(to right, #B6A6CA, #DCE0D9, #878ca9);
   min-height: 100vh;
@@ -12381,10 +12394,6 @@ html, body {
   .logo-text .location {
     font-size: 0.5rem !important;
   }
-}
-
-.bold-vision-text {
-  font-weight: 500;
 }
 
 .gradient-bg {
