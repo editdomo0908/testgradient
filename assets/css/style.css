@@ -11938,7 +11938,7 @@ option+shift+A to change for comment,
 option+7 for brackets,
 option+4 dollar*/
 body {
-  font-family: "Roboto", sans-serif !important;
+  font-family: "PT Sans", sans-serif !important;
 }
 
 .display-2 {
@@ -12137,7 +12137,7 @@ option+4 dollar*/
 .navbar-nav .nav-link {
   position: relative;
   padding-left: 0.5rem;
-  color: #80768c !important;
+  color: #3f344d !important;
 }
 
 /* Curve effect: starts invisible */
