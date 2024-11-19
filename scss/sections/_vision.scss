@@ -77,16 +77,23 @@
 
   }
 
+  
+
+
+
+
   #heading1 {
+    position: relative; /* Make the pseudo-element position relative to this */
     margin-top: 5%;
-    transition: transform 1s ease-out 1s, opacity 1s ease-out 1s;
     margin-right: 16%;
     font-size: 1.6rem;
     color: #0c1c21;
-    text-align: start;
-    padding-right: 2rem;
+    text-align: justify;
+    text-rendering: geometricPrecision;
+    padding: 3rem 2rem;
     font-weight: 400;
     line-height: 2rem;
+    transition: transform 1s ease-out 1s, opacity 1s ease-out 1s;
 
     @media (max-width: 700px) {
         transform: translateY(0%);
@@ -119,23 +126,57 @@
         line-height: 1.5rem;
        
      }
+}
 
+.animate-border::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid transparent;
+    border-image: linear-gradient(90deg, $primary , $secondary , $third);
+    border-image-slice: 1;
+    z-index: -1; /* Ensure the border is behind the text */
+    animation: draw-border 4s linear forwards, fade-out-border 4s linear forwards;
+}
+
+@keyframes draw-border {
+    0% {
+        clip-path: inset(0% 0% 100% 0%);
+    }
+    100% {
+        clip-path: inset(0% 0% 0% 100%);
+    }
+
+}
+
+@keyframes fade-out-border {
+    0% {
+        opacity: 1; /* Full opacity when the border starts to draw */
+    }
+    100% {
+        opacity: 0; /* Fade out completely at the end of the animation */
+    }
+
+}
 
    
-  }
+  
   
  
 
 /* Default hidden state for heading2 */
 #heading2 {
   position: relative;
-  font-weight: 500;
-  font-size: 1.8rem;
+  font-weight: 400;
+  font-size: 2rem;
   color:  #8b2575;
   transform: translateX(50%) translateY(-50%); /* Start off-screen on the right */
   transition: transform 1s ease-out 1s, opacity 1s ease-out 1s;
   z-index: 2; /* Ensure it stays above the image */
-  margin-top: 1rem;
+  margin-top: 6.5rem;
 
 
   @media (max-width: 700px) {

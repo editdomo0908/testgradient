@@ -257,12 +257,13 @@ function handleScrollAnimation() {
   const scrollProgress = (scrollPosition - visionTop) / visionHeight;
 
   const heading1 = document.getElementById('heading1');
+
   const heading2 = document.getElementById('heading2');
   const groupImage = document.getElementById('groupImage');
 
   // Handle animations when at the top of the page
   if (window.scrollY === 0) {
-    heading1.classList.remove('visible');
+    heading1.classList.remove('visible', 'animate-border');
     heading2.classList.remove('visible');
     groupImage.classList.remove('scaled');
     groupImage.classList.remove('normal');
@@ -274,7 +275,7 @@ function handleScrollAnimation() {
 
   // Fade in heading1 and groupImage when scrolling down
   if (scrollProgress >= 0.3 && scrollProgress < 1) {
-    heading1.classList.add('visible');
+    heading1.classList.add('visible' , 'animate-border');
     groupImage.classList.add('visible');
     heading2.classList.remove('visible');
     groupImage.classList.add('normal');
@@ -282,7 +283,7 @@ function handleScrollAnimation() {
   
   } else if (scrollProgress >= 1 && scrollProgress < 1.1) {
     // Fade in heading2, start scaling image and reduce opacity
-    heading1.classList.remove('visible');
+    heading1.classList.remove('visible' , 'animate-border');
     heading2.classList.add('visible');
     groupImage.classList.remove('normal');
     groupImage.classList.add('scaled');
