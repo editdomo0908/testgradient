@@ -12300,7 +12300,7 @@ html, body {
   top: 70px;
   left: 70px;
   right: 70px;
-  bottom: 70px;
+  bottom: 120px;
   border: 2px solid white; /* Adjust thickness as needed */
   z-index: 5000; /* Ensure it is above the video */
   pointer-events: none; /* Allows interaction with the video */
@@ -12318,6 +12318,12 @@ html, body {
   position: relative;
   padding-top: 300px;
   z-index: 2000;
+  left: 150px;
+}
+@media (max-width: 1000px) {
+  .intro-section {
+    left: 50px;
+  }
 }
 
 .wave1, .wave2 {
@@ -12694,10 +12700,6 @@ option+4 dollar*/
 option+shift+A to change for comment, 
 option+7 for brackets,
 option+4 dollar*/
-body {
-  font-family: "Open Sans", sans-serif !important;
-}
-
 .company-name {
   font-weight: 300;
   color: #ffffff;

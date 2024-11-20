@@ -124,12 +124,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function updateSizes() {
         const windowWidth = window.innerWidth;
-        if (windowWidth < 400) {
-            maxSize = 100; minSize = 65; initialLeft = 170; shrunkLeft = 290;
+        if (windowWidth < 380) {     //iphone SE 375, below 380
+            maxSize = 100; minSize = 70; initialLeft = 170; shrunkLeft = 290;
+
+
+
+        } else if (windowWidth < 395) { //iphone 12 between 380 and 395
+            maxSize = 75; minSize = 75; initialLeft = 270; shrunkLeft = 270;
+
+        } else if (windowWidth < 420) {  //iphone XR between 395-420
+            maxSize = 90; minSize = 90; initialLeft = 290; shrunkLeft = 290;
+
+            
         } else if (windowWidth < 550) {
-            maxSize = 120; minSize = 100; initialLeft = 250; shrunkLeft = 250;
+            maxSize = 90; minSize = 90; initialLeft = 310; shrunkLeft = 310;
         } else if (windowWidth < 750) {
-            maxSize = 200; minSize = 150; initialLeft = 250; shrunkLeft = 250;
+            maxSize = 120; minSize = 100; initialLeft = 250; shrunkLeft = 250;
         } else if (windowWidth < 1000) {
             maxSize = 250; minSize = 150; initialLeft = 400; shrunkLeft = 500;
         } else if (windowWidth < 1440) {
