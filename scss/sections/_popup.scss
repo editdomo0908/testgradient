@@ -10,17 +10,16 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.861);
     z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Jost', sans-serif;
 }
 
 /* Pop-up content styling */
 .popup-content {
-    background-color: $secondary;
+    background-color: #665d70b8;
     padding: 20px; /* Add some padding for better appearance */
     border-radius: 8px;
     max-width: 90%;
@@ -80,6 +79,7 @@
         flex-wrap: wrap; /* Allow wrapping if necessary */
         padding: 1rem;;
         margin: 1rem;
+        background-color: #665d70;;
     }
     
     @media (max-width: 768px) {
@@ -108,7 +108,7 @@
     top: 10px;
     right: 10px;
     font-size: 3rem;
-    font-weight: bold;
+    font-weight: 400;
     color: $primary; /* Ensure this variable is defined correctly in your CSS */
     cursor: pointer;
     display: inline-block; /* Ensure transformations work */
@@ -218,6 +218,3 @@
     }
 }
 
-.filter-buttons {
-   background-color: $third !important;
-}

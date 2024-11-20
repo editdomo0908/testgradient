@@ -13207,7 +13207,6 @@ option+4 dollar*/
 
 .first-bt-hover.color-1 {
   background-image: linear-gradient(to right, #31303a, #32303c, #A09ABC);
-  box-shadow: 0 1px 15px 0 rgb(145, 152, 199);
   border-radius: 50px;
 }
 
@@ -13226,17 +13225,16 @@ option+4 dollar*/
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.861);
   z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Jost", sans-serif;
 }
 
 /* Pop-up content styling */
 .popup-content {
-  background-color: #B6A6CA;
+  background-color: rgba(102, 93, 112, 0.7215686275);
   padding: 20px; /* Add some padding for better appearance */
   border-radius: 8px;
   max-width: 90%;
@@ -13295,6 +13293,7 @@ option+4 dollar*/
   flex-wrap: wrap; /* Allow wrapping if necessary */
   padding: 1rem;
   margin: 1rem;
+  background-color: #665d70;
 }
 
 @media (max-width: 768px) {
@@ -13314,7 +13313,7 @@ option+4 dollar*/
   top: 10px;
   right: 10px;
   font-size: 3rem;
-  font-weight: bold;
+  font-weight: 400;
   color: #ffffff; /* Ensure this variable is defined correctly in your CSS */
   cursor: pointer;
   display: inline-block; /* Ensure transformations work */
@@ -13419,10 +13418,6 @@ option+4 dollar*/
     margin-top: 10px; /* Add some spacing above the button */
   }
 }
-.filter-buttons {
-  background-color: #A09ABC !important;
-}
-
 /* https://www.youtube.com/watch?v=iJKCj8uAHz8
 option+shift+A to change for comment, 
 option+7 for brackets,
