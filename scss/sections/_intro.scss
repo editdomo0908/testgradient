@@ -79,6 +79,46 @@ html, body {
 }
 
 
+#come-button{
+ 
+        margin: 5px;
+        font-size: 16px;
+        font-weight: 400;
+        color: #000000;
+        cursor: pointer;
+        text-align:center;
+        border: none;
+        background-size: 300% 100%;
+    
+        border-radius: 50px;
+        moz-transition: all .4s ease-in-out;
+        -o-transition: all .4s ease-in-out;
+        -webkit-transition: all .4s ease-in-out;
+        transition: all .4s ease-in-out;
+    }
+    
+    #come-button:hover {
+       
+        background-position: 100% 0;
+        moz-transition: all .4s ease-in-out;
+        -o-transition: all .4s ease-in-out;
+        -webkit-transition: all .4s ease-in-out;
+        transition: all .4s ease-in-out;
+    }
+    
+    #come-button:focus {
+        outline: none;
+    }
+    
+    #come-button.color-1 {
+        background-image: none;
+        box-shadow: 0 4px 15px 0 rgb(145, 152, 199);
+        border-radius: 50px;
+    }
+        
+
+
+
 .video-frame {
   
   }
@@ -135,7 +175,7 @@ html, body {
 .wave1, .wave2 {
     transition: transform 0.8s ease-in-out, fill 0.8s ease-in-out;
     transform: scale(1) translateX(0px);
-    fill: #370926;
+    fill: $third;
     overflow:  hidden !important;
   }
   
@@ -189,6 +229,7 @@ html, body {
 .logo-text {
     text-align: center;
     color: rgba(0, 0, 0, 0.797);
+    font-family: 'Raleway', sans-serif;
    
        
 }

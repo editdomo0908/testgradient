@@ -4,7 +4,8 @@
 
 
 body {
-    font-family: 'PT Sans', sans-serif !important;
+    font-family: 'Raleway', sans-serif !important;
+    text-rendering: geometricPrecision;
   
   }
   
@@ -66,6 +67,7 @@ body {
 .display-3 {
        
         color: $primary;
+    
    
     }
     

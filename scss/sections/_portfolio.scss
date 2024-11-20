@@ -4,7 +4,12 @@
 
 
 .portfolio {
-    background-color: $third;
+    background-color: black;
+}
+
+
+.prod-title{
+    margin-bottom: 4rem;
 }
 
 .portfolio-card-section{
@@ -16,7 +21,7 @@
      padding: 15px;
      margin-bottom:15px;
      border:none!important;
-     background-image: linear-gradient(315deg, $secondary 0%, $third 74%);
+     background-image: linear-gradient(180deg, #000000 0%, #4f4d5c 84%);
      transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
     
 }
@@ -48,14 +53,14 @@
     
 }
  .btn-primary{
-     background-color: transparent!important;
+     background-color: #575369;
      border:2px solid #fff!important;
     
  
 }
  .cart-btn{
-     background-color:  $third !important;
      color: white !important;
+     background-color: #575369 !important;
      width: 96px;
      border-radius: 30px !important;
      margin: 0.5 auto;
@@ -95,8 +100,8 @@
     }
     
     .first-bt-hover.color-1 {
-        background-image: linear-gradient(to right,  $secondary, $third, $primary);
-        box-shadow: 0 4px 15px 0 rgb(145, 152, 199);
+        background-image: linear-gradient(to right,  #31303a, #32303c, #A09ABC);
+        box-shadow: 0 1px 15px 0 rgb(145, 152, 199);
         border-radius: 50px;
     }
 

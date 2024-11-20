@@ -348,9 +348,7 @@ function handleScrollAnimation() {
 
 
 
-
-
-////////WAVE////////////////////////////////    
+////////////////WAVES////////////////
 
 // Select both wave elements
 const wave1 = document.querySelector('.wave1');
@@ -359,21 +357,35 @@ const wave2 = document.querySelector('.wave2');
 // Element to act as the trigger (e.g., start of the second section)
 const triggerElement = document.querySelector('#productions');
 
+// Flag to track if the second color has been applied
+let isSecondColorApplied = false;
+
 // Function to animate both waves
 function animateBothWaves() {
-  // Apply the animation to both waves
-  wave1.style.transform = 'scale(1.2) translateX(00px)';
-  wave1.style.fill = '#370926';
-  wave2.style.transform = 'scale(1.2) translateX(0px)';
-  wave2.style.fill = '#370926';
-
-  // Reset after 2 seconds
-  setTimeout(() => {
-    wave1.style.transform = 'scale(1) translateX(0px)';
+  if (!isSecondColorApplied) {
+    // Apply the animation and second color to both waves
+    wave1.style.transform = 'scale(1.2) translateX(0px)';
     wave1.style.fill = '#8d7e9f';
-    wave2.style.transform = 'scale(1) translateX(0px)';
+    wave2.style.transform = 'scale(1.2) translateX(0px)';
     wave2.style.fill = '#8d7e9f';
-  }, 2000);
+
+    // Set the flag to true to indicate the second color is applied
+    isSecondColorApplied = true;
+  }
+}
+
+// Function to reset the waves when scrolling back up
+function resetWaves() {
+  if (isSecondColorApplied) {
+    // Reset the animation and color
+    wave1.style.transform = 'scale(1) translateX(0px)';
+    wave1.style.fill = '#370926';
+    wave2.style.transform = 'scale(1) translateX(0px)';
+    wave2.style.fill = '#370926';
+
+    // Reset the flag
+    isSecondColorApplied = false;
+  }
 }
 
 // Observer to watch the trigger element
@@ -381,11 +393,13 @@ const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       animateBothWaves();
+    } else {
+      resetWaves();
     }
   });
 }, {
   root: null,
-  threshold: 0.1 // Adjust as needed
+  threshold: 0.2 // Adjust as needed
 });
 
 // Start observing the trigger element
