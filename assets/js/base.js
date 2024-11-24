@@ -336,7 +336,7 @@ function handleScrollAnimation() {
 
 
 
-
+}
 
 
 
@@ -408,27 +408,26 @@ observer.observe(triggerElement);
 
 
 
+////////////////////////////////
+// POP-UP FROM LANDING PAGE
 
-////////////////////////////////POP_UP from landing //////////////////////////////////
+// Select popups, close buttons, and open link elements
+const popup = document.querySelector('.popup'); // First popup
+const closeButton = document.querySelector('.close-popup-button'); // Close button for first popup
+const openPopupLink = document.getElementById('openPopupLink'); // Open link for first popup
 
-
-// Get the popup, close button, and open link elements
-const popup = document.querySelector('.popup');
-const closeButton = document.querySelector('.close-popup-button');
-const openPopupLink = document.getElementById('openPopupLink');
-
-// Function to show the popup
+// Function to show the first popup
 openPopupLink.addEventListener('click', (event) => {
-  event.preventDefault(); // Prevent the default link behavior
+  event.preventDefault();
   popup.style.display = 'flex'; // Show the popup
 });
 
-// Function to close the popup
+// Function to close the first popup
 closeButton.addEventListener('click', () => {
   popup.style.display = 'none'; // Hide the popup
 });
 
-// Optional: Close the popup when clicking outside of it
+// Close the first popup when clicking outside of it
 window.addEventListener('click', (event) => {
   if (event.target === popup) {
     popup.style.display = 'none'; // Hide the popup if clicked outside
@@ -436,92 +435,86 @@ window.addEventListener('click', (event) => {
 });
 
 
+// POP-UP FROM CALENDAR
 
+// Select second popups, close buttons, and open button elements
+const openPopupButton1 = document.getElementById('openPopupButton'); // Open button for second popup
+const closePopupButton1 = document.querySelector('.close-popup-button'); // Close button for second popup
+const popup1 = document.querySelector('.popup'); // Second popup
 
-
-  
-  ///////Calendar opens popup
-
-  // Select the open and close buttons
-const openPopupButton1 = document.getElementById('openPopupButton');
-const closePopupButton1 = document.querySelector('.close-popup-button');
-const popup1 = document.querySelector('.popup');
-
-// Function to open the pop-up
-openPopupButton1.addEventListener('click', function() {
+// Function to open the second popup
+openPopupButton1.addEventListener('click', () => {
     popup1.style.display = 'flex'; // Show the pop-up
 });
 
-// Function to close the pop-up
-closePopupButton1.addEventListener('click', function() {
+// Function to close the second popup
+closePopupButton1.addEventListener('click', () => {
     popup1.style.display = 'none'; // Hide the pop-up
 });
 
-// Optional: Close pop-up when clicking outside of it
-popup1.addEventListener('click', function(e) {
-    if (e.target === popup) {
-        popup.style.display = 'none';
+// Close second popup when clicking outside of it
+popup1.addEventListener('click', (e) => {
+    if (e.target === popup1) {
+        popup1.style.display = 'none'; // Hide the pop-up if clicked outside
     }
 });
-}
 
 
 
+////////////////////////////////////////
+// FILTERING CARDS INSIDE POPUP
 
- 
-
-
-//////// Filter Functions ////////
-
-// Function to filter cards by data-id
 function filterById2(id) {
-    const popup = document.querySelector('.popup');
-    const cards = document.querySelectorAll('.popup .calendar-card'); // Ensure filtering is only on cards inside the pop-up
-
-    if (popup.style.display === 'none') {
-        return; // Prevent filtering if the popup is hidden
-    }
-
+    const cards = document.querySelectorAll('.popup .calendar-card'); // Filter only cards inside the popup
     cards.forEach(card => {
         if (card.getAttribute('data-id') === String(id)) {
-            card.style.display = 'block'; // Show the card if it matches the filter
+            card.style.display = 'block'; // Show the card if it matches
         } else {
             card.style.display = 'none'; // Hide the card if it doesn't match
         }
     });
 }
 
-
 function showAll1() {
-    const cards = document.querySelectorAll('.calendar-card');
+    const cards = document.querySelectorAll('.popup .calendar-card'); // Show all cards inside the popup
     cards.forEach(card => {
-      card.style.display = 'block'; // Show all cards
+        card.style.display = 'block';
     });
-  }
+}
 
 
 
 ////////////////////////////////////////
-///FILTERING on landing page
+/// FILTERING ON LANDING PAGE
 
 function filterById(id) {
-    const cards = document.querySelectorAll('.choice');
+    const cards = document.querySelectorAll('.choice'); // Select cards on landing page
     cards.forEach(card => {
-      if (card.getAttribute('data-id') === String(id)) {
-        card.style.display = 'block'; // Show the card if it matches the filter
-      } else {
-        card.style.display = 'none'; // Hide the card if it doesn't match
-      }
+        if (card.getAttribute('data-id') === String(id)) {
+            card.style.display = 'block'; // Show the card if it matches
+        } else {
+            card.style.display = 'none'; // Hide the card if it doesn't match
+        }
     });
-  }
-  
-  // Function to show all cards
-  function showAll() {
-    const cards = document.querySelectorAll('.choice');
+}
+
+// Function to show all cards on landing page
+function showAll() {
+    const cards = document.querySelectorAll('.choice'); // Select all cards
     cards.forEach(card => {
-      card.style.display = 'block'; // Show all cards
+        card.style.display = 'block'; // Show all cards
     });
-  }
+}
 
 
+
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+    if (request.action === "someAction") {
+        // Do something async
+        setTimeout(() => {
+            sendResponse({ status: "completed" }); // Ensure you call sendResponse
+        }, 1000);
+        return true; // Ensure async response is allowed
+    }
+});
 
