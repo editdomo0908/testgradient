@@ -466,34 +466,10 @@ popup1.addEventListener('click', function(e) {
 }
 
 
-  ///FILTERING on landing page
+
 
  
-/////// Calendar opens popup ///////
 
-// Select the open and close buttons
-const openPopupButton1 = document.getElementById('openPopupButton');
-const closePopupButton1 = document.querySelector('.close-popup-button');
-const popup1 = document.querySelector('.popup');
-
-// Function to open the pop-up
-openPopupButton1.addEventListener('click', function() {
-    console.log("Pop-up opening..."); // Debugging
-    popup1.style.display = 'flex'; // Show the pop-up
-    filterById(1); // Trigger the filter when the pop-up opens (replace 1 with any id you want to filter by)
-});
-
-// Function to close the pop-up
-closePopupButton1.addEventListener('click', function() {
-    popup1.style.display = 'none'; // Hide the pop-up
-});
-
-// Optional: Close pop-up when clicking outside of it
-popup1.addEventListener('click', function(e) {
-    if (e.target === popup1) {
-        popup1.style.display = 'none'; // Close the pop-up if clicked outside
-    }
-});
 
 //////// Filter Functions ////////
 
