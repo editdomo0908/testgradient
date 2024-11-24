@@ -13031,7 +13031,7 @@ option+4 dollar*/
   justify-content: center;
   background-color: #A09ABC; /* Semi-transparent background */
   color: black;
-  font-size: 0.8rem;
+  font-size: 0.6rem;
   opacity: 0;
   transform: translateX(0); /* Initial state */
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Smooth transition */
@@ -13042,7 +13042,7 @@ option+4 dollar*/
 }
 @media (max-width: 1400px) {
   .hover-text {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     padding: 1rem;
   }
 }
@@ -13054,7 +13054,7 @@ option+4 dollar*/
 }
 @media (max-width: 700px) {
   .hover-text {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     padding: 1rem;
   }
 }
