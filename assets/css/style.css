@@ -13054,13 +13054,13 @@ option+4 dollar*/
 }
 @media (max-width: 700px) {
   .hover-text {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
     padding: 1rem;
   }
 }
 @media (max-width: 400px) {
   .hover-text {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
     padding: 1rem;
   }
 }
