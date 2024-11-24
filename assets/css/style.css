@@ -11996,7 +11996,15 @@ option+7 for brackets,
 option+4 dollar*/
 .menu {
   background: #ffffff;
-  z-index: 5000;
+}
+
+/* Custom sticky navbar style */
+.custom-sticky-navbar {
+  position: -webkit-sticky; /* For Safari */
+  position: sticky;
+  top: 0; /* Makes it stick at the top */
+  z-index: 1020; /* Ensure it’s on top of other content */
+  background-color: #fff; /* You can adjust this as needed */
 }
 
 /* Container and Button Styling */
