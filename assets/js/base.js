@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', function () {
         } else if (windowWidth < 1440) {
             maxSize = 300; minSize = 150; initialLeft = 600; shrunkLeft = 900;
         } else {
-            maxSize = 350; minSize = 150; initialLeft = 800; shrunkLeft = 1250;
+            maxSize = 300; minSize = 150; initialLeft = 800; shrunkLeft = 1250;
         }
         initialSize = maxSize;
         repositionCircle();
