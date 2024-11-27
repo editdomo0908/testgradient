@@ -14,7 +14,7 @@
     align-items: center; /* Vertically centers items */
     flex-wrap: wrap;
     width: 100%; /* Ensures the container spans the full width */
-  padding-bottom: 50px;
+   padding-bottom: 50px;
 
   }
   
@@ -25,6 +25,7 @@
     display: flex; /* Allows alignment within the container */
     justify-content: center; /* Centers content horizontally */
     align-items: center; /* Centers content vertically */
+    background-color: white;
   }
   
   /* Media query for smaller screens */

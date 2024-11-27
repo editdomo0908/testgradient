@@ -11934,7 +11934,7 @@ option+shift+A to change for comment,
 option+7 for brackets,
 option+4 dollar*/
 body {
-  font-family: "Raleway", sans-serif !important;
+  font-family: "Open Sans", sans-serif !important;
   text-rendering: geometricPrecision;
 }
 
@@ -12698,8 +12698,9 @@ option+4 dollar*/
 }
 /* Default hidden state for heading2 */
 #heading2 {
+  font-family: "Raleway", sans-serif;
   position: relative;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 2rem;
   color: #8b2575;
   transform: translateX(50%) translateY(-50%); /* Start off-screen on the right */
@@ -13089,7 +13090,7 @@ option+4 dollar*/
 /* Optional: Adjust card title */
 .card-title {
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 500;
 }
 @media (max-width: 1400px) {
   .card-title {
@@ -13449,6 +13450,7 @@ option+4 dollar*/
   display: flex; /* Allows alignment within the container */
   justify-content: center; /* Centers content horizontally */
   align-items: center; /* Centers content vertically */
+  background-color: white;
 }
 
 /* Media query for smaller screens */
