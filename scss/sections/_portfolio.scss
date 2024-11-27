@@ -5,8 +5,16 @@
 
 .portfolio {
     background-color: black;
+    overflow: hidden;
 }
 
+
+.container-svg {
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+
+}
 
 .prod-title{
     margin-bottom: 4rem;
