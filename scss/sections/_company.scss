@@ -339,6 +339,7 @@ top:50%;
 /* Original Card Styling */
 .card {
   max-height: 600px;
+  background-color: black;
   border: none !important; /* Override any other border settings */
   transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
 }
@@ -349,6 +350,7 @@ top:50%;
 }
 
 .img-container {
+  background-color: black;
   height: 90%; /* Set the desired height */
   overflow: hidden; /* Hide overflow if the image is larger */
   position: relative; /* Needed for absolute positioning of hover text */
@@ -363,6 +365,7 @@ top:50%;
 
 .hover-text {
   position: absolute;
+  font-family: 'Arial', sans-serif;
   top: 0;
   left: -100%; /* Start outside of the container */
   width: 100%;
