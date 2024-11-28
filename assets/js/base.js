@@ -140,10 +140,12 @@ document.addEventListener('DOMContentLoaded', function () {
             maxSize = 90; minSize = 90; initialLeft = 310; shrunkLeft = 310;
         } else if (windowWidth < 750) {
             maxSize = 120; minSize = 100; initialLeft = 250; shrunkLeft = 250;
+        } else if (windowWidth < 850) {
+            maxSize = 230; minSize = 150; initialLeft = 400; shrunkLeft = 600;
         } else if (windowWidth < 1000) {
-            maxSize = 250; minSize = 150; initialLeft = 400; shrunkLeft = 500;
+            maxSize = 250; minSize = 150; initialLeft = 400; shrunkLeft = 750;
         } else if (windowWidth < 1440) {
-            maxSize = 300; minSize = 150; initialLeft = 600; shrunkLeft = 900;
+            maxSize = 300; minSize = 150; initialLeft = 600; shrunkLeft = 880;
         } else {
             maxSize = 300; minSize = 150; initialLeft = 800; shrunkLeft = 1250;
         }
