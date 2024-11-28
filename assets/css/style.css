@@ -13524,7 +13524,6 @@ option+4 dollar*/
   text-decoration: none;
   margin: 1rem; /* Adds space between icons */
   transition: background-color 0.3s;
-  cursor: pointer;
 }
 
 .icon.facebook {
