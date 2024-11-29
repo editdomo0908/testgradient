@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function () {
         } else if (windowWidth < 750) {
             maxSize = 120; minSize = 100; initialLeft = 250; shrunkLeft = 250;
         } else if (windowWidth < 850) {
-            maxSize = 230; minSize = 150; initialLeft = 400; shrunkLeft = 600;
+            maxSize = 200; minSize = 150; initialLeft = 600; shrunkLeft = 600;
         } else if (windowWidth < 1000) {
             maxSize = 250; minSize = 150; initialLeft = 400; shrunkLeft = 750;
         } else if (windowWidth < 1440) {
