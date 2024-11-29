@@ -62,6 +62,7 @@ html, body {
     z-index: 1; // Ensure the video is behind the text
     overflow: hidden;
     background: linear-gradient(to right, #775b96, #DCE0D9, #49528c);
+    display: block;
  
 
     &__content {

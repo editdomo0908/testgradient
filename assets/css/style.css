@@ -12287,6 +12287,7 @@ html, body {
   z-index: 1;
   overflow: hidden;
   background: linear-gradient(to right, #775b96, #DCE0D9, #49528c);
+  display: block;
 }
 .bg-video__content {
   height: 100%;
