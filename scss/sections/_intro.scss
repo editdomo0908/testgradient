@@ -51,27 +51,32 @@ html, body {
 
 
 
+
 .bg-video {
+  
     position: absolute;
     left: 0;
     height: 100vh;
     width: 100vw;
-    opacity: 0.65;
-    z-index: 1; /* Ensure the video is behind the text */
+    opacity: .75;
+    z-index: 1; // Ensure the video is behind the text
     overflow: hidden;
     background: linear-gradient(to right, #775b96, #DCE0D9, #49528c);
-}
+ 
 
-.bg-video__content {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-}
-
-@media (max-width: 768px) {
-    .bg-video {
-        height: auto; /* Adjust if needed */
+    &__content {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
     }
+
+
+    @media (max-width: 768px) {
+        .bg-video {
+            height: auto; /* Adjust if needed */
+        }
+    }
+    
 }
 
 
