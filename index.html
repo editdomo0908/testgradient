@@ -232,11 +232,29 @@
 <section class="landing">
 <!--Brackground video-->
 <div class="bg-video video-frame">
-  <video  class="bg-video__content" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" poster="images/groupsun.jpg">
+  <video  class="bg-video__content" id="bg-video" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" poster="images/groupsun.jpg">
       <source src="images/bg2-converted.mp4" type="video/mp4">
       Your browser is not supported unfortunately.
   </video> 
 </div>
+
+
+
+<script>
+  // Select the video element
+  const video = document.getElementById('bg-video');
+  
+  // Display loading indicator
+  const loadingIndicator = document.createElement('div');
+  loadingIndicator.innerText = 'Loading video...';
+  video.parentElement.appendChild(loadingIndicator);
+
+  // Once the video is ready to play, remove the poster image and loading indicator
+  video.oncanplaythrough = function() {
+    video.poster = ''; // Remove the poster
+    loadingIndicator.style.display = 'none'; // Hide loading text
+  };
+</script>
 
 <div class="container intro-section">
     <div class="row align-item-center text-grey">
