@@ -13547,4 +13547,27 @@ option+4 dollar*/
   font-size: 24px; /* Adjust icon size */
 }
 
+/* https://www.youtube.com/watch?v=iJKCj8uAHz8
+option+shift+A to change for comment, 
+option+7 for brackets,
+option+4 dollar*/
+.rev-title {
+  color: #B6A6CA;
+  font-size: 5rem;
+  font-family: "Manrope" sans-serif !important;
+}
+
+.pieces {
+  background-color: black;
+}
+
+.rev-text {
+  color: #A09ABC;
+}
+
+.img-rev {
+  width: 100%;
+  height: 100%;
+}
+
 /*# sourceMappingURL=style.css.map */

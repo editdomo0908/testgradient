@@ -1,0 +1,22 @@
+
+@use '../custom' as *;
+@use'../components/mixins' as *;
+
+.rev-title { 
+    color: $secondary;
+    font-size: 5rem;
+    font-family: 'Manrope' sans-serif !important;
+}
+
+.pieces {
+    background-color: black;
+}
+
+.rev-text {
+    color: $third;
+}
+
+.img-rev {
+   width: 100%;
+   height: 100%;
+}
