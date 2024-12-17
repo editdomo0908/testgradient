@@ -13170,6 +13170,7 @@ option+4 dollar*/
   width: 100%; /* Ensure the image covers the container width */
   object-fit: cover; /* Cover the entire area (crops image if necessary) */
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Smooth transition for the hover effect */
+  cursor: pointer;
 }
 
 .portfolio-card-title {
@@ -13557,17 +13558,93 @@ option+4 dollar*/
   font-family: "Manrope" sans-serif !important;
 }
 
+.rev-title2 {
+  color: black;
+  font-size: 5rem;
+  font-family: "Manrope" sans-serif !important;
+}
+
 .pieces {
   background-color: black;
+  padding-top: 3rem;
 }
 
 .rev-text {
   color: #A09ABC;
+  text-align: justify;
+  padding: 3rem;
 }
 
 .img-rev {
-  width: 100%;
+  width: 70%;
   height: 100%;
+  padding: 2rem;
+}
+
+.rev-description {
+  font-size: 1rem !important;
+}
+
+.creatives-bg {
+  background-color: #A09ABC;
+  padding-top: 5rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.creatives {
+  background-color: #A09ABC;
+}
+
+.rev-text2 {
+  color: black;
+  text-align: justify;
+  padding: 3rem;
+}
+
+.shade2 {
+  background: linear-gradient(90deg, #ffffff, grey, #A09ABC);
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+
+#come-button2 {
+  background-color: #A09ABC;
+  margin: 5px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #A09ABC;
+  cursor: pointer;
+  text-align: center;
+  border: none;
+  background-size: 300% 100%;
+  margin-left: 3rem;
+  border-radius: 50px;
+  moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+#come-button2:hover {
+  color: black;
+  background-position: 100% 0;
+  moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+#come-button2:focus {
+  outline: none;
+}
+
+#come-button2.color-1 {
+  background-image: linear-gradient(to right, #31303a, #32303c, #A09ABC);
+  border-radius: 50px;
 }
 
 /*# sourceMappingURL=style.css.map */

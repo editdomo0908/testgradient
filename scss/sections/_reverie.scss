@@ -8,15 +8,122 @@
     font-family: 'Manrope' sans-serif !important;
 }
 
+.rev-title2 { 
+    color: black;
+    font-size: 5rem;
+    font-family: 'Manrope' sans-serif !important;
+}
+
+
 .pieces {
     background-color: black;
+    padding-top: 3rem;
 }
 
 .rev-text {
     color: $third;
+    text-align: justify;
+    padding: 3rem;
+
 }
 
 .img-rev {
-   width: 100%;
+   width: 70%;
    height: 100%;
+   padding: 2rem;
 }
+
+
+
+.rev-description { 
+font-size: 1rem !important;
+
+
+}
+
+
+.creatives-bg { 
+    background-color: $third;
+    padding-top: 5rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    
+    }
+
+
+    .creatives{ 
+       background-color: $third
+        
+        }
+
+        .rev-text2 {
+            color: black;
+            text-align: justify;
+            padding: 3rem;
+        
+        }
+
+
+
+        .shade2 {
+
+            background: linear-gradient(90deg, $primary, grey, $third);
+            background-repeat: no-repeat;
+    
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: rgba(255, 255, 255, 0);
+            
+            }
+            
+        
+            
+        #come-button2 {
+                background-color: $third;
+                margin: 5px;
+                font-size: 16px;
+                font-weight: 700;
+                color: $third;
+                cursor: pointer;
+                text-align:center;
+                border: none;
+                background-size: 300% 100%;
+                margin-left: 3rem;
+            
+                border-radius: 50px;
+                moz-transition: all .4s ease-in-out;
+                -o-transition: all .4s ease-in-out;
+                -webkit-transition: all .4s ease-in-out;
+                transition: all .4s ease-in-out;
+            }
+            
+         
+            
+            #come-button2:hover {
+                color: black;
+                background-position: 100% 0;
+                moz-transition: all .4s ease-in-out;
+                -o-transition: all .4s ease-in-out;
+                -webkit-transition: all .4s ease-in-out;
+                transition: all .4s ease-in-out;
+            }
+            
+            #come-button2:focus {
+                outline: none;
+            }
+            
+            #come-button2.color-1 {
+                background-image: linear-gradient(to right,  #31303a, #32303c, #A09ABC);
+               
+                border-radius: 50px;
+            }
+        
+        
+        
+        
+        
+         
+           
+      
+            

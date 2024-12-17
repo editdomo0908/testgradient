@@ -47,6 +47,7 @@
     width: 100%; /* Ensure the image covers the container width */
     object-fit: cover; /* Cover the entire area (crops image if necessary) */
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Smooth transition for the hover effect */
+    cursor: pointer;
    
 
 }
@@ -124,3 +125,4 @@
      padding-right: 10px;
 }
  
+
