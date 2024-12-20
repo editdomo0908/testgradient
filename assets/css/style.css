@@ -12155,7 +12155,7 @@ option+4 dollar*/
   height: 0;
   border-top: 2px solid #B6A6CA;
   border-left: 2px solid #B6A6CA;
-  border-top-left-radius: 1rem;
+  border-top-left-radius: 0rem;
   opacity: 0; /* Invisible initially */
   transition: opacity 0s, width 0.4s ease, height 0.4s ease; /* Delay opacity to show only on hover */
 }
@@ -12625,7 +12625,7 @@ option+4 dollar*/
 
 #heading1 {
   position: relative; /* Make the pseudo-element position relative to this */
-  margin-top: 5%;
+  margin-top: 10%;
   margin-right: 16%;
   font-size: 1.6rem;
   color: #0c1c21;
@@ -12701,9 +12701,9 @@ option+4 dollar*/
 #heading2 {
   font-family: "Raleway", sans-serif;
   position: relative;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 2rem;
-  color: #8b2575;
+  color: #000000;
   transform: translateX(50%) translateY(-50%); /* Start off-screen on the right */
   transition: transform 1s ease-out 1s, opacity 1s ease-out 1s;
   z-index: 2; /* Ensure it stays above the image */
@@ -12734,8 +12734,8 @@ option+4 dollar*/
 }
 
 .bold-vision-text {
-  font-weight: 500;
-  color: #b346b0;
+  font-weight: 700;
+  color: #6c6297;
   transition: color 2s ease-in-out;
 }
 

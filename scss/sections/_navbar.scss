@@ -193,7 +193,7 @@
     height: 0;
     border-top: 2px solid #B6A6CA;
     border-left: 2px solid #B6A6CA;
-    border-top-left-radius: 1rem;
+    border-top-left-radius: 0rem;
     opacity: 0; /* Invisible initially */
     transition: opacity 0s, width 0.4s ease, height 0.4s ease; /* Delay opacity to show only on hover */
   }
