@@ -13595,6 +13595,22 @@ option+4 dollar*/
   color: #A09ABC;
   text-align: justify;
   padding: 3rem;
+  /* Tablet (portrait and landscape) */
+}
+@media only screen and (max-width: 480px) {
+  .rev-text {
+    padding: 1rem;
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .rev-text {
+    padding: 2rem;
+  }
+}
+@media only screen and (min-width: 769px) and (max-width: 1100px) {
+  .rev-text {
+    padding: 2rem;
+  }
 }
 
 .img-rev {
@@ -13602,6 +13618,22 @@ option+4 dollar*/
   height: 100%;
   padding: 2rem;
   margin-top: 5%;
+}
+
+.rev-intro {
+  font-size: 1.7rem;
+  line-height: 2.2rem;
+  padding-bottom: 2rem;
+}
+@media only screen and (max-width: 480px) {
+  .rev-intro {
+    font-size: 1.2rem;
+  }
+}
+@media only screen and (min-width: 769px) and (max-width: 1100px) {
+  .rev-intro {
+    font-size: 1.4rem;
+  }
 }
 
 .rev-description {
@@ -13642,6 +13674,22 @@ option+4 dollar*/
 .rev-text2 {
   color: black;
   text-align: justify;
+  /* Tablet (portrait and landscape) */
+}
+@media only screen and (max-width: 480px) {
+  .rev-text2 {
+    padding: 1rem;
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .rev-text2 {
+    padding: 2rem;
+  }
+}
+@media only screen and (min-width: 769px) and (max-width: 1100px) {
+  .rev-text2 {
+    padding: 2rem;
+  }
 }
 
 .shade2 {

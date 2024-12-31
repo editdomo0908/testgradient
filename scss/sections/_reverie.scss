@@ -50,6 +50,20 @@
     text-align: justify;
     padding: 3rem;
 
+    @media only screen and (max-width: 480px) {
+      padding: 1rem;
+         }
+         
+         /* Tablet (portrait and landscape) */
+         @media only screen and (min-width: 481px) and (max-width: 768px) {
+           padding: 2rem;
+         }
+
+         @media only screen and (min-width: 769px) and (max-width: 1100px) {
+          padding: 2rem;
+         }
+
+
 }
 
 .img-rev {
@@ -59,10 +73,27 @@
    margin-top: 5%;
 }
 
+.rev-intro { 
+    font-size: 1.7rem;
+    line-height: 2.2rem;
+    padding-bottom: 2rem;
+
+    @media only screen and (max-width: 480px) {
+        font-size: 1.2rem;
+         }
+    
+         @media only screen and (min-width: 769px) and (max-width: 1100px) {
+           font-size: 1.4rem;
+          }
+
+
+
+    }
 
 
 .rev-description { 
 font-size: 1rem !important;
+
 
 
 }
@@ -108,6 +139,20 @@ font-size: 1rem !important;
  .rev-text2 {
             color: black;
             text-align: justify;
+
+            @media only screen and (max-width: 480px) {
+                padding: 1rem;
+                   }
+                   
+                   /* Tablet (portrait and landscape) */
+                   @media only screen and (min-width: 481px) and (max-width: 768px) {
+                     padding: 2rem;
+                   }
+          
+                   @media only screen and (min-width: 769px) and (max-width: 1100px) {
+                    padding: 2rem;
+                   }
+          
           
         
         }
