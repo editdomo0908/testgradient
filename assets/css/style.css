@@ -13619,6 +13619,11 @@ option+4 dollar*/
   padding: 2rem;
   margin-top: 5%;
 }
+@media only screen and (max-width: 480px) {
+  .img-rev {
+    display: none;
+  }
+}
 
 .rev-intro {
   font-size: 1.7rem;
