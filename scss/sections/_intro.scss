@@ -176,7 +176,7 @@ html, body {
 
 .wave1, .wave2 {
     transition: transform 0.8s ease-in-out, fill 0.8s ease-in-out;
-    transform: scale(1) translateX(0px);
+    transform: scale(1) translateX(0px) translateY(5px);
     fill: $third;
     overflow:  hidden !important;
   }
