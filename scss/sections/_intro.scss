@@ -134,7 +134,7 @@ html, body {
     left: 70px;
     right: 70px;
     bottom:120px;
-    border: 2px solid white; /* Adjust thickness as needed */
+    border: 2px solid rgb(10, 10, 10); /* Adjust thickness as needed */
     z-index: 5000; /* Ensure it is above the video */
     pointer-events: none; /* Allows interaction with the video */
     box-sizing: border-box;

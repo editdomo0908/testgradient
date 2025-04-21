@@ -12004,12 +12004,12 @@ option+4 dollar*/
   position: sticky;
   top: 0; /* Makes it stick at the top */
   z-index: 1020; /* Ensure it’s on top of other content */
-  background-color: #fff; /* You can adjust this as needed */
+  background-color: #090909; /* You can adjust this as needed */
 }
 
 /* Container and Button Styling */
 .btn-language {
-  color: #80768c !important;
+  color: #ebdefb !important;
   margin-left: 2rem;
 }
 @media (max-width: 992px) {
@@ -12142,7 +12142,7 @@ option+4 dollar*/
 .navbar-nav .nav-link {
   position: relative;
   padding-left: 0.5rem;
-  color: #3f344d !important;
+  color: #c2b6d0 !important;
 }
 
 /* Curve effect: starts invisible */
@@ -12341,7 +12341,7 @@ html, body {
   left: 70px;
   right: 70px;
   bottom: 120px;
-  border: 2px solid white; /* Adjust thickness as needed */
+  border: 2px solid rgb(10, 10, 10); /* Adjust thickness as needed */
   z-index: 5000; /* Ensure it is above the video */
   pointer-events: none; /* Allows interaction with the video */
   box-sizing: border-box;
