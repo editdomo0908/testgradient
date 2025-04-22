@@ -5,11 +5,6 @@
 
 
 
-.menu {
-   background: $primary;
- 
-
-}
 
 /* Custom sticky navbar style */
 .custom-sticky-navbar {
@@ -20,7 +15,9 @@
   background-color: #090909; /* You can adjust this as needed */
 }
 
-
+.navbar-en {
+  background-color: #090909;
+}
 
 /* Container and Button Styling */
 .btn-language  {
@@ -177,7 +174,7 @@
 .navbar-nav .nav-link {
     position: relative;
     padding-left: 0.5rem;
-    color: #c2b6d0 !important;
+    color: #947bb1 !important;
 
   
 

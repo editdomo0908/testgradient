@@ -11994,10 +11994,6 @@ body {
 option+shift+A to change for comment, 
 option+7 for brackets,
 option+4 dollar*/
-.menu {
-  background: #ffffff;
-}
-
 /* Custom sticky navbar style */
 .custom-sticky-navbar {
   position: -webkit-sticky; /* For Safari */
@@ -12005,6 +12001,10 @@ option+4 dollar*/
   top: 0; /* Makes it stick at the top */
   z-index: 1020; /* Ensure it’s on top of other content */
   background-color: #090909; /* You can adjust this as needed */
+}
+
+.navbar-en {
+  background-color: #090909;
 }
 
 /* Container and Button Styling */
@@ -12142,7 +12142,7 @@ option+4 dollar*/
 .navbar-nav .nav-link {
   position: relative;
   padding-left: 0.5rem;
-  color: #c2b6d0 !important;
+  color: #947bb1 !important;
 }
 
 /* Curve effect: starts invisible */
