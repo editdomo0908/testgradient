@@ -34,13 +34,13 @@
    position: absolute;
    transform: translateY(150%) translateX(20%);
    font-size: 3.2rem;
-   font-weight: 200;
+   font-weight: 500;
    color: $primary;
    z-index: 1000;
    overflow:  hidden !important;
    overflow-y: hidden !important;
    margin-top: 200px;
-   font-family: 'Raleway', sans-serif;
+
 
 
 
@@ -92,7 +92,7 @@
 
 .shade {
 
-background: linear-gradient(90deg, $primary, grey, $third);
+background: linear-gradient(90deg, $primary, rgb(194, 150, 125), $third);
 background-repeat: no-repeat;
 background-size: 80%;
 animation: animate 3s linear infinite;
