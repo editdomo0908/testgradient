@@ -12348,6 +12348,7 @@ option+4 dollar*/
   overflow: hidden !important;
   overflow-y: hidden !important;
   margin-top: 200px;
+  z-index: 1;
 }
 @media (max-width: 1400px) {
   .hello {
@@ -13112,6 +13113,7 @@ option+4 dollar*/
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 10;
 }
 
 /* Pop-up content styling */
