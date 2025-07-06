@@ -12580,7 +12580,7 @@ option+4 dollar*/
   #heading2 {
     position: relative;
     font-size: 1.2rem;
-    color: #5b3a61;
+    color: #000000;
     transform: translateY(200%); /* Start off-screen on the right */
     padding: 2rem;
     transition: transform 1s ease-out 1s, opacity 1s ease-out 1s;
