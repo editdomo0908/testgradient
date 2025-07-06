@@ -11982,7 +11982,7 @@ body {
 }
 
 .display-3 {
-  color: #ffffff;
+  color: #DB7F67;
 }
 
 .border-right {
@@ -12234,7 +12234,7 @@ html, body {
 .wave1, .wave2 {
   transition: transform 0.8s ease-in-out, fill 0.8s ease-in-out;
   transform: scale(1) translateX(0px) translateY(10px);
-  fill: #A09ABC;
+  fill: #9183ce;
   overflow: hidden !important;
 }
 
@@ -12387,7 +12387,7 @@ option+4 dollar*/
 }
 
 .shade {
-  background: linear-gradient(90deg, #ffffff, rgb(194, 150, 125), #A09ABC);
+  background: linear-gradient(90deg, #ffffff, rgb(194, 150, 125), #9183ce);
   background-repeat: no-repeat;
   background-size: 80%;
   animation: animate 3s linear infinite;
@@ -12416,7 +12416,7 @@ option+4 dollar*/
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #A09ABC;
+  background: #9183ce;
   clip-path: circle(150px at 100% 100%);
   overflow: hidden !important;
 }
@@ -12432,7 +12432,7 @@ option+4 dollar*/
 
 /* Title and heading styling */
 .bold-vision-text {
-  background: linear-gradient(90deg, #878ca9, rgb(194, 150, 125), #A09ABC);
+  background: linear-gradient(90deg, #878ca9, rgb(194, 150, 125), #9183ce);
   font-weight: 800;
   -webkit-background-clip: text;
   -webkit-text-fill-color: rgba(255, 255, 255, 0);
@@ -12543,7 +12543,7 @@ option+4 dollar*/
   right: 0;
   bottom: 0;
   border: 2px solid transparent;
-  border-image: linear-gradient(90deg, #ffffff, #DB7F67, #A09ABC);
+  border-image: linear-gradient(90deg, #ffffff, #DB7F67, #9183ce);
   border-image-slice: 1;
   z-index: -1; /* Ensure the border is behind the text */
   animation: draw-border 4s linear forwards, fade-out-border 4s linear forwards;
@@ -12903,7 +12903,7 @@ option+4 dollar*/
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #A09ABC; /* Semi-transparent background */
+  background-color: #9183ce; /* Semi-transparent background */
   color: black;
   opacity: 0;
   transform: translateX(0); /* Initial state */
@@ -13017,7 +13017,7 @@ option+4 dollar*/
   padding: 15px;
   margin-bottom: 15px;
   border: none !important;
-  background-image: linear-gradient(180deg, #000000 0%, #4f4d5c 84%);
+  background-image: linear-gradient(180deg, #000000 0%, #000000 84%);
   transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
 }
 
@@ -13035,25 +13035,26 @@ option+4 dollar*/
 }
 
 .portfolio-card-title {
-  color: #fff;
+  color: #ca9689;
   font-size: 24px;
   padding-top: 1rem;
 }
 
 .portfolio-card-text {
-  color: #ddd;
+  color: #ca9689;
   padding-bottom: 15px;
 }
 
 .btn-primary {
-  background-color: #575369;
-  border: 2px solid #fff !important;
+  color: #000000 !important;
+  border: none !important;
 }
 
 .cart-btn {
-  color: white !important;
-  background-color: #575369 !important;
+  color: #ca9689 !important;
+  background-color: #000000 !important;
   width: 96px;
+  border: 10px solid #ca9689;
   border-radius: 30px !important;
   margin: 0.5 auto;
   margin-top: -21px;
@@ -13064,7 +13065,7 @@ option+4 dollar*/
   margin: 5px;
   font-size: 16px;
   font-weight: 400;
-  color: #fff;
+  color: #030303;
   cursor: pointer;
   text-align: center;
   border: none;
@@ -13089,7 +13090,7 @@ option+4 dollar*/
 }
 
 .first-bt-hover.color-1 {
-  background-image: linear-gradient(to right, #31303a, #32303c, #A09ABC);
+  background-image: linear-gradient(to right, #db9773, #ca9689, #A09ABC);
   border-radius: 50px;
 }
 
@@ -13118,7 +13119,7 @@ option+4 dollar*/
 
 /* Pop-up content styling */
 .popup-content {
-  background-color: rgba(102, 93, 112, 0.7215686275);
+  background-color: rgba(0, 0, 0, 0.7215686275);
   padding: 20px; /* Add some padding for better appearance */
   border-radius: 8px;
   max-width: 90%;
@@ -13177,7 +13178,7 @@ option+4 dollar*/
   flex-wrap: wrap; /* Allow wrapping if necessary */
   padding: 1rem;
   margin: 1rem;
-  background-color: #665d70;
+  background-color: #000000;
 }
 
 @media (max-width: 768px) {
@@ -13222,7 +13223,7 @@ option+4 dollar*/
 /* Calendar box styling */
 .calendar-box {
   width: fit-content;
-  border: 1px solid #A09ABC;
+  border: 1px solid #9183ce;
   border-radius: 1px 1px 4px 4px;
   margin: 0.5rem;
   padding: 0.5rem;
@@ -13232,7 +13233,7 @@ option+4 dollar*/
 }
 
 .calendar-box > .day {
-  background: #A09ABC;
+  background: #9183ce;
   color: white;
   font-size: 3rem;
   width: 100%;
@@ -13355,7 +13356,7 @@ option+4 dollar*/
 .footer-container .img-theatre {
   max-height: 50%;
   max-width: 50%;
-  margin-left: 20px;
+  margin-left: 60px;
 }
 @media (max-width: 700px) {
   .footer-container .img-theatre {
@@ -13415,7 +13416,7 @@ option+shift+A to change for comment,
 option+7 for brackets,
 option+4 dollar*/
 .creatives {
-  background-color: #A09ABC;
+  background-color: #9183ce;
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
@@ -13454,7 +13455,7 @@ option+4 dollar*/
 }
 
 .rev-text {
-  color: #A09ABC;
+  color: #9183ce;
   text-align: justify;
   padding: 3rem;
   /* Tablet (portrait and landscape) */
@@ -13508,7 +13509,7 @@ option+4 dollar*/
 }
 
 .creatives-bg {
-  background-color: #A09ABC;
+  background-color: #9183ce;
   padding-top: 5rem;
   display: flex;
   justify-content: center;
@@ -13560,7 +13561,7 @@ option+4 dollar*/
 }
 
 .shade2 {
-  background: linear-gradient(90deg, #ffffff, grey, #A09ABC);
+  background: linear-gradient(90deg, #ffffff, grey, #9183ce);
   background-repeat: no-repeat;
   -webkit-background-clip: text;
   -webkit-text-fill-color: rgba(255, 255, 255, 0);
@@ -13579,11 +13580,11 @@ option+4 dollar*/
 }
 
 #come-button2 {
-  background-color: #A09ABC;
+  background-color: #9183ce;
   margin: 5px;
   font-size: 16px;
   font-weight: 700;
-  color: #A09ABC;
+  color: #9183ce;
   cursor: pointer;
   text-align: center;
   border: none;

@@ -30,7 +30,7 @@
      padding: 15px;
      margin-bottom:15px;
      border:none!important;
-     background-image: linear-gradient(180deg, #000000 0%, #4f4d5c 84%);
+     background-image: linear-gradient(180deg, #000000 0%, #000000 84%);
      transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
     
 }
@@ -53,25 +53,26 @@
 }
 
  .portfolio-card-title{
-    color: #fff;
+    color: #ca9689 ;
     font-size: 24px;
     padding-top: 1rem;
 }
  .portfolio-card-text{
-    color: #ddd;
+    color: #ca9689 ;
     padding-bottom: 15px;
     
 }
  .btn-primary{
-     background-color: #575369;
-     border:2px solid #fff!important;
+    color: #000000 !important;
+     border:none !important;
     
  
 }
  .cart-btn{
-     color: white !important;
-     background-color: #575369 !important;
+     color: #ca9689  !important;
+     background-color:#000000  !important;
      width: 96px;
+     border: 10px solid #ca9689 ;
      border-radius: 30px !important;
      margin: 0.5 auto;
      margin-top: -21px;
@@ -84,7 +85,7 @@
         margin: 5px;
         font-size: 16px;
         font-weight: 400;
-        color: #fff;
+        color: #030303;
         cursor: pointer;
         text-align:center;
         border: none;
@@ -110,7 +111,7 @@
     }
     
     .first-bt-hover.color-1 {
-        background-image: linear-gradient(to right,  #31303a, #32303c, #A09ABC);
+        background-image: linear-gradient(to right,  #db9773,#ca9689 , #A09ABC);
        
         border-radius: 50px;
     }

@@ -30,12 +30,12 @@ let circle1 = document.querySelector('.circle1');
 let circle2 = document.querySelector('.circle2');
 
 // Set specific initial colors using hex values or color names
-const initialColorCircle1 = "#c797ab";  // Initial color for circle1 (Red)
-const initialColorCircle2 = "#878ca9";  // Initial color for circle2 (Steel Blue)
+const initialColorCircle1 = "#DB7F67";  // Initial color for circle1 (Red)
+const initialColorCircle2 = "#9183ce ";  // Initial color for circle2 (Steel Blue)
 
 // Set specific target colors using hex values or color names
 const targetColorCircle1 = "#370926";   // Target color for circle1 (Yellow)
-const targetColorCircle2 = "#B6A6CA";   // Target color for circle2 (Orange)
+const targetColorCircle2 = "#9183ce ";   // Target color for circle2 (Orange)
 
 window.addEventListener('scroll', () => {
     let scrollValue = window.scrollY;
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const subtitle = document.querySelector('.logo-text .subtitle');
     const locationText = document.querySelector('.logo-text .location');
 
-    const colors = ['#878ca9','#A09ABC','#DCE0D9','#BFA8AF ','#A98D9A ' ];
+    const colors = ['#a59bd2 ','#A09ABC','#DCE0D9','#BFA8AF ','#ca9689  ' ];
     const colorCount = colors.length;
 
     let maxSize, minSize, initialSize;
@@ -367,9 +367,9 @@ function animateBothWaves() {
   if (!isSecondColorApplied) {
     // Apply the animation and second color to both waves
     wave1.style.transform = 'scale(1.2) translateX(0px)';
-    wave1.style.fill = '#c797ab';
+    wave1.style.fill = '#DB7F67';
     wave2.style.transform = 'scale(1.2) translateX(0px)';
-    wave2.style.fill = '#c797ab';
+    wave2.style.fill = '#DB7F67';
 
     // Set the flag to true to indicate the second color is applied
     isSecondColorApplied = true;
@@ -381,9 +381,9 @@ function resetWaves() {
   if (isSecondColorApplied) {
     // Reset the animation and color
     wave1.style.transform = 'scale(1) translateX(0px)';
-    wave1.style.fill = '#A09ABC';
+    wave1.style.fill = '#9183ce ';
     wave2.style.transform = 'scale(1) translateX(0px)';
-    wave2.style.fill = '#A09ABC';
+    wave2.style.fill = '#9183ce ';
 
     // Reset the flag
     isSecondColorApplied = false;
